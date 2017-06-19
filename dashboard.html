@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Agilient Admin</title>
+    <meta name="description" content="Agilient Admin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/icons.css">
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/simple-line-icons.css">
+    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
+    
+    <!-- Table -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="../css/styles.min.css"> -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+</head><header>
+	<div class="side-nav navbar navbar-toggleable-md">
+		 <div class="navbar-collapse">
+		    <ul class="navbar-nav">
+		    	<div class="menu-toggle">
+					<a class="btn-toggle" href="#">
+						<i class="icon-menu"></i>
+					</a>
+				</div>
+		      	<li class="nav-item active">
+		        	<a class="nav-link" href="index.html"><i class="icon-home"></i><span>Home</span></a>
+		      	</li>
+		      	<li class="nav-item">
+		        	<a class="nav-link" href="#"><i class="icon-briefcase"></i><span>Organizations</span></a>
+		      	</li>
+		      	<li class="nav-item">
+		        	<a class="nav-link" href="#"><i class="icon-organization"></i><span>Business Units</span></a>
+		      	</li>
+		      	<li class="nav-item">
+		        	<a class="nav-link" href="#"><i class="icon-user"></i><span>Users</span></a>
+		      	</li>
+		      	<li class="nav-item">
+		        	<a class="nav-link" href="assesments.html"><i class="icon-check"></i><span>Assesments</span></a>
+		      	</li>
+		      	<li class="nav-item">
+		        	<a class="nav-link" href="dashboard.html"><i class="icon-speedometer"></i><span>Dashboard</span></a>
+		      	</li>
+		    </ul>
+		</div>
+	</div>
+	<div class="top-nav fixed-top">
+		<nav class="navbar navbar-toggleable-md">
+		  	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"></span>
+		  	</button>
+	  		<a class="navbar-brand" href="#"><img src="img/logo-light.png" alt=""></a>
+		  	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+		    	<ul class="navbar-nav">
+
+		      		<li class="nav-item">
+		        		<form class="navbar-form full-width">
+                    		<div class="form-group">
+	                        	<input type="text" class="form-control" placeholder="Enter keyword">
+	                        	<button type="submit" class="btn btn-search"><i class="icon-magnifier"></i></button>
+                    		</div>
+                		</form>
+		      		</li>
+
+		      		<li class="nav-item dropdown">
+				        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          Conrad Client
+				        </a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				          <a class="dropdown-item" href="#">Action</a>
+				          <a class="dropdown-item" href="#">Another action</a>
+				          <a class="dropdown-item" href="#">Something else here</a>
+				        </div>
+				    </li>
+
+		    	</ul>
+		  	</div>
+		</nav>
+	</div>
+</header><div class="admin-body">
+	<main>
+		<div class="container-fluid">
+			<div class="animated fade-in">
+				<div class="row">
+	<div class="col-md-12">
+		
+		<div class="card">
+		    <div class="card-block">
+		    	<div class="row align-items-center">
+		    		<div class="col-md-6">
+		    			<h5 class="card-title">DASHBOARD</h5>	
+		    		</div>
+		    		 <div class="col-md-6 text-right">
+		    		 	<a href="#" class="btn btn-secondary btn-sm">Create<i class="fa fa-plus"></i></a>
+		    		 	<a href="#" class="btn btn-secondary btn-sm btn-icon"><i class="fa fa-question"></i></a>
+		    		 </div>
+		    	</div>
+		    </div>
+		</div>
+
+	</div>
+
+	<div class="col-md-12">
+		<div class="card graph">
+			<div class="row">
+				<div class="col-md-6">
+					<div id="inherent-risk-ratings" class="graph-content"></div>
+				</div>
+				<div class="col-md-6">
+					<div id="residual-risk-ratings" class="graph-content"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="card graph">
+			<div id="risk-type" class="graph-content" style="width:450px;height: 300px; margin: 0 auto;"></div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="card graph">
+			<div id="risk-treatment" class="graph-content" style="width:450px;height: 300px; margin: 0 auto;"></div>
+		</div>
+	</div>
+
+    <div class="col-md-6">
+        <div class="card graph">
+            <div id="risk-threat" class="graph-content" style="width:450px;height: 300px; margin: 0 auto;"></div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card graph">
+            <div id="threat-ratings" class="graph-content" style="width:450px;height: 300px; margin: 0 auto;"></div>
+        </div>
+    </div>
+
+</div>
+<!-- Charts -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script>
+	Highcharts.chart('inherent-risk-ratings', {
+
+    chart: {
+        type: 'bubble',
+        plotBorderWidth: 1,
+        zoomType: 'xy'
+    },
+
+    title: {
+        text: 'Inherent Risk Ratings'
+    },
+
+    xAxis: {
+        gridLineWidth: 1
+    },
+
+    yAxis: {
+        startOnTick: false,
+        endOnTick: false
+    },
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            enabled: false
+          }
+        }
+      }]
+    },
+
+    series: [{
+        data: [
+            [9, 81, 63],
+            [98, 5, 89],
+            [51, 50, 73],
+            [41, 22, 14],
+            [58, 24, 20],
+            [78, 37, 34],
+            [55, 56, 53],
+            [18, 45, 70],
+            [42, 44, 28],
+            [3, 52, 59],
+            [31, 18, 97],
+            [79, 91, 63],
+            [93, 23, 23],
+            [44, 83, 22]
+        ],
+        marker: {
+            fillColor: {
+                radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+                stops: [
+                    [0, 'rgba(255,255,255,0.5)'],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.5).get('rgba')]
+                ]
+            }
+        }
+    }, {
+        data: [
+            [42, 38, 20],
+            [6, 18, 1],
+            [1, 93, 55],
+            [57, 2, 90],
+            [80, 76, 22],
+            [11, 74, 96],
+            [88, 56, 10],
+            [30, 47, 49],
+            [57, 62, 98],
+            [4, 16, 16],
+            [46, 10, 11],
+            [22, 87, 89],
+            [57, 91, 82],
+            [45, 15, 98]
+        ],
+        marker: {
+            fillColor: {
+                radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+                stops: [
+                    [0, 'rgba(255,255,255,0.5)'],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0.5).get('rgba')]
+                ]
+            }
+        }
+    }]
+
+});
+</script>
+<script>
+	Highcharts.chart('residual-risk-ratings', {
+
+    chart: {
+        type: 'bubble',
+        plotBorderWidth: 1,
+        zoomType: 'xy'
+    },
+
+    title: {
+        text: 'Residual Risk Ratings'
+    },
+
+    xAxis: {
+        gridLineWidth: 1
+    },
+
+    yAxis: {
+        startOnTick: false,
+        endOnTick: false
+    },
+
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            enabled: false
+          }
+        }
+      }]
+    },
+
+    series: [{
+        data: [
+            [9, 81, 63],
+            [98, 5, 89],
+            [51, 50, 73],
+            [41, 22, 14],
+            [58, 24, 20],
+            [78, 37, 34],
+            [55, 56, 53],
+            [18, 45, 70],
+            [42, 44, 28],
+            [3, 52, 59],
+            [31, 18, 97],
+            [79, 91, 63],
+            [93, 23, 23],
+            [44, 83, 22]
+        ],
+        marker: {
+            fillColor: {
+                radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+                stops: [
+                    [0, 'rgba(255,255,255,0.5)'],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.5).get('rgba')]
+                ]
+            }
+        }
+    }, {
+        data: [
+            [42, 38, 20],
+            [6, 18, 1],
+            [1, 93, 55],
+            [57, 2, 90],
+            [80, 76, 22],
+            [11, 74, 96],
+            [88, 56, 10],
+            [30, 47, 49],
+            [57, 62, 98],
+            [4, 16, 16],
+            [46, 10, 11],
+            [22, 87, 89],
+            [57, 91, 82],
+            [45, 15, 98]
+        ],
+        marker: {
+            fillColor: {
+                radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+                stops: [
+                    [0, 'rgba(255,255,255,0.5)'],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0.5).get('rgba')]
+                ]
+            }
+        }
+    }]
+
+});
+</script>
+
+<script>
+
+    // Build the chart
+    Highcharts.chart('risk-type', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Risk Type & Ratings',
+            align: 'left',
+            style: { "border-bottom": "1px solid #ccc", "fontSize": "18px"}
+        },
+        subtitle: {
+        	text: 'Click the slices to see the percentage of risk rating in each security area',
+            align: 'left'
+        },
+        legend: {
+        	align:'center',
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+        responsive: {
+          rules: [{
+            condition: {
+              maxWidth: 500
+            },
+            chartOptions: {
+              legend: {
+                enabled: false
+              }
+            }
+          }]
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Microsoft Internet Explorer',
+                y: 56.33
+            }, {
+                name: 'Chrome',
+                y: 24.03,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Firefox',
+                y: 10.38
+            }, {
+                name: 'Safari',
+                y: 4.77
+            }, {
+                name: 'Opera',
+                y: 0.91
+            }, {
+                name: 'Proprietary or Undetectable',
+                y: 0.2
+            }]
+        }]
+    });
+</script>
+
+<script>
+
+// Data retrieved from http://vikjavev.no/ver/index.php?spenn=2d&sluttid=16.06.2015.
+
+Highcharts.chart('risk-treatment', {
+    chart: {
+        type: 'spline'
+    },
+    title: {
+        text: 'Risk Treatment Status',
+        align: 'left',
+    },
+    subtitle: {
+        text: 'Risk With No Treatment Currently Allocated',
+        align: 'left'
+    },
+    xAxis: {
+        type: 'datetime',
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    yAxis: {
+        title: {
+            text: ''
+        },
+        minorGridLineWidth: 0,
+        gridLineWidth: 0,
+        alternateGridColor: null,
+    },
+    tooltip: {
+        valueSuffix: ' m/s'
+    },
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            enabled: false
+          }
+        }
+      }]
+    },
+    plotOptions: {
+        spline: {
+            lineWidth: 4,
+            states: {
+                hover: {
+                    lineWidth: 5
+                }
+            },
+            marker: {
+                enabled: false
+            },
+            pointInterval: 3600000, // one hour
+            pointStart: Date.UTC(2015, 4, 31, 0, 0, 0),
+            dashStyle: "Solid",
+        }
+    },
+    series: [{
+        name: 'Lorem 1',
+        data: [0.2, 0.8, 0.8, 0.8, 1, 1.3, 1.5, 2.9, 1.9, 2.6, 1.6, 3, 4, 3.6, 4.5, 4.2, 4.5, 4.5, 4, 3.1, 2.7, 4, 2.7, 2.3, 2.3, 4.1, 7.7, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 11.5, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6]
+
+    }, {
+        name: 'Lorem 2',
+        data: [0, 0, 0.6, 0.9, 0.8, 0.2, 0, 0, 0, 0.1, 0.6, 0.7, 0.8, 0.6, 0.2, 0, 0.1, 0.3, 0.3, 0, 0.1, 0, 0, 0, 0.2, 0.1, 0, 0.3, 0, 0.1, 0.2, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9, 1.2, 0.7, 1.3, 0.4, 0.3]
+    }],
+    navigation: {
+        menuItemStyle: {
+            fontSize: '10px'
+        }
+    }
+});
+</script>
+
+<script>
+    
+Highcharts.chart('risk-threat', {
+
+    chart: {
+        polar: true,
+        type: 'line'
+    },
+
+    title: {
+        text: 'Risk by Threat Source',
+        align: 'left'
+    },
+
+    pane: {
+        size: '80%'
+    },
+
+    xAxis: {
+        categories: ['Insider', 'Marketing', 'Terrorists', 'Organized & Serious Criminals',
+                'Issue Otivated Group', 'Petty Criminal'],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+    },
+
+    yAxis: {
+        gridLineInterpolation: 'polygon',
+        lineWidth: 0,
+        min: 0
+    },
+
+    tooltip: {
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+    },
+
+    legend: {
+        align: 'center',
+    },
+
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            enabled: false
+          }
+        }
+      }]
+    },
+
+    series: [{
+        name: 'Total Number of Risk',
+        data: [43000, 19000, 60000, 35000, 17000, 10000],
+        pointPlacement: 'on'
+    }, {
+        name: 'Number Above Tolerance Threshold',
+        data: [50000, 39000, 42000, 31000, 26000, 14000],
+        pointPlacement: 'on'
+    }]
+
+});
+</script>
+
+<script>
+    Highcharts.chart('threat-ratings', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Threat Ratings',
+        align: 'left'
+    },
+    subtitle: {
+        text: 'Threat Rating by Threat Source'
+    },
+    xAxis: {
+        categories: ['Insider', 'OASC', 'Terrorists', 'Organized Criminal', 'IMG']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: ''
+        }
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'percent'
+        }
+    },
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            enabled: false
+          }
+        }
+      }]
+    },
+    series: [{
+        name: 'High',
+        data: [5, 3, 4, 7, 2]
+    }, {
+        name: 'Medium',
+        data: [2, 2, 3, 2, 1]
+    }, {
+        name: 'Low',
+        data: [3, 4, 4, 2, 5]
+    }]
+});
+</script>			</div>
+		</div>
+	</main>
+</div>
+<footer class="fixed-bottom">
+	<div class="container-fluid">
+			<div class="row">
+				<!-- Navbar Footer -->
+				<div class="navbar navbar-toggleable-md">
+					<ul class="nav navbar-nav">
+	                    <li class="nav-item">
+	                       	<a class="nav-link" data-toggle="modal" data-target="#modalFAQ" href="">POWERED BY SECMAN</a>
+	                    </li>
+	        		</ul>
+	        		<ul class="nav navbar-nav ml-auto footer-links">
+						<li class="nav-item">
+	                       	<a class="nav-link" href="">SECMAN</a>
+	                    </li>
+	                    <li class="nav-item">
+	                       	<a class="nav-link" href="">Disclaimer</a>
+	                    </li>
+	                    <li class="nav-item">
+	                       	<a class="nav-link" href="">Contact Details</a>
+	                    </li>
+	                    <li class="nav-item">
+	                       	<a class="nav-link" href="">Feedback</a>
+	                    </li>
+	        		</ul>
+				</div>
+				<!--/ End Navbar Footer -->
+
+			</div>
+		</div>
+</footer>	<!-- External JS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+
+	<!-- Table -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/filter/bootstrap-table-filter.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+
+	<!-- Main JS -->
+	<script src="js/app.js "></script>
+
+</body>
+
+</html>

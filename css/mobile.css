@@ -1,0 +1,53 @@
+@media (max-width: 992px) {
+  .side-nav {
+    transform: translateX(-250px); }
+  .admin-body,
+  .top-nav {
+    margin-left: 0; }
+  .navbar-brand {
+    padding: 0;
+    height: 100%;
+    width: auto;
+    display: inline-block;
+    line-height: inherit; }
+    .navbar-brand img {
+      height: 30px; }
+  .menu-toggle {
+    position: fixed;
+    top: 13px;
+    right: 15px;
+    z-index: 1100; }
+    .menu-toggle i {
+      color: #fff; }
+  .toggle-sidebar .side-nav {
+    transform: translateX(0); } }
+
+@media (min-width: 768px) and (max-width: 992px) {
+  footer .navbar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  footer .navbar-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+    footer .navbar-nav .nav-link {
+      padding-right: .5rem;
+      padding-left: .5rem; } }
+
+@media (max-width: 767px) {
+  footer.fixed-bottom {
+    position: relative; } }
+
+/*# sourceMappingURL=mobile.css.map */
