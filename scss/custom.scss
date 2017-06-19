@@ -77,11 +77,11 @@ a:hover {
 /* Buttons */
 
 .btn-primary {
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $blue;
+    border-color: $blue;
     &:hover {
-        background-color: $primary-dark;
-        border-color: $primary-dark;
+        background-color: $light-blue;
+        border-color: $light-blue;
     }
 }
 
@@ -492,4 +492,27 @@ table tr td:last-child {
         background: #274c75;
         border-radius: 5px;
     }
+}
+
+
+/* Login */
+
+.login {
+    .card-header {
+        background-color: $blue;
+    }
+    .btn {
+        margin-bottom: 10px;
+    }
+    .animated > .row {
+        height: 100vh;
+    }
+}
+
+.login-form-wrap {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
 }

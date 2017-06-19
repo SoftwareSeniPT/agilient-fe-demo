@@ -43,11 +43,11 @@ a:hover {
 
 /* Buttons */
 .btn-primary {
-  background-color: #4285F4;
-  border-color: #4285F4; }
+  background-color: #274c75;
+  border-color: #274c75; }
   .btn-primary:hover {
-    background-color: #0d47a1;
-    border-color: #0d47a1; }
+    background-color: #386798;
+    border-color: #386798; }
 
 .btn-secondary {
   color: #1d2a32;
@@ -349,5 +349,22 @@ table tr td:last-child {
 .getting-started .card-block {
   background: #274c75;
   border-radius: 5px; }
+
+/* Login */
+.login .card-header {
+  background-color: #274c75; }
+
+.login .btn {
+  margin-bottom: 10px; }
+
+.login .animated > .row {
+  height: 100vh; }
+
+.login-form-wrap {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%; }
 
 /*# sourceMappingURL=custom.css.map */
