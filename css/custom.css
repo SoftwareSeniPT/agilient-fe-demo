@@ -350,6 +350,18 @@ table tr td:last-child {
   background: #274c75;
   border-radius: 5px; }
 
+.getting-started h5 {
+  margin-bottom: 30px; }
+
+.getting-started a {
+  color: #fff; }
+
+.getting-started a.color-link {
+  color: #83afdc; }
+
+ul li i {
+  margin-right: 7px; }
+
 /* Login */
 .login .card-header {
   background-color: #274c75; }
@@ -366,5 +378,9 @@ table tr td:last-child {
   top: 50%;
   transform: translateY(-50%);
   width: 100%; }
+
+/* Owl Carousel */
+.item-video {
+  height: 350px; }
 
 /*# sourceMappingURL=custom.css.map */

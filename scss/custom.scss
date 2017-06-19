@@ -492,6 +492,21 @@ table tr td:last-child {
         background: #274c75;
         border-radius: 5px;
     }
+    h5 {
+        margin-bottom: 30px;
+    }
+    a {
+        color: $white;
+    }
+    a.color-link {
+        color: #83afdc;
+    }
+}
+
+ul li {
+    i {
+        margin-right: 7px;
+    }
 }
 
 
@@ -515,4 +530,9 @@ table tr td:last-child {
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
+}
+
+/* Owl Carousel */
+.item-video {
+    height: 350px;
 }
