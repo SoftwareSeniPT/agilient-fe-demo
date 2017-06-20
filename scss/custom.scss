@@ -192,7 +192,7 @@ a:hover {
 /* Body */
 
 .admin-body {
-    margin-left: 250px;
+    margin-left: 200px;
     padding-top: 65px;
     padding-bottom: 50px;
     background-color: $grey;
@@ -221,7 +221,7 @@ footer {
 
 .side-nav {
     display: block;
-    width: 250px;
+    width: 200px;
     background: $blue;
     float: left;
     position: fixed;
@@ -291,7 +291,7 @@ footer {
         }
     }
     footer {
-        margin-left: 250px;
+        margin-left: 200px;
     }
 }
 
@@ -299,7 +299,7 @@ footer {
 /* Navbar Top */
 
 .top-nav {
-    margin-left: 250px;
+    margin-left: 200px;
     transition: all .3s ease;
     clear: both;
     background-color: $white;
@@ -532,7 +532,65 @@ ul li {
     width: 100%;
 }
 
+
 /* Owl Carousel */
+
 .item-video {
     height: 350px;
+}
+
+
+/* Step Wizard */
+
+.nav-tabs {
+    .nav-item {
+        width: 25%;
+        &:not(:last-child) .nav-link::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 21px solid transparent;
+            border-bottom: 21px solid transparent;
+            border-left: 15px solid $light-blue;
+            position: absolute;
+            top: 50%;
+            margin-top: -21px;
+            margin-left: 1px;
+            left: 100%;
+            z-index: 3;
+        }
+        &:not(:last-child) .nav-link::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 21px solid transparent;
+            border-bottom: 21px solid transparent;
+            border-left: 15px solid white;
+            position: absolute;
+            top: 50%;
+            margin-top: -21px;
+            left: 100%;
+            z-index: 3;
+        }
+    }
+    .nav-link {
+        text-align: center;
+        position: relative;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        background-color: $white;
+        border-top-color: $light-blue;
+        border-bottom-color: $light-blue;
+    }
+    .nav-item.show .nav-link,
+    .nav-link.active {
+        background-color: $light-blue;
+        color: #fff;
+        border-color: $light-blue;
+    }
+    .nav-link.active::after {
+        border-left: 21px solid #386798 !important;
+    }
 }
