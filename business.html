@@ -38,13 +38,13 @@
 						<i class="icon-menu"></i>
 					</a>
 				</div>
-		      	<li class="nav-item active">
+		      	<li class="nav-item">
 		        	<a class="nav-link" href="index.html"><i class="icon-home"></i><span>Home</span></a>
 		      	</li>
 		      	<li class="nav-item">
 		        	<a class="nav-link" href="#"><i class="icon-briefcase"></i><span>Organizations</span></a>
 		      	</li>
-		      	<li class="nav-item">
+		      	<li class="nav-item active">
 		        	<a class="nav-link" href="business.html"><i class="icon-organization"></i><span>Business Units</span></a>
 		      	</li>
 		      	<li class="nav-item">
@@ -102,90 +102,63 @@
 		<div class="card">
 		    <div class="card-block">
 		    	<div class="row align-items-center">
-		    		<div class="col-md-6">
-		    			<h5 class="card-title">HOME</h5>	
+		    		<div class="col-md-6 d-flex justify-content-start">
+		    			<h5 class="card-title">BUSINESS UNITS</h5>
+		    			<ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Business Units</li>
+                        </ol>	
 		    		</div>
 		    		 <div class="col-md-6 text-right">
-		    		 	<a href="#" class="btn btn-primary btn-sm">Getting started</a>
-		    		 	<a href="#" class="btn btn-secondary btn-sm">Create<i class="fa fa-plus"></i></a>
+		    		 	<a href="#" data-toggle="modal" data-target="#newBusiness" class="btn btn-secondary btn-sm">
+		    		 		Create
+		    		 		<i class="fa fa-plus"></i>
+		    		 	</a>
+
+		    		 	<!-- Modal -->
+                                <div class="modal fade" id="newBusiness" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    
+                                       
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    
+                                        <div class="modal-body">
+                                            <div class="row title-modal-business">
+                                            	<div class="col-md-12">
+                                            	New Business Unit
+                                            	</div>
+                                            </div>
+                                            <div class="row content-modal-business">
+	                                            <div class="col-md-6">
+													<select name="" id="select-modal">
+														<option disabled selected value>Select Parent</option>
+														<option value="">Organisations</option>
+														<option value="">Operations</option>
+														<option value="">Logistics</option>
+														<option value="">Marketings</option>
+														<option value="">Sales</option>
+													</select>
+												</div>
+												<div class="col-md-6">
+													<input type="text" id="input-modal" placeholder="Type Name">
+													<div class="row">
+														<div class="col-md-6">
+															<button class="btn btn-primary btn-sm save-modal" type="submit">Save</button>
+														</div>
+													</div>
+												</div>
+                                            </div>
+                                        </div>
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+
 		    		 	<a href="#" class="btn btn-secondary btn-sm btn-icon"><i class="fa fa-question"></i></a>
 		    		 </div>
-		    	</div>
-		    </div>
-		</div>
-
-	</div>
-
-	<div class="col-md-3">
-		
-		<div class="card card-icon">
-		    <div class="card-block">
-		    	<div class="row">
-		    		<div class="col-md-12 text-center">
-		    			<div class="icon-img">
-		    				<img src="img/tower.png" alt="">
-		    				<span class="badge badge-pill badge-danger">5</span>
-		    			</div>
-		    			<h5 class="card-title">Organizations</h5>
-		    		</div>
-		    		
-		    	</div>
-		    </div>
-		</div>
-
-	</div>
-
-	<div class="col-md-3">
-		
-		<div class="card card-icon">
-		    <div class="card-block">
-		    	<div class="row">
-		    		<div class="col-md-12 text-center">
-		    			<div class="icon-img">
-		    				<img src="img/tower.png" alt="">
-		    				<span class="badge badge-pill badge-danger">5</span>
-		    			</div>
-		    			<h5 class="card-title">Bussiness Units</h5>
-		    		</div>
-		    		
-		    	</div>
-		    </div>
-		</div>
-
-	</div>
-
-	<div class="col-md-3">
-		
-		<div class="card card-icon">
-		    <div class="card-block">
-		    	<div class="row">
-		    		<div class="col-md-12 text-center">
-		    			<div class="icon-img">
-		    				<img src="img/tower.png" alt="">
-		    				<span class="badge badge-pill badge-danger">5</span>
-		    			</div>
-		    			<h5 class="card-title">Users</h5>
-		    		</div>
-		    		
-		    	</div>
-		    </div>
-		</div>
-
-	</div>
-
-	<div class="col-md-3">
-		
-		<div class="card card-icon">
-		    <div class="card-block">
-		    	<div class="row">
-		    		<div class="col-md-12 text-center">
-		    			<div class="icon-img">
-		    				<img src="img/tower.png" alt="">
-		    				<span class="badge badge-pill badge-danger">5</span>
-		    			</div>
-		    			<h5 class="card-title">Assesments</h5>
-		    		</div>
-		    		
 		    	</div>
 		    </div>
 		</div>
@@ -226,8 +199,8 @@
                 <button id="ok" type="submit" class="btn btn-default">OK</button>
             </div>
         </div>
-		<table id="table-home" data-toggle="table"
-               data-height="460"
+		<table id="table-business" data-toggle="table"
+               data-height="560"
                data-toolbar="#toolbar"
                data-show-refresh="true"
                data-show-toggle="true"
@@ -236,77 +209,68 @@
                data-response-handler="responseHandler">
 		    <thead>
 		        <tr>
-		            <th data-field="name" data-sortable="true">Name</th>
+		            <th data-field="name" data-sortable="false">Name</th>
+		            <th data-field="organisation"  data-sortable="false">Organisation</th>
 		            <th data-field="type"  data-sortable="true">Type</th>
 		            <th data-field="status"  data-sortable="true">Status</th>
-		            <th data-field="table-link-head"  data-sortable="false">Status</th>
+		            <th data-field="table-link-head"  data-sortable="false"></th>
 		        </tr>
 		    </thead>
 		    <tbody>
 		        <tr>
-		        	<td>Adi</td>
-		        	<td>Bussiness Unit</td>
+		        	<td>Sales</td>
+		        	<td>Demo Org</td>
+		        	<td>Entity</td>
 		        	<td>Active</td>
 		        	<td>
-						
+
 		        	</td>
 		        </tr>
 		        <tr>
-		        	<td>Ani</td>
-		        	<td>Bussiness Unit</td>
+		        	<td>Operations</td>
+		        	<td>Demo Org</td>
+		        	<td>Entity</td>
 		        	<td>Active</td>
 		        	<td>
-						
+		        	
 		        	</td>
 		        </tr>
 		        <tr>
-		        	<td>Badu</td>
-		        	<td>User</td>
+		        	<td>Technology</td>
+		        	<td>Demo Org</td>
+		        	<td>Entity</td>
 		        	<td>Active</td>
 		        	<td>
-						
+		        	
 		        	</td>
 		        </tr>
 		        <tr>
-		        	<td>Cici</td>
-		        	<td>Assessement</td>
-		        	<td>Inactive</td>
+		        	<td>IT</td>
+		        	<td>Demo Org</td>
+		        	<td>Entity</td>
+		        	<td>Active</td>
 		        	<td>
-						
+		        	
 		        	</td>
 		        </tr>
-				 <tr>
-					<td>Dido</td>
-					<td>User</td>
-					<td>Inactive</td>
-					<td>
-						
-					</td>
-				</tr>
-				<tr>
-					<td>Dido</td>
-					<td>User</td>
-					<td>Inactive</td>
-					<td>
-						
-					</td>
-				</tr>
-				<tr>
-					<td>Dido</td>
-					<td>User</td>
-					<td>Inactive</td>
-					<td>
-						
-					</td>
-				</tr>
-				<tr>
-					<td>Dido</td>
-					<td>User</td>
-					<td>Inactive</td>
-					<td>
-						
-					</td>
-				</tr>
+		        <tr>
+		        	<td>Marketing</td>
+		        	<td>Demo Org</td>
+		        	<td>Entity</td>
+		        	<td>Active</td>
+		        	<td>
+		        	
+		        	</td>
+		        </tr>
+		        <tr>
+		        	<td>Distribution</td>
+		        	<td>Demo Org</td>
+		        	<td>Entity</td>
+		        	<td>Active</td>
+		        	<td>
+		        	
+		        	</td>
+		        </tr>
 		    </tbody>
 		</table>
 	</div>

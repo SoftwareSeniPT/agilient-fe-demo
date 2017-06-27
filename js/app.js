@@ -12,6 +12,8 @@
 
         init: function($) {
             app.addBlockTable();
+            app.addBlockTableBusiness();
+            app.addBlockTableUsers();
             app.menuToggle();
             app.owlSlider();
         },
@@ -79,6 +81,102 @@
                 return res.rows;
             }
 
+
+        },
+        addBlockTableBusiness: function() {
+            jQuery('#table-business td:last-child').append('<div class="table-menu">' +
+                '<a href="#0" class="table-toggle"><i class="icon-options-vertical"></i></a>' +
+                '<div class="table-menu-link">' +
+                '<span class="">' +
+                '<a href="#">' +
+                '<i class="icon-user"></i>' +
+                '</a>' +
+                '</span>' +
+                '<span class="">' +
+                '<a href="#">' +
+                '<i class="icon-reload"></i>' +
+                '</a>' +
+                '</span>' +
+                '<span class="">' +
+                '<a href="#">' +
+                '<i class="icon-list"></i>' +
+                '</a>' +
+                '</span>' +
+                '<span class="">' +
+                '<a href="#">' +
+                '<i class="icon-trash"></i>' +
+                '</a>' +
+                '</span>' +
+                '</div>' +
+                '</div>'
+            );
+            var $table = $('#table-business'),
+                $ok = $('#ok');
+            $(function() {
+                $ok.click(function() {
+                    $table.bootstrapTable('refresh');
+                });
+            });
+
+            function queryParams() {
+                var params = {};
+                $('#toolbar').find('input[name]').each(function() {
+                    params[$(this).attr('name')] = $(this).val();
+                });
+                return params;
+            }
+
+            function responseHandler(res) {
+                return res.rows;
+            }
+
+        },
+        addBlockTableUsers: function() {
+            jQuery('#table-users td:last-child').append('<div class="table-menu">' +
+                '<a href="#0" class="table-toggle"><i class="icon-options-vertical"></i></a>' +
+                '<div class="table-menu-link">' +
+                '<span class="">' +
+                '<a href="#">' +
+                '<i class="icon-user"></i>' +
+                '</a>' +
+                '</span>' +
+                '<span class="">' +
+                '<a href="#">' +
+                '<i class="icon-reload"></i>' +
+                '</a>' +
+                '</span>' +
+                '<span class="">' +
+                '<a href="#">' +
+                '<i class="icon-list"></i>' +
+                '</a>' +
+                '</span>' +
+                '<span class="">' +
+                '<a href="#">' +
+                '<i class="icon-trash"></i>' +
+                '</a>' +
+                '</span>' +
+                '</div>' +
+                '</div>'
+            );
+            var $table = $('#table-users'),
+                $ok = $('#ok');
+            $(function() {
+                $ok.click(function() {
+                    $table.bootstrapTable('refresh');
+                });
+            });
+
+            function queryParams() {
+                var params = {};
+                $('#toolbar').find('input[name]').each(function() {
+                    params[$(this).attr('name')] = $(this).val();
+                });
+                return params;
+            }
+
+            function responseHandler(res) {
+                return res.rows;
+            }
 
         },
         owlSlider: function() {

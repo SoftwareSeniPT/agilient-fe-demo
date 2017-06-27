@@ -663,3 +663,119 @@ button.close {
 button.close span {
     line-height: 30px;
 }
+.title-modal-criteria {
+    background-color: #386798;
+    color: #fff;
+    .col-md-4, .col-md-8 {
+        position: relative;
+        p{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+.content-modal-criteria {
+    margin-top: 20px;
+    .col-md-2{
+        padding-left: 0px;
+        padding-right: 10px;
+    }
+
+}
+.modal#myModal {
+    top: 50px;
+    width: 100%;
+    .modal-content {
+        padding: 20px 30px;
+        width: -moz-max-content;
+    }
+}
+    
+.critical-level {
+    position: relative;
+    width:100%;
+    height: 100%;
+    p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+.critical-level.vital {
+    background-color: #FE0000;
+}
+.critical-level.high {
+    background-color: #FF6501;
+}
+.critical-level.low {
+    background-color: #FFCC00;
+}
+.critical-level.significant {
+    background-color: #98CB00;
+}
+.critical-level.very-low {
+    background-color: #32CCCC;
+}
+
+.critical-level-desc {
+    border: 1px solid #DFDFDF;
+    border-bottom: none;
+}
+.content-modal-criteria .row:last-child .critical-level-desc {
+    border-bottom: 1px solid #DFDFDF;
+}
+.critical-level-desc ul {
+    margin-left: -30px;
+}
+
+.modal#newBusiness {
+    top: 250px;
+    width: 100%;
+    .save-modal, .cancel-modal {
+        margin-top: 10px;
+        margin-left: -35px;
+    }
+}
+.title-modal-business {
+    background-color: #386798;
+    padding: 10px 0px;
+    div {
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+    }
+}
+.content-modal-business {
+    padding:20px 0px;
+}
+.content-modal-business > div {
+    text-align: center;
+}
+#select-modal, #input-modal {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.modal#newUsers {
+    top: 250px;
+    width: 100%;
+}
+.title-modal-users {
+    background-color: #386798;
+    padding: 10px 0px;
+    div {
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+    }
+}
+.content-modal-users {
+    padding:20px 0px;
+}
