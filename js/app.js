@@ -2,6 +2,11 @@
     e(window.jQuery, window, document);
 })(function($, window, document) {
 
+    var datamu = {
+                    id: 20,
+                    name: 'ItemKU',
+                    price: '$99'
+                }
     var app = {
 
         // ==============================================================================================
@@ -16,6 +21,12 @@
             app.addBlockTableUsers();
             app.menuToggle();
             app.owlSlider();
+            app.deleteRow();
+            app.loadkopet();
+            app.addActionAsset();
+            app.cekIndex();
+            app.updateRow();
+            //app.insertRow();
         },
 
         // ======================================================================
@@ -33,6 +44,105 @@
             if (jQuery(window).width() <= 992) {
                 jQuery('.menu-toggle').appendTo('header');
             }
+        },
+        deleteRow: function() {
+            $('#table-home').on('click', '.icon-trash', function(){
+                $(this).parents('tr').remove();
+                console.log($(this).parents('tr').data('index'));
+            });
+
+            $('#table-asset').on('click', '.icon-trash', function(){
+                var index = $(this).parents('tr').data('index');
+                
+                    //update row data from modal box
+                    $('#table-asset').bootstrapTable('remove', {field: index, row: {
+                        asset: $('#input-modal').val(),
+                    }});
+                    //remove modal
+                    $('#editModal').modal('hide');
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    //re-add the action icon
+                    app.addActionAsset();
+                
+            });
+        },
+        cekIndex: function() {
+            $('#table-asset').on('click', '.icon-trash',function() {
+                console.log($(this).parents('tr').data('index'));
+                //console.log($(this).parents('tr').html());
+                //console.log($(this).parents('td').html());
+            });
+        },
+        addActionAsset: function() {
+            jQuery('#table-asset td:first-child').append(
+                '<span class="action-cell">' +
+                '<a href="#" data-toggle="modal" data-target="#editModal">' +
+                '<i class="icon-list"></i>' +
+                '</a>' +
+
+                '<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                    '<div class="modal-dialog modal-sm" role="document">' +        
+                        '<div class="modal-content">'   +     
+                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                                '<span aria-hidden="true">&times;</span>' +
+                            '</button>' +
+                            '<div class="modal-body">' +
+                                '<input type="text" id="input-modal" placeholder="ketik kene">' +
+                                '<button id="updateAsset" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+                                         
+                '</span>' +
+                '<span class="action-cell">' +
+                '<a href="#">' +
+                '<i class="icon-trash"></i>' +
+                '</a>' +
+                '</span>'
+            );
+        },
+        updateRow: function() {
+            $('#table-asset').on('click', '.icon-list', function(){
+                var index = $(this).parents('tr').data('index');
+                $('#updateAsset').click(function(){
+                    //update row data from modal box
+                    $('#table-asset').bootstrapTable('updateRow', {index: index, row: {
+                        asset: $('#input-modal').val(),
+                    }});
+                    //remove modal
+                    $('#editModal').modal('hide');
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    //re-add the action icon
+                    app.addActionAsset();
+                });
+            })
+            
+        },
+        loadkopet: function() {
+             $('#tableku').bootstrapTable({
+                columns: [{
+                    field: 'id',
+                    title: 'Item ID'
+                }, {
+                    field: 'name',
+                    title: 'Item Name'
+                }, {
+                    field: 'price',
+                    title: 'Item Price'
+                }],
+                data: [{
+                    id: 1,
+                    name: 'Item 1',
+                    price: '$1'
+                }, {
+                    id: 2,
+                    name: 'Item 2',
+                    price: '$2'
+                }]
+            });
         },
         addBlockTable: function() {
             jQuery('#table-home td:last-child').append('<div class="table-menu">' +
@@ -61,6 +171,7 @@
                 '</div>' +
                 '</div>'
             );
+
             var $table = $('#table-home'),
                 $ok = $('#ok');
             $(function() {
@@ -201,8 +312,19 @@
         app.init($);
     });
 
+
+            
+            $('#insert').click(function(){
+                $('#tableku').bootstrapTable('insertRow', {index: 1, row: datamu});
+            });
+
+            
+            
+
     $(window).resize(function() {
         // Insert your JS function here that need to triggered when window resize
         // app.scrollToFixed();
     });
+
+
 });

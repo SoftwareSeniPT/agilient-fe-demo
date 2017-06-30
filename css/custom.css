@@ -591,4 +591,13 @@ button.close span {
 .content-modal-users {
   padding: 20px 0px; }
 
+/*table and action*/
+.action-cell a {
+  color: #000;
+  float: right; }
+  .action-cell a:hover {
+    color: #777; }
+  .action-cell a:visited {
+    color: #000; }
+
 /*# sourceMappingURL=custom.css.map */
