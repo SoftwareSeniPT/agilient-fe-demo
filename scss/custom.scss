@@ -788,6 +788,28 @@ button.close span {
         color: #777;
     }
     &:visited{
+        &:hover{
+            color: #777;
+        }
         color: #000;
     }
+    &:link{
+        &:hover{
+            color: #777;
+        }
+        color: #000;
+    }
+    &:active{
+        &:hover{
+            color: #777;
+        }
+        color: #000;
+    }
+}
+.modal#editAsset, .modal#editThreatActors, .modal#editThreatActs {
+    top: 200px;
+}
+.modal-input-edit {
+    width: 100%;
+    margin-bottom: 10px;
 }

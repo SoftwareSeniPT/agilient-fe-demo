@@ -2,11 +2,6 @@
     e(window.jQuery, window, document);
 })(function($, window, document) {
 
-    var datamu = {
-                    id: 20,
-                    name: 'ItemKU',
-                    price: '$99'
-                }
     var app = {
 
         // ==============================================================================================
@@ -21,12 +16,11 @@
             app.addBlockTableUsers();
             app.menuToggle();
             app.owlSlider();
-            app.deleteRow();
-            app.loadkopet();
             app.addActionAsset();
-            app.cekIndex();
+            app.addActionThreat();
+            app.addActionControl();
+            app.deleteRow();
             app.updateRow();
-            //app.insertRow();
         },
 
         // ======================================================================
@@ -45,103 +39,266 @@
                 jQuery('.menu-toggle').appendTo('header');
             }
         },
-        deleteRow: function() {
-            $('#table-home').on('click', '.icon-trash', function(){
-                $(this).parents('tr').remove();
-                console.log($(this).parents('tr').data('index'));
-            });
-
-            $('#table-asset').on('click', '.icon-trash', function(){
-                var index = $(this).parents('tr').data('index');
-                
-                    //update row data from modal box
-                    $('#table-asset').bootstrapTable('remove', {field: index, row: {
-                        asset: $('#input-modal').val(),
-                    }});
-                    //remove modal
-                    $('#editModal').modal('hide');
-                    $('body').removeClass('modal-open');
-                    $('.modal-backdrop').remove();
-                    //re-add the action icon
-                    app.addActionAsset();
-                
-            });
-        },
-        cekIndex: function() {
-            $('#table-asset').on('click', '.icon-trash',function() {
-                console.log($(this).parents('tr').data('index'));
-                //console.log($(this).parents('tr').html());
-                //console.log($(this).parents('td').html());
-            });
-        },
         addActionAsset: function() {
-            jQuery('#table-asset td:first-child').append(
+            jQuery('#table-asset td:first-child').append(                            
+                '</span>' +
                 '<span class="action-cell">' +
-                '<a href="#" data-toggle="modal" data-target="#editModal">' +
-                '<i class="icon-list"></i>' +
+                '<a href="javascript:void(0)">' +
+                '<i class="icon-trash"></i>' +
+                '</a>' +
+                '</span>' +
+
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)" data-toggle="modal" data-target="#editAsset">' +
+                '<i class="icon-edit"></i>' +
                 '</a>' +
 
-                '<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                '<div class="modal fade" id="editAsset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
                     '<div class="modal-dialog modal-sm" role="document">' +        
                         '<div class="modal-content">'   +     
                             '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
                                 '<span aria-hidden="true">&times;</span>' +
                             '</button>' +
                             '<div class="modal-body">' +
-                                '<input type="text" id="input-modal" placeholder="ketik kene">' +
+                                '<input type="text" id="input-asset" class="modal-input-edit" placeholder="ketik kene">' +
                                 '<button id="updateAsset" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>'
+            );
+        },
+        addActionThreat: function() {
+            jQuery('#table-threat td:first-child').append(                
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)">' +
+                '<i class="icon-trash"></i>' +
+                '</a>' +
+                '</span>' +
+
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)" data-toggle="modal" data-target="#editThreatActors">' +
+                '<i class="icon-edit"></i>' +
+                '</a>' +
+
+                '<div class="modal fade" id="editThreatActors" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                    '<div class="modal-dialog modal-sm" role="document">' +        
+                        '<div class="modal-content">'   +     
+                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                                '<span aria-hidden="true">&times;</span>' +
+                            '</button>' +
+                            '<div class="modal-body">' +
+                                '<input type="text" id="input-threatActors" class="modal-input-edit" placeholder="ketik kene">' +
+                                '<button id="updateThreatActors" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
                                          
-                '</span>' +
+                '</span>'
+            );
+
+            jQuery('#table-threat td:nth-child(2)').append(                
                 '<span class="action-cell">' +
-                '<a href="#">' +
+                '<a href="javascript:void(0)">' +
                 '<i class="icon-trash"></i>' +
                 '</a>' +
+                '</span>' +
+
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)" data-toggle="modal" data-target="#editThreatActs">' +
+                '<i class="icon-edit"></i>' +
+                '</a>' +
+
+                '<div class="modal fade" id="editThreatActs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                    '<div class="modal-dialog modal-sm" role="document">' +        
+                        '<div class="modal-content">'   +     
+                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                                '<span aria-hidden="true">&times;</span>' +
+                            '</button>' +
+                            '<div class="modal-body">' +
+                                '<input type="text" id="input-threatActs" class="modal-input-edit" placeholder="ketik kene">' +
+                                '<button id="updateThreatActs" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+                                         
                 '</span>'
             );
         },
+        addActionControl: function() {
+            jQuery('#table-control td:first-child').append(                            
+                '</span>' +
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)">' +
+                '<i class="icon-trash"></i>' +
+                '</a>' +
+                '</span>' +
+
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)" data-toggle="modal" data-target="#editControlCategory">' +
+                '<i class="icon-edit"></i>' +
+                '</a>' +
+
+                '<div class="modal fade" id="editControlCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                    '<div class="modal-dialog modal-sm" role="document">' +        
+                        '<div class="modal-content">'   +     
+                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                                '<span aria-hidden="true">&times;</span>' +
+                            '</button>' +
+                            '<div class="modal-body">' +
+                                '<input type="text" id="input-controlCategory" class="modal-input-edit" placeholder="ketik kene">' +
+                                '<button id="updateControlCategory" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>'
+            );
+            jQuery('#table-control td:nth-child(2)').append(                            
+                '</span>' +
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)">' +
+                '<i class="icon-trash"></i>' +
+                '</a>' +
+                '</span>' +
+
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)" data-toggle="modal" data-target="#editControlSecurity">' +
+                '<i class="icon-edit"></i>' +
+                '</a>' +
+
+                '<div class="modal fade" id="editControlSecurity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                    '<div class="modal-dialog modal-sm" role="document">' +        
+                        '<div class="modal-content">'   +     
+                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                                '<span aria-hidden="true">&times;</span>' +
+                            '</button>' +
+                            '<div class="modal-body">' +
+                                '<input type="text" id="input-controlSecurity" class="modal-input-edit" placeholder="ketik kene">' +
+                                '<button id="updateControlSecurity" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>'
+            );
+        },
+        deleteRow: function() {
+            //table-home still need to change to use .bootstrapTable('removeRow')
+            $('#table-home').on('click', '.icon-trash', function(){
+                $(this).parents('tr').remove();
+                console.log($(this).parents('tr').data('index'));
+            });
+            //table-asset
+            $('#table-asset').on('click', '.icon-trash', function(){
+                var index = $(this).parents('tr').data('index');
+                    
+                    //remove row data
+                    $('#table-asset').bootstrapTable('removeRow', {index: index});
+                    
+                    //re-add the action icon
+                    app.addActionAsset();
+                
+            });
+            //table-threat
+            $('#table-threat').on('click', '.icon-trash', function(){
+                var index = $(this).parents('tr').data('index');
+                    
+                    //remove row data
+                    $('#table-threat').bootstrapTable('removeRow', {index: index});
+                    
+                    //re-add the action icon
+                    app.addActionThreat();
+                
+            });
+            $('#table-control').on('click', '.icon-trash', function(){
+                var index = $(this).parents('tr').data('index');
+                    
+                    //remove row data
+                    $('#table-control').bootstrapTable('removeRow', {index: index});
+                    
+                    //re-add the action icon
+                    app.addActionControl();
+                
+            });
+        },
         updateRow: function() {
-            $('#table-asset').on('click', '.icon-list', function(){
+            $('#table-asset').on('click', '.icon-edit', function(){
                 var index = $(this).parents('tr').data('index');
                 $('#updateAsset').click(function(){
                     //update row data from modal box
                     $('#table-asset').bootstrapTable('updateRow', {index: index, row: {
-                        asset: $('#input-modal').val(),
+                        asset: $('#input-asset').val(),
                     }});
                     //remove modal
-                    $('#editModal').modal('hide');
+                    $('#editAsset').modal('hide');
                     $('body').removeClass('modal-open');
                     $('.modal-backdrop').remove();
                     //re-add the action icon
                     app.addActionAsset();
                 });
-            })
-            
-        },
-        loadkopet: function() {
-             $('#tableku').bootstrapTable({
-                columns: [{
-                    field: 'id',
-                    title: 'Item ID'
-                }, {
-                    field: 'name',
-                    title: 'Item Name'
-                }, {
-                    field: 'price',
-                    title: 'Item Price'
-                }],
-                data: [{
-                    id: 1,
-                    name: 'Item 1',
-                    price: '$1'
-                }, {
-                    id: 2,
-                    name: 'Item 2',
-                    price: '$2'
-                }]
+            });
+
+            $('#table-threat').on('click', '.icon-edit', function(){
+                var index = $(this).parents('tr').data('index');
+                $('#updateThreatActors').click(function(){
+                    //update row data from modal box
+                    $('#table-threat').bootstrapTable('updateRow', {index: index, row: {
+                        threat_actors: $('#input-threatActors').val(),
+                    }});
+                    //remove modal
+                    $('#editThreatActors').modal('hide');
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    //re-add the action icon
+                    app.addActionThreat();
+                });
+            });
+            $('#table-threat').on('click', '.icon-edit', function(){
+                var index = $(this).parents('tr').data('index');
+                $('#updateThreatActs').click(function(){
+                    //update row data from modal box
+                    $('#table-threat').bootstrapTable('updateRow', {index: index, row: {
+                        threat_acts: $('#input-threatActs').val(),
+                    }});
+                    //remove modal
+                    $('#editThreatActs').modal('hide');
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    //re-add the action icon
+                    app.addActionThreat();
+                });
+            });
+
+            $('#table-control').on('click', '.icon-edit', function(){
+                var index = $(this).parents('tr').data('index');
+                $('#updateControlCategory').click(function(){
+                    //update row data from modal box
+                    $('#table-control').bootstrapTable('updateRow', {index: index, row: {
+                        category: $('#input-controlCategory').val(),
+                    }});
+                    //remove modal
+                    $('#editControlCategory').modal('hide');
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    //re-add the action icon
+                    app.addActionControl();
+                });
+            });
+            $('#table-control').on('click', '.icon-edit', function(){
+                var index = $(this).parents('tr').data('index');
+                $('#updateControlSecurity').click(function(){
+                    //update row data from modal box
+                    $('#table-control').bootstrapTable('updateRow', {index: index, row: {
+                        security: $('#input-controlSecurity').val(),
+                    }});
+                    //remove modal
+                    $('#editControlSecurity').modal('hide');
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    //re-add the action icon
+                    app.addActionControl();
+                });
             });
         },
         addBlockTable: function() {
@@ -311,14 +468,6 @@
     $(function() {
         app.init($);
     });
-
-
-            
-            $('#insert').click(function(){
-                $('#tableku').bootstrapTable('insertRow', {index: 1, row: datamu});
-            });
-
-            
             
 
     $(window).resize(function() {

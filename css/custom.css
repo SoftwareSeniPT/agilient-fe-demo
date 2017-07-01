@@ -599,5 +599,22 @@ button.close span {
     color: #777; }
   .action-cell a:visited {
     color: #000; }
+    .action-cell a:visited:hover {
+      color: #777; }
+  .action-cell a:link {
+    color: #000; }
+    .action-cell a:link:hover {
+      color: #777; }
+  .action-cell a:active {
+    color: #000; }
+    .action-cell a:active:hover {
+      color: #777; }
+
+.modal#editAsset, .modal#editThreatActors, .modal#editThreatActs {
+  top: 200px; }
+
+.modal-input-edit {
+  width: 100%;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=custom.css.map */
