@@ -240,7 +240,7 @@
 		            <th data-field="name" data-sortable="true">Name</th>
 		            <th data-field="type"  data-sortable="true">Type</th>
 		            <th data-field="status"  data-sortable="true">Status</th>
-		            <th data-field="table-link-head"  data-sortable="false">Status</th>
+		             <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents">Action</th>
 		        </tr>
 		    </thead>
 		    <tbody>
@@ -351,6 +351,48 @@ function myFunction() {
     } 
   }
 }
+</script>
+
+<script>
+	function actionFormatter(value, row, index) {
+	    return [
+	        '<div class="table-menu">' +
+                '<a href="#0" class="table-toggle"><i class="icon-options-vertical"></i></a>' +
+                '<div class="table-menu-link">' +
+                	'<span class="">' +
+	                	'<a href="#">' +
+	                		'<i class="icon-user"></i>' +
+	                	'</a>' +
+                	'</span>' +
+                	'<span class="">' +
+		                '<a href="#">' +
+		                	'<i class="icon-reload"></i>' +
+		                '</a>' +
+	                '</span>' +
+	                '<span class="">' +
+		                '<a href="#">' +
+		                	'<i class="icon-list"></i>' +
+		                '</a>' +
+	                '</span>' +
+	                '<span class="">' +
+		                '<a href="#">' +
+		                	'<i class="icon-trash"></i>' +
+		                '</a>' +
+	                '</span>' +
+	            '</div>' +
+            '</div>'
+	        
+	    ].join('');
+	}
+
+	window.actionEvents = {
+	    'click .table-menu': function (e) {
+	        $('.table-toggle').click(function(e) {
+	        	$('.table-menu-link').removeClass('show');
+                $(this).parent().find($('.table-menu-link')).toggleClass('show');
+            });
+	    },
+	};
 </script>
 
 			</div>

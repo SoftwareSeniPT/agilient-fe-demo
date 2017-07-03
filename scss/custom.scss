@@ -463,11 +463,14 @@ table tr td:last-child {
 .table-menu-link {
     position: absolute;
     top: 0;
-    right: 15px;
+    right: 45px;
     width: 100px;
     display: none;
     span {
         margin-left: 2px;
+    }
+    a {
+        margin-right: 3px;
     }
 }
 

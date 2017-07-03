@@ -11,7 +11,7 @@
         // ==============================================================================================
 
         init: function($) {
-            app.addBlockTable();
+            // app.addBlockTable();
             app.addBlockTableBusiness();
             app.addBlockTableUsers();
             app.menuToggle();
