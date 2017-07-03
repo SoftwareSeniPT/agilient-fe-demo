@@ -41,7 +41,6 @@
         },
         addActionAsset: function() {
             jQuery('#table-asset td:first-child').append(                            
-                '</span>' +
                 '<span class="action-cell">' +
                 '<a href="javascript:void(0)">' +
                 '<i class="icon-trash"></i>' +
@@ -65,7 +64,38 @@
                             '</div>' +
                         '</div>' +
                     '</div>' +
-                '</div>'
+                '</div>' +
+                '</span>'
+            );
+
+            jQuery('#table-asset td:nth-child(3)').append(                            
+                
+                '<span class="action-cell">' +
+                '<a href="javascript:void(0)" data-toggle="modal" data-target="#editAssetCriticality">' +
+                '<i class="icon-edit"></i>' +
+                '</a>' +
+
+                '<div class="modal fade" id="editAssetCriticality" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                    '<div class="modal-dialog modal-sm" role="document">' +        
+                        '<div class="modal-content">'   +     
+                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                                '<span aria-hidden="true">&times;</span>' +
+                            '</button>' +
+                            '<div class="modal-body">' +
+                                '<select name="" id="select-assetCriticality" class="modal-select-edit">' +
+                                    '<option value="Vital">Vital</option>' +
+                                    '<option value="High">High</option>' +
+                                    '<option value="Low">Low</option>' +
+                                    '<option value="Significant">Significant</option>' +
+                                    '<option value="Very Low">Very Low</option>' +
+                                '</select>' +
+                                
+                                '<button id="updateAssetCriticality" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+                '</span>'
             );
         },
         addActionThreat: function() {
@@ -232,6 +262,21 @@
                     }});
                     //remove modal
                     $('#editAsset').modal('hide');
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    //re-add the action icon
+                    app.addActionAsset();
+                });
+            });
+            $('#table-asset').on('click', '.icon-edit', function(){
+                var index = $(this).parents('tr').data('index');
+                $('#updateAssetCriticality').click(function(){
+                    //update row data from modal box
+                    $('#table-asset').bootstrapTable('updateRow', {index: index, row: {
+                        criticality: $('#select-assetCriticality').val(),
+                    }});
+                    //remove modal
+                    $('#editAssetCriticality').modal('hide');
                     $('body').removeClass('modal-open');
                     $('.modal-backdrop').remove();
                     //re-add the action icon

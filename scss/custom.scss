@@ -806,10 +806,10 @@ button.close span {
         color: #000;
     }
 }
-.modal#editAsset, .modal#editThreatActors, .modal#editThreatActs {
+.modal#editAsset, .modal#editThreatActors, .modal#editThreatActs, .modal#editAssetCriticality {
     top: 200px;
 }
-.modal-input-edit {
+.modal-input-edit, .modal-select-edit {
     width: 100%;
     margin-bottom: 10px;
 }
