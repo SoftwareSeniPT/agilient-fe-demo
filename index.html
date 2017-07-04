@@ -130,7 +130,7 @@
                                             <img src="img/tower.png" alt="">
                                             <span class="badge badge-pill badge-danger">5</span>
                                         </div>
-                                        <h5 class="card-title">Bussiness Units</h5>
+                                        <h5 class="card-title">Business Units</h5>
                                     </div>
                                 </div>
                             </div>
@@ -185,9 +185,24 @@
 			<div class="col-md-2"></div>
 		</div> -->
                         <div id="toolbar">
-                            
+                            <div class="custom-filter">
+                                <select class="filterOptions" id="" data-filter="type">
+                                    <option class="attributeOptions" value="">Type</option>
+                                    <option class="attributeOptions" value="BusinessUnit">Business Unit</option>
+                                    <option class="attributeOptions" value="Assessement">Assessement</option>
+                                    <option class="attributeOptions" value="User">User</option>
+                                </select>
+                            </div>
+
+                            <div class="custom-filter">
+                                <select class="filterOptions" id="" data-filter="status">
+                                    <option class="attributeOptions" value="">Status</option>
+                                    <option class="attributeOptions" value="Active">Active</option>
+                                    <option class="attributeOptions" value="Inactive">Inactive</option>
+                                </select>
+                            </div>
                         </div>
-                        <table id="table-home" data-search="true" data-toggle="table" data-height="460" data-toolbar="#toolbar" data-show-refresh="true" data-show-columns="true" data-query-params="queryParams" data-response-handler="responseHandler">
+                        <table id="table-home" class="table-general" data-search="true" data-toggle="table" data-height="460" data-toolbar="#toolbar" data-show-refresh="true" data-show-columns="true" data-query-params="queryParams" data-response-handler="responseHandler">
                             <thead>
                                 <tr>
                                     <th data-field="name" data-sortable="true">Name</th>
@@ -197,56 +212,56 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr data-type="BusinessUnit" data-status="Active">
                                     <td>Adi</td>
-                                    <td>Bussiness Unit</td>
+                                    <td>Business Unit</td>
                                     <td>Active</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-type="BusinessUnit" data-status="Active">
                                     <td>Ani</td>
-                                    <td>Bussiness Unit</td>
+                                    <td>Business Unit</td>
                                     <td>Active</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-type="User" data-status="Active">
                                     <td>Badu</td>
                                     <td>User</td>
                                     <td>Active</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-type="Assessement" data-status="Inactive">
                                     <td>Cici</td>
                                     <td>Assessement</td>
                                     <td>Inactive</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-type="User" data-status="Inactive">
                                     <td>Dido</td>
                                     <td>User</td>
                                     <td>Inactive</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-type="Assessement" data-status="Inactive">
+                                    <td>Dido</td>
+                                    <td>Assessement</td>
+                                    <td>Inactive</td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr data-type="User" data-status="Inactive">
                                     <td>Dido</td>
                                     <td>User</td>
                                     <td>Inactive</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Dido</td>
-                                    <td>User</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                    </td>
-                                </tr>
-                                <tr>
+                                <tr data-type="User" data-status="Inactive">
                                     <td>Dido</td>
                                     <td>User</td>
                                     <td>Inactive</td>
@@ -332,6 +347,7 @@
     </div>
 </footer>
 <!-- External JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>

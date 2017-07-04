@@ -14,6 +14,7 @@
             // app.addBlockTable();
             // app.addBlockTableBusiness();
             // app.addBlockTableUsers();
+            app.selectFilterCustom();
             app.menuToggle();
             app.owlSlider();
             app.addActionAsset();
@@ -28,6 +29,61 @@
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
+        selectFilterCustom: function() {
+            var doSelection = function() {
+                // first we get current selected items
+                var selectedVals = []
+                $('.filterOptions').each(function(i, j) {
+                    //console.log("map",this,i,j);
+                    //console.log(j);
+                    selectedVals.push({
+                        val: $(j).val(),
+                        attr: $(j).attr('data-filter')
+                    });
+                });
+
+                selectedVals = selectedVals.filter(function(j) {
+                    return !!j.val; /* return anything that isn't empty (not falsey) */
+                });
+                // console.log("hi", selectedVals);
+                // next we unhide all rows so that we dont hide previously selected rows
+
+                $('.table-general tbody tr').show();
+                $('.table-general tbody tr').each(function(i, e) {
+                    for (var a = 0; a < selectedVals.length; a++) {
+                        var val = selectedVals[a];
+                        var thisVal = $(e).attr('data-' + val.attr);
+                        // console.log('comparing ', thisVal, val);
+                        if (thisVal !== val.val) {
+                            $(e).hide();
+                        }
+                    }
+                })
+
+                // then finally we hide rows that dont match
+
+            }
+
+            $('.filterOptions').on('change', function() {
+                doSelection();
+            });
+
+            // make same width between thead and tbody after custom filter triggered
+
+            var selectedWidth = []
+            $('.bootstrap-table .fixed-table-body thead tr th').each(function(i, j) {
+                selectedWidth.push($(j).outerWidth());
+            });
+            console.log(selectedWidth);
+
+            $('.bootstrap-table .fixed-table-body tbody tr').each(function(i, e) {
+                $(e).find('td').each(function(index, obj) {
+                    $(obj).css({
+                        width: selectedWidth[index]
+                    });
+                });
+            });
+        },
         menuToggle: function() {
             $('.btn-toggle').on('click', function() {
                 $('body').toggleClass('toggle-sidebar');
