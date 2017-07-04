@@ -185,23 +185,9 @@
 			<div class="col-md-2"></div>
 		</div> -->
                         <div id="toolbar">
-                            <div class="form-inline" role="form">
-                                <div class="form-group">
-                                    <span>Offset: </span>
-                                    <input name="offset" class="form-control w70" type="number" value="0">
-                                </div>
-                                <div class="form-group">
-                                    <span>Limit: </span>
-                                    <input name="limit" class="form-control w70" type="number" value="5">
-                                </div>
-                                <div class="form-group">
-                                    <input name="search" class="form-control" type="text" placeholder="Search">
-                                </div>
-                                <button id="ok" type="submit" class="btn btn-default">OK</button>
-                                <button id="insert" type="submit" class="btn btn-default">tes</button>
-                            </div>
+                            
                         </div>
-                        <table id="table-home" data-toggle="table" data-height="460" data-toolbar="#toolbar" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-query-params="queryParams" data-response-handler="responseHandler">
+                        <table id="table-home" data-search="true" data-toggle="table" data-height="460" data-toolbar="#toolbar" data-show-refresh="true" data-show-columns="true" data-query-params="queryParams" data-response-handler="responseHandler">
                             <thead>
                                 <tr>
                                     <th data-field="name" data-sortable="true">Name</th>
@@ -271,45 +257,6 @@
                         </table>
                     </div>
                 </div>
-                <script>
-                function monthSorter(a, b) {
-                    if (a.month < b.month) return -1;
-                    if (a.month > b.month) return 1;
-                    return 0;
-                }
-
-                function queryParams() {
-                    return {
-                        type: 'owner',
-                        sort: 'updated',
-                        direction: 'desc',
-                        per_page: 20,
-                        page: 1
-                    };
-                }
-                </script>
-                <script>
-                function myFunction() {
-                    // Declare variables 
-                    var input, filter, table, tr, td, i;
-                    input = document.getElementById("search-table");
-                    filter = input.value.toUpperCase();
-                    table = document.getElementById("table-home");
-                    tr = table.getElementsByTagName("tr");
-
-                    // Loop through all table rows, and hide those who don't match the search query
-                    for (i = 0; i < tr.length; i++) {
-                        td = tr[i].getElementsByTagName("td")[0];
-                        if (td) {
-                            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                tr[i].style.display = "";
-                            } else {
-                                tr[i].style.display = "none";
-                            }
-                        }
-                    }
-                }
-                </script>
                 <script>
                 function actionFormatter(value, row, index) {
                     return [

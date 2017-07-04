@@ -493,9 +493,11 @@ button.close span {
 .title-modal-criteria {
   background-color: #386798;
   color: #fff; }
-  .title-modal-criteria .col-md-4, .title-modal-criteria .col-md-8 {
+  .title-modal-criteria .col-md-4,
+  .title-modal-criteria .col-md-8 {
     position: relative; }
-    .title-modal-criteria .col-md-4 p, .title-modal-criteria .col-md-8 p {
+    .title-modal-criteria .col-md-4 p,
+    .title-modal-criteria .col-md-8 p {
       position: relative;
       top: 50%;
       left: 50%;
@@ -555,7 +557,8 @@ button.close span {
 .modal#newBusiness {
   top: 250px;
   width: 100%; }
-  .modal#newBusiness .save-modal, .modal#newBusiness .cancel-modal {
+  .modal#newBusiness .save-modal,
+  .modal#newBusiness .cancel-modal {
     margin-top: 10px;
     margin-left: -35px; }
 
@@ -573,7 +576,8 @@ button.close span {
 .content-modal-business > div {
   text-align: center; }
 
-#select-modal, #input-modal {
+#select-modal,
+#input-modal {
   width: 100%;
   height: 30px;
   margin-bottom: 10px; }
@@ -612,11 +616,28 @@ button.close span {
     .action-cell a:active:hover {
       color: #777; }
 
-.modal#editAsset, .modal#editThreatActors, .modal#editThreatActs, .modal#editAssetCriticality {
+.modal#editAsset,
+.modal#editThreatActors,
+.modal#editThreatActs,
+.modal#editAssetCriticality {
   top: 200px; }
 
-.modal-input-edit, .modal-select-edit {
+.modal-input-edit,
+.modal-select-edit {
   width: 100%;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding: 5px; }
+
+.modal-input-edit .save-modal {
+  margin: 0; }
+
+/* Bootstrap Table */
+.bootstrap-table .btn {
+  padding: .55rem .75rem;
+  line-height: 1;
+  border: 1px solid #d0d0d0; }
+
+.bootstrap-table .btn i {
+  margin: 0; }
 
 /*# sourceMappingURL=custom.css.map */

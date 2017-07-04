@@ -666,12 +666,14 @@ button.close {
 button.close span {
     line-height: 30px;
 }
+
 .title-modal-criteria {
     background-color: #386798;
     color: #fff;
-    .col-md-4, .col-md-8 {
+    .col-md-4,
+    .col-md-8 {
         position: relative;
-        p{
+        p {
             position: relative;
             top: 50%;
             left: 50%;
@@ -679,14 +681,15 @@ button.close span {
         }
     }
 }
+
 .content-modal-criteria {
     margin-top: 20px;
-    .col-md-2{
+    .col-md-2 {
         padding-left: 0px;
         padding-right: 10px;
     }
-
 }
+
 .modal#myModal {
     top: 50px;
     width: 100%;
@@ -695,12 +698,12 @@ button.close span {
         width: -moz-max-content;
     }
 }
-    
+
 .critical-level {
     position: relative;
-    width:100%;
+    width: 100%;
     height: 100%;
-    p{
+    p {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -710,18 +713,23 @@ button.close span {
         white-space: nowrap;
     }
 }
+
 .critical-level.vital {
     background-color: #FE0000;
 }
+
 .critical-level.high {
     background-color: #FF6501;
 }
+
 .critical-level.low {
     background-color: #FFCC00;
 }
+
 .critical-level.significant {
     background-color: #98CB00;
 }
+
 .critical-level.very-low {
     background-color: #32CCCC;
 }
@@ -730,9 +738,11 @@ button.close span {
     border: 1px solid #DFDFDF;
     border-bottom: none;
 }
+
 .content-modal-criteria .row:last-child .critical-level-desc {
     border-bottom: 1px solid #DFDFDF;
 }
+
 .critical-level-desc ul {
     margin-left: -30px;
 }
@@ -740,11 +750,13 @@ button.close span {
 .modal#newBusiness {
     top: 250px;
     width: 100%;
-    .save-modal, .cancel-modal {
+    .save-modal,
+    .cancel-modal {
         margin-top: 10px;
         margin-left: -35px;
     }
 }
+
 .title-modal-business {
     background-color: #386798;
     padding: 10px 0px;
@@ -754,13 +766,17 @@ button.close span {
         font-weight: bold;
     }
 }
+
 .content-modal-business {
-    padding:20px 0px;
+    padding: 20px 0px;
 }
+
 .content-modal-business > div {
     text-align: center;
 }
-#select-modal, #input-modal {
+
+#select-modal,
+#input-modal {
     width: 100%;
     height: 30px;
     margin-bottom: 10px;
@@ -770,6 +786,7 @@ button.close span {
     top: 250px;
     width: 100%;
 }
+
 .title-modal-users {
     background-color: #386798;
     padding: 10px 0px;
@@ -779,40 +796,67 @@ button.close span {
         font-weight: bold;
     }
 }
+
 .content-modal-users {
-    padding:20px 0px;
+    padding: 20px 0px;
 }
 
+
 /*table and action*/
+
 .action-cell a {
     color: #000;
     float: right;
-    &:hover{
+    &:hover {
         color: #777;
     }
-    &:visited{
-        &:hover{
+    &:visited {
+        &:hover {
             color: #777;
         }
         color: #000;
     }
-    &:link{
-        &:hover{
+    &:link {
+        &:hover {
             color: #777;
         }
         color: #000;
     }
-    &:active{
-        &:hover{
+    &:active {
+        &:hover {
             color: #777;
         }
         color: #000;
     }
 }
-.modal#editAsset, .modal#editThreatActors, .modal#editThreatActs, .modal#editAssetCriticality {
+
+.modal#editAsset,
+.modal#editThreatActors,
+.modal#editThreatActs,
+.modal#editAssetCriticality {
     top: 200px;
 }
-.modal-input-edit, .modal-select-edit {
+
+.modal-input-edit,
+.modal-select-edit {
     width: 100%;
     margin-bottom: 10px;
+    padding: 5px;
+}
+
+.modal-input-edit {
+    .save-modal {
+        margin: 0;
+    }
+}
+
+/* Bootstrap Table */
+.bootstrap-table .btn {
+    padding: .55rem .75rem;
+    line-height: 1;
+    border: 1px solid #d0d0d0;
+}
+
+.bootstrap-table .btn i {
+    margin: 0;
 }
