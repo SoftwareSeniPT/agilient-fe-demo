@@ -16,6 +16,7 @@
             // app.addBlockTableUsers();
             app.selectFilterCustom();
             app.menuToggle();
+            // app.multiSearch();
             app.owlSlider();
             app.addActionAsset();
             app.addActionThreat();
@@ -29,6 +30,22 @@
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
+        multiSearch: function() {
+
+            $("#myMultiSearch").multisearch({
+                source: [{
+                    name: 'One'
+                }, {
+                    name: 'Two'
+                }, {
+                    name: 'Three'
+                }, {
+                    name: 'Four'
+                }],
+            });
+
+
+        },
         selectFilterCustom: function() {
             var doSelection = function() {
                 // first we get current selected items
@@ -74,7 +91,7 @@
             $('.bootstrap-table .fixed-table-body thead tr th').each(function(i, j) {
                 selectedWidth.push($(j).outerWidth());
             });
-            console.log(selectedWidth);
+            // console.log(selectedWidth);
 
             $('.bootstrap-table .fixed-table-body tbody tr').each(function(i, e) {
                 $(e).find('td').each(function(index, obj) {
