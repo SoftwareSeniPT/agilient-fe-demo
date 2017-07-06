@@ -16,7 +16,7 @@
             // app.addBlockTableUsers();
             app.selectFilterCustom();
             app.menuToggle();
-            // app.multiSearch();
+            app.select2();
             app.owlSlider();
             app.addActionAsset();
             app.addActionThreat();
@@ -30,21 +30,10 @@
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
-        multiSearch: function() {
-
-            $("#myMultiSearch").multisearch({
-                source: [{
-                    name: 'One'
-                }, {
-                    name: 'Two'
-                }, {
-                    name: 'Three'
-                }, {
-                    name: 'Four'
-                }],
+        select2: function() {
+            $(document).ready(function() {
+                $("select").select2();
             });
-
-
         },
         selectFilterCustom: function() {
             var doSelection = function() {
