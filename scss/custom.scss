@@ -772,19 +772,19 @@ button.close span {
     text-align: center;
 }
 
-#select-modal,
-#input-modal {
+.select-modal,
+.input-modal {
     width: 100%;
     height: 30px;
     margin-bottom: 10px;
 }
 
-.modal#newUsers {
+.modal#newUsers, .modal#editHome {
     top: 250px;
     width: 100%;
 }
 
-.title-modal-users {
+.title-modal-users, .title-modal-home {
     background-color: #386798;
     padding: 10px 0px;
     div {
@@ -794,7 +794,7 @@ button.close span {
     }
 }
 
-.content-modal-users {
+.content-modal-users, .content-modal-home {
     padding: 20px 0px;
 }
 
@@ -896,4 +896,16 @@ button.close span {
 
 .select2-container {
     width: 100% !important;
+}
+#name-search .label.label-info.pull-left {
+    float: unset !important;
+    &::after{
+        content: 'Search';
+    }
+}
+#name-search .search-input {
+    width: 89%;
+}
+#name-search .panel-body {
+    padding: 0;
 }

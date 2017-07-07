@@ -182,13 +182,9 @@
                                     </select>
                                 </div>
                                 <div id="name-search" class="col-md-5">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="panel panel-default">
-                                                <div class="panel-body" data-role="selected-list">
-                                                    <input class="search-input pull-left" data-role="input" type="text" placeholder="Search..." />
-                                                </div>
-                                            </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-body" data-role="selected-list">
+                                            <input class="search-input" data-role="input" type="text" placeholder="Search..." />
                                         </div>
                                     </div>
                                 </div>
@@ -206,74 +202,85 @@
                                         <option class="attributeOptions" value="Inactive">Inactive</option>
                                     </select>
                                 </div>
-                                <div class="col-md-12 search-result">
-                                    <div data-role="picker" class="panel panel-default">
-                                        <div class="list-group" data-role="picker-list">
+                                <div class="row">
+                                    <div class="col-md-12 search-result">
+                                        <div data-role="picker" class="panel panel-default">
+                                            <div class="list-group" data-role="picker-list">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <table id="table-home" class="table-general" data-toggle="table" data-height="460" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler">
+                        <table id="table-home" class="table-general" data-toggle="table" data-height="460" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-url="db/data.json" data-unique-id="id" >
                             <thead>
                                 <tr>
+                                    <th data-field="id"></th>
                                     <th data-field="name" data-sortable="true">Name</th>
                                     <th data-field="type" data-sortable="true">Type</th>
                                     <th data-field="status" data-sortable="true">Status</th>
-                                    <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents"></th>
+                                    <th data-field="action"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr data-type="BusinessUnit" data-status="Active">
+                                <tr data-type="BusinessUnit" data-status="Active" >
+                                    <td>0</td>
                                     <td>Adi</td>
                                     <td>Business Unit</td>
                                     <td>Active</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr data-type="BusinessUnit" data-status="Active">
+                                <tr data-type="BusinessUnit" data-status="Active" >
+                                    <td>1</td>
                                     <td>Ani</td>
                                     <td>Business Unit</td>
                                     <td>Active</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr data-type="User" data-status="Active">
+                                <tr data-type="User" data-status="Active" >
+                                    <td>2</td>
                                     <td>Badu</td>
                                     <td>User</td>
                                     <td>Active</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr data-type="Assessement" data-status="Inactive">
+                                <tr data-type="Assessement" data-status="Inactive" >
+                                    <td>3</td>
                                     <td>Cici</td>
                                     <td>Assessement</td>
                                     <td>Inactive</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr data-type="User" data-status="Inactive">
+                                <tr data-type="User" data-status="Inactive" data-index="4">
+                                    <td>4</td>
                                     <td>Dido</td>
                                     <td>User</td>
                                     <td>Inactive</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr data-type="Assessement" data-status="Inactive">
+                                <tr data-type="Assessement" data-status="Inactive" >
+                                    <td>5</td>
                                     <td>Dido</td>
                                     <td>Assessement</td>
                                     <td>Inactive</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr data-type="User" data-status="Inactive">
+                                <tr data-type="User" data-status="Inactive" >
+                                    <td>6</td>
                                     <td>Dido</td>
                                     <td>User</td>
                                     <td>Inactive</td>
                                     <td>
                                     </td>
                                 </tr>
-                                <tr data-type="User" data-status="Inactive">
+                                <tr data-type="User" data-status="Inactive" >
+                                    <td>7</td>
                                     <td>Dido</td>
                                     <td>User</td>
                                     <td>Inactive</td>
@@ -301,9 +308,12 @@
                         '</a>' +
                         '</span>' +
                         '<span class="">' +
-                        '<a href="#">' +
+                        '<a href="#" data-toggle="modal" data-target="#editHome">' +
                         '<i class="icon-list"></i>' +
                         '</a>' +
+                        //modal box for edit
+                        
+
                         '</span>' +
                         '<span class="">' +
                         '<a href="#">' +

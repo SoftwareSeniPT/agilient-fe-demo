@@ -11,8 +11,9 @@
         // ==============================================================================================
 
         init: function($) {
-            // app.addBlockTable();
-            // app.addBlockTableBusiness();
+            app.hideID();
+            app.addBlockTable();
+            app.addBlockTableBusiness();
             // app.addBlockTableUsers();
             app.selectFilterCustom();
             app.menuToggle();
@@ -32,7 +33,7 @@
         // ======================================================================
         select2: function() {
             $(document).ready(function() {
-                $("select").select2();
+                $("select.filterOptions").select2();
             });
         },
         selectFilterCustom: function() {
@@ -89,6 +90,10 @@
                     });
                 });
             });
+        },
+        hideID: function() {
+            $('#table-home').bootstrapTable('hideColumn', 'id');
+            console.log(JSON.stringify($('#table-home').bootstrapTable('getRowByUniqueId', 1)));
         },
         menuToggle: function() {
             $('.btn-toggle').on('click', function() {
@@ -448,9 +453,92 @@
                 '</a>' +
                 '</span>' +
                 '<span class="">' +
-                '<a href="#">' +
+                '<a href="#" data-toggle="modal" data-target="#editHome">' +
                 '<i class="icon-list"></i>' +
                 '</a>' +
+                //modal edit
+                '<div class="modal fade" id="editHome" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                '<div class="modal-dialog modal-lg" role="document">' +
+                '<div class="modal-content">' +
+                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                '<span aria-hidden="true">&times;</span>' +
+                '</button>' +
+                '<div class="modal-body">' +
+
+                '<div class="row title-modal-home">' +
+                    '<div class="col-md-12">Edit User</div>' +
+                '</div>' +
+                '<div class="row content-modal-home">' +
+                    '<div class="col-md-4">' +
+                        '<input type="text" id="edit-username" class="input-modal" placeholder="User Name">' +
+                        '<select name="" id="edit-rolemain" class="select-modal">' +
+                            '<option value="">Administrator</option>' +
+                        '</select>' +
+                        '<select name="" id="edit-role" class="select-modal">' +
+                            '<option value="">Business Unit Admin</option>' +
+                            '<option value="">Administrator</option>' +
+                            '<option value="">Assessor</option>' +
+                            '<option value="">Viewer</option>' +
+                        '</select>' +
+                        '<select name="" id="select-role2" class="select-modal">' +
+                            '<option value="">Business Unit Admin</option>' +
+                            '<option value="">Administrator</option>' +
+                            '<option value="">Assessor</option>' +
+                            '<option value="">Viewer</option>' +
+                        '</select>' +
+                    '</div>' +
+                    '<div class="col-md-4">' +
+                        '<input type="text" id="edit-email" class="input-modal" placeholder="Email">' +
+                        '<select name="" class="select-modal">' +
+                            '<option value="">Organisations</option>' +
+                        '</select>' +
+                        '<select name="" id="edit-organisations" class="select-modal">' +
+                            '<option disabled selected value>Select Business Unit</option>' +
+                            '<option value="">Organisations</option>' +
+                            '<option value="">Operations</option>' +
+                            '<option value="">Logistics</option>' +
+                            '<option value="">Marketings</option>' +
+                            '<option value="">Sales</option>' +
+                        '</select>' +
+                        '<select name="" id="edit-organisations2" class="select-modal">' +
+                            '<option disabled selected value>Select Business Unit</option>' +
+                            '<option value="">Organisations</option>' +
+                            '<option value="">Operations</option>' +
+                            '<option value="">Logistics</option>' +
+                            '<option value="">Marketings</option>' +
+                            '<option value="">Sales</option>' +
+                        '</select>' +
+                    '</div>' +
+                    '<div class="col-md-4">' +
+                        '<input type="text" id="edit-password" class="input-modal" placeholder="Password">' +
+                        '<select name="" id="" class="select-modal">' +
+                            '<option value="">-</option>' +
+                        '</select>' +
+                        '<select name="" id="edit-assessment" class="select-modal">' +
+                            '<option value="">-</option>' +
+                        '</select>' +
+                        '<select name="" id="edit-assessment2" class="select-modal">' +
+                            '<option disabled selected value>Select Assessment</option>' +
+                            '<option value="">Task 1</option>' +
+                            '<option value="">Task 2</option>' +
+                            '<option value="">Task 3</option>' +
+                            '<option value="">Task 4</option>' +
+                        '</select>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="row">' +
+                    '<div class="col-md-12 pull-right">' +
+                        '<button class="btn btn-primary btn-sm cancel-modal" type="submit">Cancel</button>' +
+                        '<button class="btn btn-primary btn-sm save-modal" type="submit">Save</button>' +
+                    '</div>' +
+                '</div>' +
+
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+
+                //end modal edit
                 '</span>' +
                 '<span class="">' +
                 '<a href="#">' +
