@@ -687,4 +687,7 @@ button.close span {
 #name-search .panel-body {
   padding: 0; }
 
+.bootstrap-table .pull-right.search {
+  display: none; }
+
 /*# sourceMappingURL=custom.css.map */

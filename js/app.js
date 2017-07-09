@@ -25,6 +25,7 @@
             app.deleteRow();
             app.updateRow();
             app.menuToggleEachRow();
+            app.refresh();
         },
 
         // ======================================================================
@@ -34,6 +35,11 @@
         select2: function() {
             $(document).ready(function() {
                 $("select.filterOptions").select2();
+            });
+        },
+        refresh: function(){
+            $('#table-home').on('search.bs.table', function(){
+                app.addBlockTable();
             });
         },
         selectFilterCustom: function() {

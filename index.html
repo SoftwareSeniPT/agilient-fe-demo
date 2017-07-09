@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/mobile.css">
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+
+    <script src="https://use.fontawesome.com/2270d34561.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 </head>
 <header>
@@ -181,13 +183,11 @@
                                         <option class="attributeOptions" value="User">User</option>
                                     </select>
                                 </div>
-                                <div id="name-search" class="col-md-5">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body" data-role="selected-list">
-                                            <input class="search-input" data-role="input" type="text" placeholder="Search..." />
-                                        </div>
-                                    </div>
+                                
+                                <div class="search col-md-5">
+                                <input class="form-control" placeholder="Search" type="text">
                                 </div>
+
                                 <div class="custom-filter col-md-2">
                                     <select class="filterOptions" id="" data-filter="status">
                                         <option class="attributeOptions" value="">Status</option>
@@ -212,7 +212,7 @@
                                 </div>
                             </div>
                         </div>
-                        <table id="table-home" class="table-general" data-toggle="table" data-height="460" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-url="db/data.json" data-unique-id="id" >
+                        <table id="table-home" class="table-general" data-toggle="table" data-height="460" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-url="db/data.json" data-unique-id="id" data-search="true" >
                             <thead>
                                 <tr>
                                     <th data-field="id"></th>
