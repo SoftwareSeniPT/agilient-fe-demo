@@ -66,6 +66,21 @@
                 // console.log("hi", selectedVals);
                 // next we unhide all rows so that we dont hide previously selected rows
 
+                $('.table-general-2 tbody tr').show();
+                $('.table-general-2 tbody tr').each(function(i, e) {
+                    for (var a = 0; a < selectedVals.length; a++) {
+                        var val = selectedVals[a];
+                        var thisVal = $(e).attr('data-' + val.attr);
+                        // console.log('comparing ', thisVal, val);
+                        //console.log($(e).children()['0'].text());
+                        var type = $('.table-general-2 tbody tr').eq(i).children().eq(2).text();
+                        //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
+                        if (type !== val.val) {
+                            $(e).hide();
+                        }
+                    }
+                })
+
                 $('.table-general tbody tr').show();
                 $('.table-general tbody tr').each(function(i, e) {
                     for (var a = 0; a < selectedVals.length; a++) {
@@ -73,7 +88,7 @@
                         var thisVal = $(e).attr('data-' + val.attr);
                         // console.log('comparing ', thisVal, val);
                         //console.log($(e).children()['0'].text());
-                        var type = $('.table-general tbody tr').eq(i).children().eq(2).text();
+                        var type = $('.table-general tbody tr').eq(i).children().eq(1).text();
                         //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
                         if (type !== val.val) {
                             $(e).hide();
