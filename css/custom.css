@@ -335,6 +335,17 @@ table tr td:last-child {
   .table-menu-link a {
     margin-right: 3px; }
 
+.table-menu-link-2 {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 100px;
+  display: block; }
+  .table-menu-link-2 span {
+    margin-left: 2px; }
+  .table-menu-link-2 a {
+    margin-right: 3px; }
+
 .show {
   display: block; }
 
@@ -584,7 +595,7 @@ button.close span {
   height: 30px;
   margin-bottom: 10px; }
 
-.modal#newUsers, .modal#editHome {
+.modal#newUsers, .modal#editHome, .modal#editBusiness {
   top: 250px;
   width: 100%; }
 
@@ -689,5 +700,44 @@ button.close span {
 
 .bootstrap-table .pull-right.search {
   display: none; }
+
+#toolbar .search.col-md-5.tool {
+  margin-top: 0px; }
+
+#toolbar .tool {
+  padding: 0; }
+
+#toolbar .row .tool:nth-child(5) {
+  padding-right: 15px; }
+
+#toolbar .row .tool:nth-child(1) {
+  padding-left: 15px; }
+
+.select2-selection.select2-selection--single {
+  height: 38px;
+  border-radius: 0px;
+  border-left: none; }
+
+.custom-filter:nth-child(2) .select2-selection.select2-selection--single {
+  border-right: none; }
+
+.search .form-control {
+  border: 1px solid #aaa;
+  border-radius: 0px; }
+
+#toolbar .col-md-1 p {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-right: none;
+  padding-left: 10px;
+  font-weight: bold; }
+
+.select2-selection__rendered {
+  padding-top: 3.5px; }
+
+.select2-selection__arrow {
+  margin-top: 4.5px; }
 
 /*# sourceMappingURL=custom.css.map */

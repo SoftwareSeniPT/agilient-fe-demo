@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/vendor/simple-line-icons.css">
     <link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
     <link rel="stylesheet" href="css/vendor/owl.theme.default.css">
+    <link rel="stylesheet" href="css/vendor/select2.min.css">
     <!-- Table -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
@@ -213,22 +214,48 @@
 			<div class="col-md-2"></div>
 		</div> -->
                         <div id="toolbar">
-                            <div class="form-inline" role="form">
-                                <div class="form-group">
-                                    <span>Offset: </span>
-                                    <input name="offset" class="form-control w70" type="number" value="0">
+                            <div class="row">
+                                <div class="col-md-1 tool">
+                                    <p>Filter</p>
                                 </div>
-                                <div class="form-group">
-                                    <span>Limit: </span>
-                                    <input name="limit" class="form-control w70" type="number" value="5">
+                                <div class="custom-filter col-md-2 tool">
+                                    <select class="filterOptions" id="" data-filter="type">
+                                        <option class="attributeOptions" value="">All</option>
+                                        <option class="attributeOptions" value="BusinessUnit">Business Unit</option>
+                                        <option class="attributeOptions" value="Assessement">Assessement</option>
+                                        <option class="attributeOptions" value="User">User</option>
+                                    </select>
                                 </div>
-                                <div class="form-group">
-                                    <input name="search" class="form-control" type="text" placeholder="Search">
+                                
+                                <div class="search col-md-5 tool">
+                                <input class="form-control" placeholder="Search" type="text">
                                 </div>
-                                <button id="ok" type="submit" class="btn btn-default">OK</button>
+
+                                <div class="custom-filter col-md-2 tool">
+                                    <select class="filterOptions" id="" data-filter="status">
+                                        <option class="attributeOptions" value="">Status</option>
+                                        <option class="attributeOptions" value="Active">Active</option>
+                                        <option class="attributeOptions" value="Inactive">Inactive</option>
+                                    </select>
+                                </div>
+                                <div class="custom-filter col-md-2 tool">
+                                    <select class="filterOptions" id="" data-filter="sort">
+                                        <option class="attributeOptions" value="">Sort by</option>
+                                        <option class="attributeOptions" value="Active">Active</option>
+                                        <option class="attributeOptions" value="Inactive">Inactive</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 search-result">
+                                        <div data-role="picker" class="panel panel-default">
+                                            <div class="list-group" data-role="picker-list">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <table id="table-users" data-toggle="table" data-height="560" data-toolbar="#toolbar" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-query-params="queryParams" data-response-handler="responseHandler">
+                        <table id="table-users" class="table-general" data-toggle="table" data-height="560" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-search="true">
                             <thead>
                                 <tr>
                                     <th data-field="name" data-sortable="false">Name</th>
@@ -450,6 +477,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 <!-- Main JS -->
 <script src="js/app.js "></script>
+<script src="js/select2.min.js"></script>
 </body>
 
 </html>
