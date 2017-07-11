@@ -72,8 +72,10 @@
                         var val = selectedVals[a];
                         var thisVal = $(e).attr('data-' + val.attr);
                         // console.log('comparing ', thisVal, val);
-                        console.log($(e).children()[3]);
-                        if (thisVal !== val.val) {
+                        //console.log($(e).children()['0'].text());
+                        var type = $('.table-general tbody tr').eq(i).children().eq(2).text();
+                        //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
+                        if (type !== val.val) {
                             $(e).hide();
                         }
                     }
