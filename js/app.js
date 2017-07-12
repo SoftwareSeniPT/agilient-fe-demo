@@ -48,8 +48,8 @@
             });
         },
         selectFilterCustom: function() {
-            var doSelection = function() {
-                // first we get current selected items
+            var doSelectionType = function() {
+                // first we get current selected items (filter type)
                 var selectedVals = []
                 $('.filterOptions').each(function(i, j) {
                     //console.log("map",this,i,j);
@@ -95,14 +95,77 @@
                         }
                     }
                 })
-
                 // then finally we hide rows that dont match
-
             }
 
-            $('.filterOptions').on('change', function() {
-                doSelection();
+            var doSelectionStatus = function() {
+                // first we get current selected items (filter type)
+                var selectedVals = []
+                $('.filterOptions').each(function(i, j) {
+                    //console.log("map",this,i,j);
+                    //console.log(j);
+                    selectedVals.push({
+                        val: $(j).val(),
+                        attr: $(j).attr('data-filter')
+                    });
+                });
+
+                selectedVals = selectedVals.filter(function(j) {
+                    return !!j.val; /* return anything that isn't empty (not falsey) */
+                });
+                // console.log("hi", selectedVals);
+                // next we unhide all rows so that we dont hide previously selected rows
+
+                $('.table-general-2 tbody tr').show();
+                $('.table-general-2 tbody tr').each(function(i, e) {
+                    for (var a = 0; a < selectedVals.length; a++) {
+                        var val = selectedVals[a];
+                        var thisVal = $(e).attr('data-' + val.attr);
+                        // console.log('comparing ', thisVal, val);
+                        //console.log($(e).children()['0'].text());
+                        var type = $('.table-general-2 tbody tr').eq(i).children().eq(3).text();
+                        //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
+                        if (type !== val.val) {
+                            $(e).hide();
+                        }
+                    }
+                })
+
+                $('.table-general tbody tr').show();
+                $('.table-general tbody tr').each(function(i, e) {
+                    for (var a = 0; a < selectedVals.length; a++) {
+                        var val = selectedVals[a];
+                        var thisVal = $(e).attr('data-' + val.attr);
+                        // console.log('comparing ', thisVal, val);
+                        //console.log($(e).children()['0'].text());
+                        var type = $('.table-general tbody tr').eq(i).children().eq(2).text();
+                        //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
+                        if (type !== val.val) {
+                            $(e).hide();
+                        }
+                    }
+                })
+                // then finally we hide rows that dont match
+            }
+
+            /*
+            var doSelectionSort = function() {
+                var selectedSort = $('#sortColumn').find(':selected').val();
+                $('.table-general thead #name_header, .table-general thead #type_header, .table-general thead #status_header').each(function(i, e) {
+
+                }
+            }*/
+
+            $('#filterType').on('change', function() {
+                doSelectionType();
             });
+            $('#filterStatus').on('change', function(){
+                doSelectionStatus();
+            });
+            /*
+            $('#sortColumn').on('change', function(){
+                doSelectionSort();
+            });*/
 
             // make same width between thead and tbody after custom filter triggered
 
@@ -315,9 +378,15 @@
         },
         deleteRow: function() {
             //table-home still need to change to use .bootstrapTable('removeRow')
-            $('#table-home').on('click', '.icon-trash', function() {
-                $(this).parents('tr').remove();
-                console.log($(this).parents('tr').data('index'));
+            $('#table-home').on('click', '.fa-trash', function() {
+                //$(this).parents('tr').remove();
+                //console.log($(this).parents('tr').data('index'));
+                var index = $(this).parents('tr').data('index');
+
+                //remove row data
+                $('#table-home').bootstrapTable('removeRow', {
+                    index: index
+                });
             });
             //table-asset
             $('#table-asset').on('click', '.icon-trash', function() {
@@ -354,7 +423,7 @@
                 //re-add the action icon
                 app.addActionControl();
             });
-            $('#table-business').on('click', '.icon-trash', function() {
+            $('#table-business').on('click', '.fa-trash', function() {
                 var index = $(this).parents('tr').data('index');
 
                 //remove row data
@@ -479,7 +548,7 @@
                     app.addActionControl();
                 });
             });
-            $('#table-business').on('click', '.icon-list', function(){
+            $('#table-business').on('click', '.fa-file-text-o', function(){
                 var index = $(this).parents('tr').data('index');
                 $('#updateBusiness').click(function(){
                     //update row data from modal box
@@ -632,17 +701,17 @@ function actionFormatter(value, row, index) {
             '<div class="table-menu-link-2">' +
             '<span class="">' +
             '<a href="#">' +
-            '<i class="icon-user"></i>' +
+            '<i class="fa fa-user"></i>' +
             '</a>' +
             '</span>' +
             '<span class="">' +
             '<a href="#">' +
-            '<i class="icon-reload"></i>' +
+            '<i class="fa fa-undo"></i>' +
             '</a>' +
             '</span>' +
             '<span class="">' +
             '<a href="#" data-toggle="modal" data-target="#editHome">' +
-            '<i class="icon-list"></i>' +
+            '<i class="fa fa-file-text-o"></i>' +
             '</a>' +
             //modal edit
             '<div class="modal fade" id="editHome" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
@@ -730,7 +799,7 @@ function actionFormatter(value, row, index) {
             '</span>' +
             '<span class="">' +
             '<a href="#">' +
-            '<i class="icon-trash"></i>' +
+            '<i class="fa fa-trash"></i>' +
             '</a>' +
             '</span>' +
             '</div>'
@@ -745,17 +814,17 @@ function actionFormatterBusiness(value, row, index) {
         '<div class="table-menu-link-2">' +
         '<span class="">' +
         '<a href="#">' +
-        '<i class="icon-user"></i>' +
+        '<i class="fa fa-user"></i>' +
         '</a>' +
         '</span>' +
         '<span class="">' +
         '<a href="#">' +
-        '<i class="icon-reload"></i>' +
+        '<i class="fa fa-undo"></i>' +
         '</a>' +
         '</span>' +
         '<span class="">' +
         '<a href="#" data-toggle="modal" data-target="#editBusiness">' +
-        '<i class="icon-list"></i>' +
+        '<i class="fa fa-file-text-o"></i>' +
         '</a>' +
         //modal edit
         '<div class="modal fade" id="editBusiness" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
@@ -808,7 +877,7 @@ function actionFormatterBusiness(value, row, index) {
         '</span>' +
         '<span class="">' +
         '<a href="#">' +
-        '<i class="icon-trash"></i>' +
+        '<i class="fa fa-trash"></i>' +
         '</a>' +
         '</span>' +
         '</div>' +
