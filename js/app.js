@@ -15,7 +15,6 @@
             //app.addBlockTable();
             //app.addBlockTableBusiness();
             // app.addBlockTableUsers();
-            app.selectFilterCustom();
             app.menuToggle();
             app.select2();
             app.owlSlider();
@@ -26,16 +25,54 @@
             app.updateRow();
             app.menuToggleEachRow();
             app.refresh();
+            app.homeTableToolbar();
         },
 
         // ======================================================================
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
+        homeTableToolbar: function() {
+          app.filter('type', $('#table-home'), $('#filterType'));
+          app.filter('status', $('#table-home'), $('#filterStatus'));
+          app.sortSelectInit('status', $('#table-home'), $('#sortColumn'))
+        },
+        filter: function(field, tableElement, selectElement) {
+          selectElement.on('change', function() {
+            var value = selectElement.val();
+            if (value === "") {
+              tableElement.bootstrapTable('filterBy', "");
+            } else {
+              tableElement.bootstrapTable('filterBy', {
+                  [field]: [value]
+              });
+            }
+          });
+        },
+        sortSelectInit: function(field, tableElement, selectElement) {
+          selectElement.on('change', function() {
+            var value = selectElement.val();
+            if (value === "Inactive") {
+              app.sortingField(field, 'desc', tableElement);
+            } else {
+              app.sortingField(field, 'asc', tableElement);
+            }
+          });
+        },
+        sortingField: function(field, order, table) {
+          var targetTH = table.find('th[data-field="' + field + '"]');
+          var targetTHInner = targetTH.children('.sortable');
+
+          targetTHInner.click();
+          setTimeout(function () {
+            if (targetTH.data('order') !== order) {
+              targetTHInner.click();
+            }
+          }, 100);
+        },
         select2: function() {
-            $(document).ready(function() {
-                $("select.filterOptions").select2();
-            });
+            $("select.filterOptions").select2();
+            $(".new-select").select2();
         },
         refresh: function(){
             $('#table-home').on('search.bs.table', function(){
@@ -45,142 +82,6 @@
             $('#table-business').on('search.bs.table', function(){
                 //app.addBlockTableBusiness();
                 //app.menuToggle();
-            });
-        },
-        selectFilterCustom: function() {
-            var doSelectionType = function() {
-                // first we get current selected items (filter type)
-                var selectedVals = []
-                $('.filterOptions').each(function(i, j) {
-                    //console.log("map",this,i,j);
-                    //console.log(j);
-                    selectedVals.push({
-                        val: $(j).val(),
-                        attr: $(j).attr('data-filter')
-                    });
-                });
-
-                selectedVals = selectedVals.filter(function(j) {
-                    return !!j.val; /* return anything that isn't empty (not falsey) */
-                });
-                // console.log("hi", selectedVals);
-                // next we unhide all rows so that we dont hide previously selected rows
-
-                $('.table-general-2 tbody tr').show();
-                $('.table-general-2 tbody tr').each(function(i, e) {
-                    for (var a = 0; a < selectedVals.length; a++) {
-                        var val = selectedVals[a];
-                        var thisVal = $(e).attr('data-' + val.attr);
-                        // console.log('comparing ', thisVal, val);
-                        //console.log($(e).children()['0'].text());
-                        var type = $('.table-general-2 tbody tr').eq(i).children().eq(2).text();
-                        //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
-                        if (type !== val.val) {
-                            $(e).hide();
-                        }
-                    }
-                })
-
-                $('.table-general tbody tr').show();
-                $('.table-general tbody tr').each(function(i, e) {
-                    for (var a = 0; a < selectedVals.length; a++) {
-                        var val = selectedVals[a];
-                        var thisVal = $(e).attr('data-' + val.attr);
-                        // console.log('comparing ', thisVal, val);
-                        //console.log($(e).children()['0'].text());
-                        var type = $('.table-general tbody tr').eq(i).children().eq(1).text();
-                        //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
-                        if (type !== val.val) {
-                            $(e).hide();
-                        }
-                    }
-                })
-                // then finally we hide rows that dont match
-            }
-
-            var doSelectionStatus = function() {
-                // first we get current selected items (filter type)
-                var selectedVals = []
-                $('.filterOptions').each(function(i, j) {
-                    //console.log("map",this,i,j);
-                    //console.log(j);
-                    selectedVals.push({
-                        val: $(j).val(),
-                        attr: $(j).attr('data-filter')
-                    });
-                });
-
-                selectedVals = selectedVals.filter(function(j) {
-                    return !!j.val; /* return anything that isn't empty (not falsey) */
-                });
-                // console.log("hi", selectedVals);
-                // next we unhide all rows so that we dont hide previously selected rows
-
-                $('.table-general-2 tbody tr').show();
-                $('.table-general-2 tbody tr').each(function(i, e) {
-                    for (var a = 0; a < selectedVals.length; a++) {
-                        var val = selectedVals[a];
-                        var thisVal = $(e).attr('data-' + val.attr);
-                        // console.log('comparing ', thisVal, val);
-                        //console.log($(e).children()['0'].text());
-                        var type = $('.table-general-2 tbody tr').eq(i).children().eq(3).text();
-                        //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
-                        if (type !== val.val) {
-                            $(e).hide();
-                        }
-                    }
-                })
-
-                $('.table-general tbody tr').show();
-                $('.table-general tbody tr').each(function(i, e) {
-                    for (var a = 0; a < selectedVals.length; a++) {
-                        var val = selectedVals[a];
-                        var thisVal = $(e).attr('data-' + val.attr);
-                        // console.log('comparing ', thisVal, val);
-                        //console.log($(e).children()['0'].text());
-                        var type = $('.table-general tbody tr').eq(i).children().eq(2).text();
-                        //console.log($('.table-general tbody tr').eq(i).children().eq(2).text());
-                        if (type !== val.val) {
-                            $(e).hide();
-                        }
-                    }
-                })
-                // then finally we hide rows that dont match
-            }
-
-            /*
-            var doSelectionSort = function() {
-                var selectedSort = $('#sortColumn').find(':selected').val();
-                $('.table-general thead #name_header, .table-general thead #type_header, .table-general thead #status_header').each(function(i, e) {
-
-                }
-            }*/
-
-            $('#filterType').on('change', function() {
-                doSelectionType();
-            });
-            $('#filterStatus').on('change', function(){
-                doSelectionStatus();
-            });
-            /*
-            $('#sortColumn').on('change', function(){
-                doSelectionSort();
-            });*/
-
-            // make same width between thead and tbody after custom filter triggered
-
-            var selectedWidth = []
-            $('.bootstrap-table .fixed-table-body thead tr th').each(function(i, j) {
-                selectedWidth.push($(j).outerWidth());
-            });
-            // console.log(selectedWidth);
-
-            $('.bootstrap-table .fixed-table-body tbody tr').each(function(i, e) {
-                $(e).find('td').each(function(index, obj) {
-                    $(obj).css({
-                        width: selectedWidth[index]
-                    });
-                });
             });
         },
         hideID: function() {
@@ -690,121 +591,14 @@
         // app.scrollToFixed();
     });
 
-    
+
 
 });
 
 function actionFormatter(value, row, index) {
-    return [
-        '<div class="table-menu">' +
-        '<a href="#0" class="table-toggle"><i class="icon-options-vertical"></i></a>' +
-            '<div class="table-menu-link-2">' +
-            '<span class="">' +
-            '<a href="#">' +
-            '<i class="fa fa-user"></i>' +
-            '</a>' +
-            '</span>' +
-            '<span class="">' +
-            '<a href="#">' +
-            '<i class="fa fa-undo"></i>' +
-            '</a>' +
-            '</span>' +
-            '<span class="">' +
-            '<a href="#" data-toggle="modal" data-target="#editHome">' +
-            '<i class="fa fa-file-text-o"></i>' +
-            '</a>' +
-            //modal edit
-            '<div class="modal fade" id="editHome" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog modal-lg" role="document">' +
-            '<div class="modal-content">' +
-            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-            '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
-            '<div class="modal-body">' +
-
-            '<div class="row title-modal-home">' +
-                '<div class="col-md-12">Edit User</div>' +
-            '</div>' +
-            '<div class="row content-modal-home">' +
-                '<div class="col-md-4">' +
-                    '<input type="text" id="edit-username" class="input-modal" placeholder="User Name">' +
-                    '<select name="" id="edit-rolemain" class="select-modal">' +
-                        '<option value="">Administrator</option>' +
-                    '</select>' +
-                    '<select name="" id="edit-role" class="select-modal">' +
-                        '<option value="">Business Unit Admin</option>' +
-                        '<option value="">Administrator</option>' +
-                        '<option value="">Assessor</option>' +
-                        '<option value="">Viewer</option>' +
-                    '</select>' +
-                    '<select name="" id="select-role2" class="select-modal">' +
-                        '<option value="">Business Unit Admin</option>' +
-                        '<option value="">Administrator</option>' +
-                        '<option value="">Assessor</option>' +
-                        '<option value="">Viewer</option>' +
-                    '</select>' +
-                '</div>' +
-                '<div class="col-md-4">' +
-                    '<input type="text" id="edit-email" class="input-modal" placeholder="Email">' +
-                    '<select name="" class="select-modal">' +
-                        '<option value="">Organisations</option>' +
-                    '</select>' +
-                    '<select name="" id="edit-organisations" class="select-modal">' +
-                        '<option disabled selected value>Select Business Unit</option>' +
-                        '<option value="">Organisations</option>' +
-                        '<option value="">Operations</option>' +
-                        '<option value="">Logistics</option>' +
-                        '<option value="">Marketings</option>' +
-                        '<option value="">Sales</option>' +
-                    '</select>' +
-                    '<select name="" id="edit-organisations2" class="select-modal">' +
-                        '<option disabled selected value>Select Business Unit</option>' +
-                        '<option value="">Organisations</option>' +
-                        '<option value="">Operations</option>' +
-                        '<option value="">Logistics</option>' +
-                        '<option value="">Marketings</option>' +
-                        '<option value="">Sales</option>' +
-                    '</select>' +
-                '</div>' +
-                '<div class="col-md-4">' +
-                    '<input type="text" id="edit-password" class="input-modal" placeholder="Password">' +
-                    '<select name="" id="" class="select-modal">' +
-                        '<option value="">-</option>' +
-                    '</select>' +
-                    '<select name="" id="edit-assessment" class="select-modal">' +
-                        '<option value="">-</option>' +
-                    '</select>' +
-                    '<select name="" id="edit-assessment2" class="select-modal">' +
-                        '<option disabled selected value>Select Assessment</option>' +
-                        '<option value="">Task 1</option>' +
-                        '<option value="">Task 2</option>' +
-                        '<option value="">Task 3</option>' +
-                        '<option value="">Task 4</option>' +
-                    '</select>' +
-                '</div>' +
-            '</div>' +
-            '<div class="row">' +
-                '<div class="col-md-12 pull-right">' +
-                    '<button class="btn btn-primary btn-sm cancel-modal" type="submit">Cancel</button>' +
-                    '<button class="btn btn-primary btn-sm save-modal" type="submit">Save</button>' +
-                '</div>' +
-            '</div>' +
-
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-
-            //end modal edit
-            '</span>' +
-            '<span class="">' +
-            '<a href="#">' +
-            '<i class="fa fa-trash"></i>' +
-            '</a>' +
-            '</span>' +
-            '</div>'
-
-    ].join('');
+  console.log({ value, row, index });
+  var HTML = jQuery('.table-menu')[0].outerHTML;
+  return HTML;
 }
 
 function actionFormatterBusiness(value, row, index) {

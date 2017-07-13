@@ -1,0 +1,102 @@
+<div class="col-md-12">
+    <div id="toolbar">
+        <div class="row">
+            <div class="col-md-1 tool">
+                <p>Filter</p>
+            </div>
+            <div class="custom-filter col-md-2 tool">
+                <select class="filterOptions" id="filterType" data-filter="type">
+                  <option class="attributeOptions" value="">All</option>
+                  <option class="attributeOptions" value="Entity">Entity</option>
+                </select>
+            </div>
+            <div class="search col-md-5 tool">
+              <input class="form-control" placeholder="Search" type="text">
+            </div>
+            <div class="custom-filter col-md-2 tool">
+              <select class="filterOptions" id="filterStatus" data-filter="status">
+                <option class="attributeOptions" value="">Status</option>
+                <option class="attributeOptions" value="Active">Active</option>
+                <option class="attributeOptions" value="Inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="custom-filter col-md-2 tool">
+              <select class="filterOptions" id="sortColumn" data-filter="sort">
+                <option class="attributeOptions" value="">Sort by</option>
+                <option class="attributeOptions" value="Active">Active</option>
+                <option class="attributeOptions" value="Inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="row">
+                <div class="col-md-12 search-result">
+                    <div data-role="picker" class="panel panel-default">
+                        <div class="list-group" data-role="picker-list"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table id="table-home" class="table-general" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true">
+        <thead>
+            <tr>
+                <th data-field="id" id="id_header"></th>
+                <th data-field="name" id="name_header" data-sortable="true">Name</th>
+                <th data-field="organisation" id="organisasion_header" data-sortable="true">Organisation</th>
+                <th data-field="type" id="type_header" data-sortable="true">Type</th>
+                <th data-field="status" id="status_header" data-sortable="true">Status</th>
+                <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-type="BusinessUnit" data-status="Active">
+                <td>0</td>
+                <td>Sales</td>
+                <td>Demo Org</td>
+                <td>Entity</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr data-type="BusinessUnit" data-status="Active">
+                <td>1</td>
+                <td>Operations</td>
+                <td>Demo Org</td>
+                <td>Entity</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr data-type="User" data-status="Active">
+                <td>2</td>
+                <td>Technology</td>
+                <td>Demo Org</td>
+                <td>Entity</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr data-type="Assessement" data-status="Inactive">
+                <td>3</td>
+                <td>Finance and IT</td>
+                <td>Demo Org</td>
+                <td>Entity</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr data-type="User" data-status="Inactive" data-index="4">
+                <td>4</td>
+                <td>Marketing</td>
+                <td>Demo Org</td>
+                <td>Entity</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr data-type="Assessement" data-status="Inactive">
+                <td>5</td>
+                <td>Distribution</td>
+                <td>Demo Org</td>
+                <td>Entity</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- @import "_table-menu.kit" -->
+</div>
