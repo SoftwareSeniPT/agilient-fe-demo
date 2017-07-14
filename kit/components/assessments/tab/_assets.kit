@@ -1,0 +1,76 @@
+<div class="tab-pane" id="profile" role="tabpanel">
+  <p>
+    List and assess assets and their level critically in the context of the assessment scope
+  </p>
+  <table id="table-assets" class="table-general" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true">
+      <thead>
+          <tr>
+              <th data-field="id" id="id_header"></th>
+              <th data-field="name" id="assets_header" data-sortable="true">Asset</th>
+              <th data-field="type" id="category_header" data-sortable="true">Asset Category</th>
+              <th data-field="status" id="criticality_header" data-sortable="true">Critically</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr data-type="BusinessUnit" data-status="Active" >
+              <td>0</td>
+              <td>Privacy Information</td>
+              <td>Operational</td>
+              <td>High</td>
+          </tr>
+          <tr data-type="BusinessUnit" data-status="Active" >
+              <td>1</td>
+              <td>Reputation</td>
+              <td>Intagible</td>
+              <td>Vital</td>
+          </tr>
+          <tr data-type="User" data-status="Active" >
+              <td>2</td>
+              <td>Staff</td>
+              <td>People</td>
+              <td>Vital</td>
+          </tr>
+          <tr data-type="Assessement" data-status="Inactive" >
+              <td>3</td>
+              <td>Member of the public</td>
+              <td>People</td>
+              <td>Vital</td>
+          </tr>
+          <tr data-type="User" data-status="Inactive" data-index="4">
+              <td>4</td>
+              <td>Buildings</td>
+              <td>Operational</td>
+              <td>Vital</td>
+          </tr>
+          <tr data-type="Assessement" data-status="Inactive" >
+              <td>5</td>
+              <td>Profitability</td>
+              <td>Intagible</td>
+              <td>Significant</td>
+          </tr>
+          <tr data-type="User" data-status="Inactive" >
+              <td>6</td>
+              <td>Weapons</td>
+              <td>Intagible</td>
+              <td>Low</td>
+          </tr>
+          <tr data-type="User" data-status="Inactive" >
+              <td>7</td>
+              <td>Profitability</td>
+              <td>Intagible</td>
+              <td>Significant</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <div class="add-assets">
+    <button type="button" class="btn btn-primary btn-block">Add Assets</button>
+  </div>
+
+  <div class="actions-button">
+    <button type="button" class="btn btn-secondary">Save as Draft</button>
+    <button type="button" class="btn btn-primary">Publish Assessment</button>
+    <button type="button" class="btn btn-danger">Delete Assessment</button>
+  </div>
+
+</div>

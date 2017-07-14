@@ -1,0 +1,66 @@
+<div class="tab-pane" id="settings" role="tabpanel">
+  <p>
+Create control categories and security controls, enter comments and select vulnerability ratings in each in the register below
+ </p>
+  <table id="table-threatx" class="table-general" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true">
+      <thead>
+          <tr>
+              <th data-field="id" id="id_header"></th>
+              <th data-field="name" id="threat_actor_header" data-sortable="true">Control Category</th>
+              <th data-field="type" id="threat_acts_header" data-sortable="true">Security Control</th>
+              <th data-field="status" id="assets_at_risk_header" data-sortable="true">Control Comments</th>
+              <th data-field="status" id="threat_rating_header" data-sortable="true">Risk Control </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr data-type="BusinessUnit" data-status="Active" >
+              <td>0</td>
+              <td>Trusted Insider</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+          </tr>
+          <tr data-type="BusinessUnit" data-status="Active" >
+              <td>1</td>
+              <td>Issue Motivated Group</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+          </tr>
+          <tr data-type="User" data-status="Active" >
+              <td>2</td>
+              <td>Petty Criminals</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+          </tr>
+          <tr data-type="Assessement" data-status="Inactive" >
+              <td>3</td>
+              <td>Organised Criminals</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+          </tr>
+          <tr data-type="User" data-status="Inactive" data-index="4">
+              <td>4</td>
+              <td>Cyber Criminals</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+          </tr>
+          <tr data-type="Assessement" data-status="Inactive" >
+              <td>5</td>
+              <td>Terrorist</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+              <td>Lorem Ipsum</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <div class="actions-button">
+    <button type="button" class="btn btn-secondary">Save as Draft</button>
+    <button type="button" class="btn btn-primary">Publish Assessment</button>
+    <button type="button" class="btn btn-danger">Delete Assessment</button>
+  </div>
+</div>

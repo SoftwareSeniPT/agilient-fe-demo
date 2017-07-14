@@ -26,12 +26,112 @@
             app.menuToggleEachRow();
             app.refresh();
             app.homeTableToolbar();
+            app.showGettingStarted();
+            app.assessmentNextButtons();
+            app.initTextEditor();
+            app.initAssessmentTextEditor();
         },
 
         // ======================================================================
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
+        initTextEditor: function() {
+          tinymce.init({
+            selector:'#externalContext',
+            mode : "textareas",
+            readonly : true,
+            branding: false,
+            menubar: false,
+            statusbar: false,
+            toolbar: false
+          });
+        },
+        initAssessmentTextEditor: function() {
+          jQuery('.texteditor-enabled').each(function(i, o) {
+            // Init texteditor
+            // Get content
+            var content = jQuery(o)[0].innerHTML;
+            var init = 0;
+            jQuery(o).parent().on("DOMSubtreeModified", function(){
+              if (init === 1) {
+                return false;
+              }
+
+              console.log('complete');
+              // Init tinymce
+              setTimeout(function () {
+                tinymce.init({
+                  selector: `.textarea-${i}`,
+                  mode : "textareas",
+                  branding: false,
+                  menubar: false,
+                  statusbar: false,
+                  height: 300,
+                });
+              }, 100);
+
+              init = 1;
+            })
+
+            jQuery(o).parent()
+              .append(`<div class="textarea-el"><textarea class="textarea-${i}">${content}</textarea></div>`);
+            // find button
+            var button = jQuery(o).parents('.col-md-10').next().find('.btn-edit');
+            var buttonSave = jQuery(o).parents('.col-md-10').next().find('.btn-save');
+            var textarea = jQuery(o).parent().find('.textarea-el');
+            function textareaToggle() {
+              if(!textarea.is(':visible')) {
+                textarea.slideDown();
+                jQuery(o).slideUp();
+                button.text('Close');
+                buttonSave.css({ display: 'block' });
+              } else {
+                textarea.slideUp();
+                jQuery(o).slideDown();
+                button.text('Edit');
+                buttonSave.hide({ display: 'none' });
+              }
+            }
+            button.click(function(e){
+              e.preventDefault();
+              textareaToggle();
+            });
+            buttonSave.click(function(e){
+              e.preventDefault();
+              // get textarea value
+              var id = jQuery(`.textarea-${i}`).attr('id');
+              var val = tinyMCE.get(id).getContent()
+              // Update content
+              jQuery(o).html(val);
+              textareaToggle();
+            });
+          })
+        },
+        assessmentNextButtons: function() {
+          function goToNext(section) {
+            jQuery(`#${section} .btn-next`).click(function(e){
+              e.preventDefault();
+              var nextSection = jQuery(`#${section}`).next().attr('id');
+              jQuery(`a[href="#${nextSection}"]`).click();
+            });
+          }
+          goToNext('context');
+        },
+        showGettingStarted: function() {
+          jQuery('#getting-started-btn').click(function(){
+            if(jQuery('body').hasClass('on-getting-started')) {
+              jQuery('body').removeClass('on-getting-started');
+              // hide getting started and show tiles
+              jQuery('#getting-started').slideUp();
+              jQuery('#tiles').slideDown();
+            } else {
+              jQuery('body').addClass('on-getting-started');
+              jQuery('#getting-started').slideDown();
+              jQuery('#tiles').slideUp();
+            }
+          });
+        },
         homeTableToolbar: function() {
           app.filter('type', $('#table-home'), $('#filterType'));
           app.filter('status', $('#table-home'), $('#filterStatus'));
@@ -86,7 +186,8 @@
         },
         hideID: function() {
             $('#table-home').bootstrapTable('hideColumn', 'id');
-            console.log(JSON.stringify($('#table-home').bootstrapTable('getRowByUniqueId', 1)));
+            $('#table-assets').bootstrapTable('hideColumn', 'id');
+            $('#table-threatx').bootstrapTable('hideColumn', 'id');
         },
         menuToggle: function() {
             $('.btn-toggle').on('click', function() {
@@ -596,7 +697,6 @@
 });
 
 function actionFormatter(value, row, index) {
-  console.log({ value, row, index });
   var HTML = jQuery('.table-menu')[0].outerHTML;
   return HTML;
 }

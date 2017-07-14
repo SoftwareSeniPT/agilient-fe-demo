@@ -996,7 +996,7 @@ button.close span {
     line-height: 33px !important;
 }
 
-.table-general tr td:last-child {
+#table-home tr td:last-child {
     padding: 0 !important;
     vertical-align: top;
 }
@@ -1038,4 +1038,57 @@ button.close span {
 
 .table-general {
     overflow: hidden;
+}
+
+.tiles {
+  width: 100%;
+  display: flex;
+}
+
+#getting-started h3 {
+    font-size: 1.45rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#getting-started p {
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+#getting-started li {
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.textarea-el {
+  display: none;
+}
+
+.btn-save, .btn-edit {
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.btn-save {
+  display: none;
+}
+
+#table-assets th, #table-threatx th {
+    background: #3b6896;
+    color: #fff;
+    border: 0;
+}
+
+.add-assets {
+    margin-top: 20px;
+}
+
+.actions-button {
+  margin-top: 20px;
+}
+
+.actions-button {
+  text-align: center;
 }
