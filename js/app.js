@@ -1,3 +1,22 @@
+(function mergeControlTable() {
+  var table = jQuery('#table-controls');
+  table.on('post-body.bs.table', function () {
+    setTimeout(function () {
+      // get table count
+      var count = table.bootstrapTable('getData').length;
+      for (i = 0; i < count; i++) {
+        if (i === 0 || (i && (i % 4 === 0))) {
+          table.bootstrapTable('mergeCells', {
+            index: i,
+            field: 'category',
+            rowspan: 4
+          });
+        }
+      }
+    }, 500);
+  });
+})();
+
 (function(e) {
     e(window.jQuery, window, document);
 })(function($, window, document) {
@@ -30,12 +49,36 @@
             app.assessmentNextButtons();
             app.initTextEditor();
             app.initAssessmentTextEditor();
+            app.initActionOnTable();
         },
 
         // ======================================================================
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
+        initActionOnTable: function() {
+          app.initActionOn(jQuery('#table-assets'));
+          app.initActionOn(jQuery('#table-threatx'));
+          app.initActionOn(jQuery('#table-controls'));
+          app.initActionOn(jQuery('#table-risk'));
+        },
+        initActionOn: function(table) {
+          table.find('tr').each(function(i, o){
+            jQuery(o).find('td').each(function(index, object){
+              var removeLink = jQuery(object).data('remove-link');
+              var editLink = jQuery(object).data('edit-link');
+              var addLink = jQuery(object).data('add-link');
+              var hasRemoveLink = typeof removeLink !== typeof undefined && removeLink !== false && removeLink !== "";
+              var hasEditLink = typeof editLink !== typeof undefined && editLink !== false && editLink !== "";
+              var hasAddLink = typeof addLink !== typeof undefined && addLink !== false && addLink !== "";
+              if (hasRemoveLink || hasEditLink || hasAddLink) {
+                // Add action html
+                var actions = `<div class="actions">${hasAddLink ? `<a href="${addLink}" class="add-link"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>` : ''} <span>${hasEditLink ? `<a href="${editLink}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>` : ''} ${hasRemoveLink ? `<a href="${removeLink}"><i class="fa fa-trash" aria-hidden="true"></i></a>` : ''}</span></div>`;
+                jQuery(object).append(actions);
+                }
+            })
+          })
+        },
         initTextEditor: function() {
           tinymce.init({
             selector:'#externalContext',

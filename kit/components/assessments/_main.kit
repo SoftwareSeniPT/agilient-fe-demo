@@ -14,7 +14,7 @@
 					<div class="col-md-6 text-right">
 						<a href="#" class="btn btn-primary btn-sm">Export Assesments</a>
 						<a href="#" class="btn btn-secondary btn-sm">Create<i class="fa fa-plus"></i></a>
-						<a href="#" class="btn btn-secondary btn-sm btn-icon"><i class="fa fa-question"></i></a>
+						<a href="#" class="btn btn-secondary btn-sm btn-icon" data-toggle="modal" data-target=".criteria-help"><i class="fa fa-question"></i></a>
 					</div>
 				</div>
 			</div>
@@ -35,10 +35,9 @@
 										<div class="col-md-12 text-center">
 											<div class="card-block">
 												<div class="icon-img">
-													<img src="img/tower.png" alt="">
-													<span class="badge badge-pill badge-danger">5</span>
+													<i class="fa fa-exclamation" aria-hidden="true"></i>
 												</div>
-												<h5 class="card-title">Organizations</h5>
+												<h5 class="card-title">Assets Critically</h5>
 											</div>
 										</div>
 									</div>
@@ -67,10 +66,9 @@
 										<div class="col-md-12 text-center">
 											<div class="card-block">
 												<div class="icon-img">
-													<img src="img/tower.png" alt="">
-													<span class="badge badge-pill badge-danger">5</span>
+													<i class="fa fa-bolt" aria-hidden="true"></i>
 												</div>
-												<h5 class="card-title">Organizations</h5>
+												<h5 class="card-title">Threat Matrix</h5>
 											</div>
 										</div>
 									</div>
@@ -83,10 +81,9 @@
 										<div class="col-md-12 text-center">
 											<div class="card-block">
 												<div class="icon-img">
-													<img src="img/tower.png" alt="">
-													<span class="badge badge-pill badge-danger">5</span>
+													<i class="fa fa-lock" aria-hidden="true"></i>
 												</div>
-												<h5 class="card-title">Organizations</h5>
+												<h5 class="card-title">Risk Control Rating</h5>
 											</div>
 										</div>
 									</div>
@@ -99,10 +96,9 @@
 										<div class="col-md-12 text-center">
 											<div class="card-block">
 												<div class="icon-img">
-													<img src="img/tower.png" alt="">
-													<span class="badge badge-pill badge-danger">5</span>
+													<i class="fa fa-th" aria-hidden="true"></i>
 												</div>
-												<h5 class="card-title">Organizations</h5>
+												<h5 class="card-title">Risk Matrices</h5>
 											</div>
 										</div>
 									</div>
@@ -133,7 +129,7 @@
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#risk" role="tab">Risk Register</a>
-			</li> 
+			</li>
 		</ul>
 
 		<!-- Tab panes -->
@@ -146,5 +142,68 @@
 		</div>
 
 	</div>
-
+</div>
+<div class="modal fade criteria-help" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <table>
+				<tr>
+					<th>Default</th>
+					<th>Asset Critically Assessment Criteria</th>
+				</tr>
+				<tr>
+					<th>Vital</th>
+					<td>
+						<ul>
+							<li>Alternative services and/or facilities cannot be provided by State or Federal agencies</li>
+							<li>Loss or compromise will result in abandonment or long-term cessation of the functions or core business practices.</li>
+							<li>Loss or compromise will have a severe Impact on the economic and social well-being of the community. </li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>High</th>
+					<td>
+						<ul>
+							<li>If services and/or facilities are disrupted. major restrictions to core business practices will result</li>
+							<li>Service/facility will require extensive assistance from State or Federal agency resources</li>
+							<li>Loss or compromise will have a significant imact on the economic and social well-being of the community. </li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Low</th>
+					<td>
+						<ul>
+							<li>Normal services and/or facilities can be provided by State or Federal resources located within the region.</li>
+							<li>Loss or compromise will have very limited effect on the functions or core business practices.</li>
+							<li>Loss or compromise of fuctionality will have no impact on the economic and soc'al well-being of the community. </li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Significant</th>
+					<td>
+						<ul>
+<li>Services and/or facilities will be available. but with some restrictions to core business practices.</li>
+<li>Reduced responsiveness and/or capacity compared to normal operations.</li>
+<li>Maintaining a level of service may require assistance from State agencies from other jurisdictions.</li>
+<li>Loss or compromise will result in medium term disruption of the fuctions or core business practices.</li>
+<li>Minimal impact on the economic and social well-being of the community. </li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Very Low</th>
+					<td>
+						<ul>
+							<li>Normal services and/or facilities can be provided by resources located within the region.</li>
+							<li>Loss or compromise will have no effect on the functions core business practices.</li>
+							<li>Loss or compromise of func:ionality will have no impact on the economic and well-being of the community</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+    </div>
+  </div>
 </div>

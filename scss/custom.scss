@@ -437,7 +437,7 @@ footer {
 
 .icon-img {
     position: relative;
-    margin-bottom: 1em;
+    margin-bottom: 20px;
     width: auto;
     display: inline-block;
     .badge {
@@ -1091,4 +1091,205 @@ button.close span {
 
 .actions-button {
   text-align: center;
+}
+
+.table-general td {
+    position: relative;
+    overflow: hidden;
+}
+
+.table-general .actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f8f8f8;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.2s;
+}
+
+.table-general td:hover .actions {
+  transform: translateX(0%);
+}
+
+.table-general .actions a {
+    line-height: 1;
+    margin: 0px 5px;
+    font-size: 18px;
+}
+
+.table-general .actions .add-link {
+    position: absolute;
+    right: 100%;
+    padding-right: 4px;
+}
+
+.table-general .actions a:hover {
+    color: #ad1e1e;
+}
+
+.rowspan .actions {
+    position: static;
+    transform: none;
+    display: inline-block;
+}
+
+.table-general .rowspan:hover .actions {
+  transform: none;
+}
+
+.rowspan .actions span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #f8f8f8;
+    display: inline-block;
+    padding: 5px 4px;
+    border-top: 1px solid #eceeef;
+    border-right: 1px solid #eceeef;
+    transform: translateY(100%);
+    transition: transform 0.2s;
+}
+
+.rowspan:hover .actions span {
+  transform: translateY(0%);
+}
+
+.table-general .rowspan .actions .add-link {
+    right: auto;
+    top: 0px;
+    right: 0;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+table[data-escape] select {
+  border: 1px solid #b3b3b3;
+      height: 26px;
+      background: #fff;
+      border-radius: 0px;
+      padding: 0 10px;
+      width: 100%;
+      margin: 7px 0;
+      color: #676767;
+      outline: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      display: block;
+      padding: 0 0.4rem;
+      margin: 0;
+      color: #333;
+      border-radius: 0;
+    border: 0;
+    background: #fff url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221.1%22%20width%3D%2232%22%20height%3D%2224%22%20viewBox%3D%220%200%2032%2024%22%3E%3Cpolygon%20points%3D%220%2C0%2032%2C0%2016%2C24%22%20style%3D%22fill%3A%20black%22%3E%3C/polygon%3E%3C/svg%3E") right 10px center no-repeat;
+    background-size: 8px 8px;
+    padding-right: 1.625rem;
+}
+
+#table-assets select.status-select {
+    min-width: 140px;
+}
+
+#table-risk .add-link:before {
+    content: "Add Type ";
+}
+
+#table-risk .add-link {
+    border-top: 1px solid #dddddd;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    padding: 4px 9px;
+    color: #333;
+}
+
+#table-risk td {
+    position: relative;
+}
+
+#table-risk .add-link:hover {
+    color: #bf191f;
+}
+
+#table-risk td[data-add-link] {
+    padding-bottom: 33px;
+}
+
+#table-risk .add-link i {
+    float: right;
+    padding: 4px 0;
+}
+
+.criteria-help table {
+    width: 100%;
+}
+
+.criteria-help table tr th:first-child {
+    width: 13%;
+}
+
+.criteria-help table tr:nth-child(even) th {
+    background: #203c59;
+    color: #fff;
+}
+
+.criteria-help table tr:nth-child(odd) th {
+    background: #294d74;
+    color: #fff;
+}
+
+.criteria-help .modal-content {
+    padding: 40px;
+}
+
+.criteria-help table tr th:first-child {
+    text-align: center;
+}
+
+.criteria-help table tr:first-child th:first-child {
+    text-align: left;
+}
+
+.criteria-help table tr th, .criteria-help table tr td {
+    padding: 10px 20px;
+}
+
+.criteria-help table tr:first-child {border-bottom: 10px solid #fff;}
+
+.criteria-help table tr:not(:first-child) td:last-child {
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+#table-home td {
+    overflow: visible;
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+      max-width: 990px;
+  }
+}
+
+.card-block > .icon-img {
+    width: 70px;
+    height: 70px;
+    background: #3b6896;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 38px;
+    padding: 14px 0;
+}
+
+.col-md-3:first-child .card-block > .icon-img {
+    background: none;
+    border: 5px solid #3e6994;
+    color: #3e6994;
+    padding: 10px 0;
 }

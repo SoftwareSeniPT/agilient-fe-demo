@@ -2,57 +2,99 @@
   <p>
 Details relating to each threat and associated threat act will automatically appear as individual entries in the Security Risk Register. If a "Threat Tolerance" has been defined during configuration, only threats acts with a rating equal to or greater than the defined tolerance level will appear in the Security Risk Register
  </p>
-  <table id="table-threatx" class="table-general" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true">
+  <table id="table-threatx" class="table-general" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true" data-escape="false">
       <thead>
           <tr>
               <th data-field="id" id="id_header"></th>
-              <th data-field="name" id="threat_actor_header" data-sortable="true">Threat Actor</th>
-              <th data-field="type" id="threat_acts_header" data-sortable="true">Threat Acts</th>
-              <th data-field="status" id="assets_at_risk_header" data-sortable="true">Assets at Risk</th>
-              <th data-field="status" id="threat_rating_header" data-sortable="true">Threat Rating</th>
+              <th data-field="actor" id="threat_actor_header" data-sortable="true">Threat Actor</th>
+              <th data-field="acts" id="threat_acts_header" data-sortable="true">Threat Acts</th>
+              <th data-field="assets-ridk" id="assets_at_risk_header" data-sortable="true">Assets at Risk</th>
+              <th data-field="rating" id="threat_rating_header" data-sortable="true">Threat Rating</th>
           </tr>
       </thead>
       <tbody>
-          <tr data-type="BusinessUnit" data-status="Active" >
+          <tr>
               <td>0</td>
-              <td>Trusted Insider</td>
-              <td>Lorem Ipsum</td>
-              <td>Lorem Ipsum</td>
-              <td>Lorem Ipsum</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Trusted Insider</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Lorem Ipsum</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Lorem ipsum</option>
+                  <option value="">Dolor Sit</option>
+                  <option value="">Consectetur</option>
+                  <option value="">Quasi Et</option>
+                </select>
+              </td>
+              <td>Lorem Ipssum</td>
           </tr>
-          <tr data-type="BusinessUnit" data-status="Active" >
+          <tr>
               <td>1</td>
-              <td>Issue Motivated Group</td>
-              <td>Lorem Ipsum</td>
-              <td>Lorem Ipsum</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Issue Motivated Group</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Lorem Ipsum</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Lorem ipsum</option>
+                  <option value="">Dolor Sit</option>
+                  <option value="">Consectetur</option>
+                  <option value="">Quasi Et</option>
+                </select>
+              </td>
               <td>Lorem Ipsum</td>
           </tr>
-          <tr data-type="User" data-status="Active" >
+          <tr>
               <td>2</td>
-              <td>Petty Criminals</td>
-              <td>Lorem Ipsum</td>
-              <td>Lorem Ipsum</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Petty Criminals</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Lorem Ipsum</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Lorem ipsum</option>
+                  <option value="">Dolor Sit</option>
+                  <option value="">Consectetur</option>
+                  <option value="">Quasi Et</option>
+                </select>
+              </td>
               <td>Lorem Ipsum</td>
           </tr>
-          <tr data-type="Assessement" data-status="Inactive" >
+          <tr>
               <td>3</td>
-              <td>Organised Criminals</td>
-              <td>Lorem Ipsum</td>
-              <td>Lorem Ipsum</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Organised Criminals</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Lorem Ipsum</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Lorem ipsum</option>
+                  <option value="">Dolor Sit</option>
+                  <option value="">Consectetur</option>
+                  <option value="">Quasi Et</option>
+                </select>
+              </td>
               <td>Lorem Ipsum</td>
           </tr>
-          <tr data-type="User" data-status="Inactive" data-index="4">
+          <tr>
               <td>4</td>
-              <td>Cyber Criminals</td>
-              <td>Lorem Ipsum</td>
-              <td>Lorem Ipsum</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Cyber Criminals</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Lorem Ipsum</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Lorem ipsum</option>
+                  <option value="">Dolor Sit</option>
+                  <option value="">Consectetur</option>
+                  <option value="">Quasi Et</option>
+                </select>
+              </td>
               <td>Lorem Ipsum</td>
           </tr>
-          <tr data-type="Assessement" data-status="Inactive" >
+          <tr>
               <td>5</td>
-              <td>Terrorist</td>
-              <td>Lorem Ipsum</td>
-              <td>Lorem Ipsum</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Terrorist</td>
+              <td data-edit-link="#" data-remove-link="#" data-add-link="#">Lorem Ipsum</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Lorem ipsum</option>
+                  <option value="">Dolor Sit</option>
+                  <option value="">Consectetur</option>
+                  <option value="">Quasi Et</option>
+                </select>
+              </td>
               <td>Lorem Ipsum</td>
           </tr>
       </tbody>

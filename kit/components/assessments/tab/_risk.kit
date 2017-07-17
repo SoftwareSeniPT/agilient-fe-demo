@@ -1,3 +1,50 @@
 <div class="tab-pane" id="risk" role="tabpanel">
-  Risk
+  <p>
+Populate the Security Risk Register below; note that some details have been automatically created based on entries made within Asset and the Threat Registers
+  </p>
+  <table id="table-risk" data-toggle="table" data-striped="true">
+      <thead>
+          <tr>
+              <th data-field="id" data-visible="false"></th>
+              <th data-field="name">Threat</th>
+              <th data-field="asset-at-risk">Assets at Risk</th>
+              <th data-field="control">Controls</th>
+              <th data-field="description">Risk Description</th>
+              <th data-field="type">Risk Type</th>
+              <th data-field="inherit">Inherit Risk</th>
+              <th data-field="threatment">Recommended Threatment</th>
+              <th data-field="residual">Residual Risk</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>0</td>
+              <td>Trusted Insiders - Financial or other forms of fraud.</td>
+              <td>Private Data (HIGH) Private Data (HIGH)</td>
+              <td data-add-link="#">Management Support Mail Screening</td>
+              <td>Insider access private customer records, copy and steal information</td>
+              <td data-add-link="#">Information Information</td>
+              <td>HIGH</td>
+              <td data-add-link="#">Recommended Threatment Recommended Threatment</td>
+              <td>LOW</td>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td>Trusted Insiders - Financial or other forms of fraud.</td>
+              <td>Private Data (HIGH) Private Data (HIGH)</td>
+              <td data-add-link="#">Management Support Mail Screening</td>
+              <td>Insider access private customer records, copy and steal information</td>
+              <td data-add-link="#">Information Information</td>
+              <td>HIGH</td>
+              <td data-add-link="#">Recommended Threatment Recommended Threatment</td>
+              <td>LOW</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <div class="actions-button">
+    <button type="button" class="btn btn-secondary">Save as Draft</button>
+    <button type="button" class="btn btn-primary">Publish Assessment</button>
+    <button type="button" class="btn btn-danger">Delete Assessment</button>
+  </div>
 </div>

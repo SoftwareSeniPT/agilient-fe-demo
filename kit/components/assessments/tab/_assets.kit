@@ -2,7 +2,7 @@
   <p>
     List and assess assets and their level critically in the context of the assessment scope
   </p>
-  <table id="table-assets" class="table-general" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true">
+  <table id="table-assets" class="table-general" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="assetsResponse" data-unique-id="id" data-search="true" data-escape="false">
       <thead>
           <tr>
               <th data-field="id" id="id_header"></th>
@@ -12,53 +12,109 @@
           </tr>
       </thead>
       <tbody>
-          <tr data-type="BusinessUnit" data-status="Active" >
+          <tr>
               <td>0</td>
-              <td>Privacy Information</td>
+              <td data-edit-link="#" data-remove-link="#">Privacy Information</td>
               <td>Operational</td>
-              <td>High</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="">Vital</option>
+                  <option value="" selected>High</option>
+                  <option value="">Significant</option>
+                  <option value="">Low</option>
+                </select>
+              </td>
           </tr>
-          <tr data-type="BusinessUnit" data-status="Active" >
+          <tr>
               <td>1</td>
-              <td>Reputation</td>
+              <td data-edit-link="#" data-remove-link="#">Reputation</td>
               <td>Intagible</td>
-              <td>Vital</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Vital</option>
+                  <option value="">High</option>
+                  <option value="">Significant</option>
+                  <option value="">Low</option>
+                </select>
+              </td>
           </tr>
-          <tr data-type="User" data-status="Active" >
+          <tr>
               <td>2</td>
-              <td>Staff</td>
+              <td data-edit-link="#" data-remove-link="#">Staff</td>
               <td>People</td>
-              <td>Vital</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Vital</option>
+                  <option value="">High</option>
+                  <option value="">Significant</option>
+                  <option value="">Low</option>
+                </select>
+              </td>
           </tr>
-          <tr data-type="Assessement" data-status="Inactive" >
+          <tr>
               <td>3</td>
-              <td>Member of the public</td>
+              <td data-edit-link="#" data-remove-link="#">Member of the public</td>
               <td>People</td>
-              <td>Vital</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Vital</option>
+                  <option value="">High</option>
+                  <option value="">Significant</option>
+                  <option value="">Low</option>
+                </select>
+              </td>
           </tr>
-          <tr data-type="User" data-status="Inactive" data-index="4">
+          <tr>
               <td>4</td>
-              <td>Buildings</td>
+              <td data-edit-link="#" data-remove-link="#">Buildings</td>
               <td>Operational</td>
-              <td>Vital</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="" selected>Vital</option>
+                  <option value="">High</option>
+                  <option value="">Significant</option>
+                  <option value="">Low</option>
+                </select>
+              </td>
           </tr>
-          <tr data-type="Assessement" data-status="Inactive" >
+          <tr>
               <td>5</td>
-              <td>Profitability</td>
+              <td data-edit-link="#" data-remove-link="#">Profitability</td>
               <td>Intagible</td>
-              <td>Significant</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="">Vital</option>
+                  <option value="">High</option>
+                  <option value="" selected>Significant</option>
+                  <option value="">Low</option>
+                </select>
+              </td>
           </tr>
-          <tr data-type="User" data-status="Inactive" >
+          <tr>
               <td>6</td>
-              <td>Weapons</td>
+              <td data-edit-link="#" data-remove-link="#">Weapons</td>
               <td>Intagible</td>
-              <td>Low</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="">Vital</option>
+                  <option value="">High</option>
+                  <option value="">Significant</option>
+                  <option value="" selected>Low</option>
+                </select>
+              </td>
           </tr>
-          <tr data-type="User" data-status="Inactive" >
+          <tr>
               <td>7</td>
-              <td>Profitability</td>
+              <td data-edit-link="#" data-remove-link="#">Profitability</td>
               <td>Intagible</td>
-              <td>Significant</td>
+              <td>
+                <select class="status-select" name="status">
+                  <option value="">Vital</option>
+                  <option value="">High</option>
+                  <option value="" selected>Significant</option>
+                  <option value="">Low</option>
+                </select>
+              </td>
           </tr>
       </tbody>
   </table>
