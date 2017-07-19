@@ -6,7 +6,6 @@
     Author URI: bayuslari.com
     Version: 1.0
 */
-
 $blue: #274c75;
 $light-blue: #386798;
 $white: #fff;
@@ -26,27 +25,25 @@ $info: #33b5e5;
 $info-dark: #0099CC;
 $danger: #ff4444;
 $danger-dark: #CC0000;
-
 /**
  *
  * GENERAL
  *
  */
-
 *,
+a,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-ul,
-a {
+ul {
     margin: 0;
 }
 
 html {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -65,32 +62,23 @@ a:hover {
 :focus {
     outline: none;
 }
-
-
 /**
  *
  * Components
  *
  */
-
-
 /* Button  */
-
-
 /* Buttons */
-
 .btn {
     cursor: pointer;
-    padding: .7rem 1.5rem;
-    margin-bottom: .5rem;
+    padding: 0.7rem 1.5rem;
+    margin-bottom: 0.5rem;
 }
-
-
 /* Buttons */
-
 .btn-primary {
     background-color: $blue;
     border-color: $blue;
+
     &:hover {
         background-color: $light-blue;
         border-color: $light-blue;
@@ -105,6 +93,7 @@ a:hover {
 .btn-success {
     background-color: $success;
     border-color: $success;
+
     &:hover {
         background-color: $success-dark;
         border-color: $success-dark;
@@ -114,6 +103,7 @@ a:hover {
 .btn-info {
     background-color: $info;
     border-color: $info;
+
     &:hover {
         background-color: $info-dark;
         border-color: $info-dark;
@@ -123,6 +113,7 @@ a:hover {
 .btn-warning {
     background-color: $warning;
     border-color: $warning;
+
     &:hover {
         background-color: $warning-dark;
         border-color: $warning-dark;
@@ -132,6 +123,7 @@ a:hover {
 .btn-danger {
     background-color: $danger;
     border-color: $danger;
+
     &:hover {
         background-color: $danger-dark;
         border-color: $danger-dark;
@@ -140,17 +132,16 @@ a:hover {
 
 .btn-link {
     color: $primary;
+
     &:hover {
         color: $primary-dark;
     }
 }
-
-
 /* Buttons Line */
-
 .btn-outline-primary {
     color: $primary;
     border-color: $primary;
+
     &:hover {
         background-color: $primary;
         color: $white;
@@ -160,77 +151,63 @@ a:hover {
 .btn-outline-secondary {
     color: $light-1;
     border-color: $light-1;
+
     &:hover {
         background-color: $light-1;
         border-color: $light-1;
         color: $white;
     }
 }
-
-
 /* Buttons with icon */
-
 .btn > i {
     margin-left: 5px;
 }
-
-
 /* Button Large */
-
 .btn-lg {
     font-size: 1.2rem;
     padding: 1rem 2rem;
 }
-
-
 /* Button Small */
-
 .btn-sm {
-    font-size: .9rem;
-    padding: .5rem .75rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
 }
 
 .btn-icon {
     border-radius: 50%;
-    padding: .5rem .8rem;
+    padding: 0.5rem 0.8rem;
+
     i {
         margin-left: 0;
         margin-right: 0;
         font-size: inherit;
     }
 }
-
-
 /* Body */
-
 .admin-body {
     margin-left: 200px;
     padding-top: 65px;
     padding-bottom: 50px;
     background-color: $grey;
     min-height: calc(100vh - 35px);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
-
-
 /* Footer */
-
 footer {
     background-color: $light-blue;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
+
     .nav-link {
         color: $white;
         font-size: 14px;
         padding: 0;
     }
+
     .navbar {
         width: 100%;
     }
 }
-
-
 /* Sidebar Nav */
-
 .side-nav {
     display: block;
     width: 200px;
@@ -254,80 +231,90 @@ footer {
     will-change: transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
+
     a {
         color: #fff;
-        padding: .8rem 1rem !important;
+        padding: 0.8rem 1rem !important;
         height: 50px;
     }
+
     i {
         margin-right: 10px;
     }
+
     .menu-toggle > a {
         height: 50px;
         max-height: 50px;
         display: inline-block;
         line-height: 1.8;
     }
+
     .navbar-nav {
         flex-direction: column !important;
         width: 100%;
     }
+
     .nav-item {
         &.active {
             background-color: darken($blue, 7%);
         }
+
         &:hover {
             background-color: darken($blue, 7%);
         }
     }
 }
-
 @media (min-width: 992px) {
     .toggle-sidebar {
         .side-nav {
             width: 50px;
+
             i {
                 margin-right: 0;
             }
         }
-        .top-nav,
+
         .admin-body,
+        .top-nav,
         footer {
             margin-left: 50px;
         }
+
         .nav-link {
             span {
                 display: none;
             }
         }
     }
+
     footer {
         margin-left: 200px;
     }
 }
-
-
 /* Navbar Top */
-
 .top-nav {
     margin-left: 200px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     clear: both;
     background-color: $white;
     height: 50px;
+
     .navbar {
         height: 50px;
         background-color: $light-blue;
+
         a.nav-link {
             color: $white;
         }
     }
+
     .nav-link {
         height: 30px;
         line-height: 1;
         padding-left: 1rem !important;
         padding-right: 1rem !important;
+
         > .badge {
             position: absolute;
             top: 50%;
@@ -336,6 +323,7 @@ footer {
             margin-left: 0;
         }
     }
+
     .dropdown-menu {
         right: 0;
         left: auto;
@@ -347,6 +335,7 @@ footer {
     padding: 0.7rem 0;
     height: 50px;
     line-height: 1;
+
     img {
         height: 100%;
     }
@@ -354,105 +343,100 @@ footer {
 
 .navbar-form {
     position: relative;
+
     .form-control {
-        font-size: .8rem;
+        font-size: 0.8rem;
         font-family: Lato, sans-serif;
         height: 30px;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
         width: 200px;
         padding: 5px 10px;
         border-radius: 0;
         border: 1px solid $blue;
+
         &:focus {
             width: 300px;
         }
     }
+
     .form-group {
         margin-bottom: 0;
     }
+
     .btn-search {
         position: absolute;
         right: 0;
         top: 0;
         height: 30px;
         line-height: 1;
-        padding: .5rem;
+        padding: 0.5rem;
         border: none;
         background: 0 0;
         border-radius: 0;
         color: $white;
         background-color: $blue;
         font-size: 1rem;
+
         i {
             margin-right: 0;
             font-size: inherit;
         }
     }
 }
-
-
 /* Breadcrumb */
-
 .breadcrumb {
     margin: 0;
     padding: 0;
     background: transparent;
     margin-left: 15px;
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
-    content: '>>'
+    content: '>>';
 }
-
-
 /* Accordion */
-
 #accordion .card-header {
     background: transparent;
     border-top: 1px solid #dfdfdf;
+
     i {
         color: #333;
     }
+
     a {
         color: #333;
     }
 }
-
-
 /* Card */
-
 .card {
     margin-bottom: 1rem;
+
     .card-title {
         margin-bottom: 0;
     }
+
     .btn {
         margin-bottom: 0;
     }
 }
-
-
 /* Badge */
-
 .icon-img {
     position: relative;
     margin-bottom: 20px;
     width: auto;
     display: inline-block;
+
     .badge {
         position: absolute;
         right: 0;
         top: 5px;
         font-family: Lato, sans-serif;
-        padding: .8em 1em;
+        padding: 0.8em 1em;
         border-radius: 50%;
     }
 }
-
-
 /* Table */
-
 .table-menu {
     position: relative;
 }
@@ -467,22 +451,27 @@ table tr td:last-child {
     right: 15px;
     width: 100px;
     display: none;
+
     span {
         margin-left: 2px;
     }
+
     a {
         margin-right: 3px;
     }
 }
+
 .table-menu-link-2 {
     position: absolute;
     top: 0;
     right: 15px;
     width: 100px;
     display: block;
+
     span {
         margin-left: 2px;
     }
+
     a {
         margin-right: 3px;
     }
@@ -491,38 +480,37 @@ table tr td:last-child {
 .show {
     display: block;
 }
-
-
 /* Graph */
-
 .graph {
     padding: 30px 0;
+
     .graph-content {
         width: 300px;
         height: 300px;
         margin: 0 auto;
     }
 }
-
-
 /* Getting Started */
-
 .getting-started {
     .card {
         padding: 15px;
         background: #386798;
         color: #fff;
     }
+
     .card-block {
         background: #274c75;
         border-radius: 5px;
     }
+
     h5 {
         margin-bottom: 30px;
     }
+
     a {
         color: $white;
     }
+
     a.color-link {
         color: #83afdc;
     }
@@ -533,17 +521,16 @@ ul li {
         margin-right: 7px;
     }
 }
-
-
 /* Login */
-
 .login {
     .card-header {
         background-color: $blue;
     }
+
     .btn {
         margin-bottom: 10px;
     }
+
     .animated > .row {
         height: 100vh;
     }
@@ -556,21 +543,16 @@ ul li {
     transform: translateY(-50%);
     width: 100%;
 }
-
-
 /* Owl Carousel */
-
 .item-video {
     height: 350px;
 }
-
-
 /* Step Wizard */
-
 .nav-tabs {
     .nav-item {
         width: 25%;
     }
+
     .nav-item:not(:last-child) .nav-link::before {
         content: "";
         display: block;
@@ -586,6 +568,7 @@ ul li {
         left: 100%;
         z-index: 3;
     }
+
     .nav-item:not(:last-child) .nav-link::after {
         content: "";
         display: block;
@@ -600,12 +583,15 @@ ul li {
         left: 100%;
         z-index: 3;
     }
+
     .nav-item:first-child .nav-link {
         border-top-left-radius: 4px;
     }
+
     .nav-item:last-child .nav-link {
         border-top-right-radius: 4px;
     }
+
     .nav-link {
         text-align: center;
         position: relative;
@@ -617,20 +603,19 @@ ul li {
         border-right: 1px solid $muted;
         border-left: 1px solid $muted;
     }
+
     .nav-item.show .nav-link,
     .nav-link.active {
         background-color: $light-blue;
         color: #fff;
         border-color: $light-blue;
     }
+
     .nav-link.active::after {
         border-left: 21px solid #386798 !important;
     }
 }
-
-
 /* Tab */
-
 .tab-content {
     .tab-pane {
         background: white;
@@ -641,29 +626,31 @@ ul li {
         border-bottom-right-radius: 4px;
         padding: 20px;
     }
+
     .card {
         background-color: $grey;
         margin-bottom: 2rem;
     }
+
     h5 {
         margin-top: 5px;
         margin-bottom: 15px;
     }
+
     .btn i {
         margin-left: 0;
     }
+
     a:focus,
     a:hover {
         color: $white;
     }
+
     .btn.collapsed i:before {
         content: '\f067';
     }
 }
-
-
 /* Modal */
-
 button.close {
     position: absolute;
     right: -15px;
@@ -684,9 +671,11 @@ button.close span {
 .title-modal-criteria {
     background-color: #386798;
     color: #fff;
+
     .col-md-4,
     .col-md-8 {
         position: relative;
+
         p {
             position: relative;
             top: 50%;
@@ -698,8 +687,9 @@ button.close span {
 
 .content-modal-criteria {
     margin-top: 20px;
+
     .col-md-2 {
-        padding-left: 0px;
+        padding-left: 0;
         padding-right: 10px;
     }
 }
@@ -707,6 +697,7 @@ button.close span {
 .modal#myModal {
     top: 50px;
     width: 100%;
+
     .modal-content {
         padding: 20px 30px;
         width: -moz-max-content;
@@ -717,6 +708,7 @@ button.close span {
     position: relative;
     width: 100%;
     height: 100%;
+
     p {
         position: absolute;
         top: 50%;
@@ -764,8 +756,9 @@ button.close span {
 .modal#newBusiness {
     top: 250px;
     width: 100%;
-    .save-modal,
-    .cancel-modal {
+
+    .cancel-modal,
+    .save-modal {
         margin-top: 10px;
         margin-left: -35px;
     }
@@ -773,7 +766,8 @@ button.close span {
 
 .title-modal-business {
     background-color: #386798;
-    padding: 10px 0px;
+    padding: 10px 0;
+
     div {
         text-align: center;
         color: #fff;
@@ -782,28 +776,32 @@ button.close span {
 }
 
 .content-modal-business {
-    padding: 20px 0px;
+    padding: 20px 0;
 }
 
 .content-modal-business > div {
     text-align: center;
 }
 
-.select-modal,
-.input-modal {
+.input-modal,
+.select-modal {
     width: 100%;
     height: 30px;
     margin-bottom: 10px;
 }
 
-.modal#newUsers, .modal#editHome, .modal#editBusiness {
+.modal#editBusiness,
+.modal#editHome,
+.modal#newUsers {
     top: 250px;
     width: 100%;
 }
 
-.title-modal-users, .title-modal-home {
+.title-modal-home,
+.title-modal-users {
     background-color: #386798;
-    padding: 10px 0px;
+    padding: 10px 0;
+
     div {
         text-align: center;
         color: #fff;
@@ -811,31 +809,33 @@ button.close span {
     }
 }
 
-.content-modal-users, .content-modal-home {
-    padding: 20px 0px;
+.content-modal-home,
+.content-modal-users {
+    padding: 20px 0;
 }
-
-
 /*table and action*/
-
 .action-cell a {
     color: #000;
     float: right;
+
     &:hover {
         color: #777;
     }
+
     &:visited {
         &:hover {
             color: #777;
         }
         color: #000;
     }
+
     &:link {
         &:hover {
             color: #777;
         }
         color: #000;
     }
+
     &:active {
         &:hover {
             color: #777;
@@ -845,9 +845,9 @@ button.close span {
 }
 
 .modal#editAsset,
+.modal#editAssetCriticality,
 .modal#editThreatActors,
-.modal#editThreatActs,
-.modal#editAssetCriticality {
+.modal#editThreatActs {
     top: 200px;
 }
 
@@ -863,22 +863,21 @@ button.close span {
         margin: 0;
     }
 }
-
-
 /* Bootstrap Table */
-
 .bootstrap-table {
     .btn {
-        padding: .55rem .75rem;
+        padding: 0.55rem 0.75rem;
         line-height: 1;
         border: 1px solid #d0d0d0;
+
         i {
             margin: 0;
         }
     }
+
     .label {
         display: inline;
-        padding: .2em .6em .3em;
+        padding: 0.2em 0.6em 0.3em;
         font-size: 75%;
         font-weight: bold;
         line-height: 1;
@@ -886,93 +885,115 @@ button.close span {
         text-align: center;
         white-space: nowrap;
         vertical-align: baseline;
-        border-radius: .25em;
+        border-radius: 0.25em;
     }
+
     .label-info {
         background-color: #5bc0de;
     }
+
     a.label-info {
         margin: 4px 3px;
         font-size: 14px;
     }
+
     .panel-body {
         padding: 15px;
     }
+
     .pull-left {
         float: left!important;
     }
+
     #toolbar {
         width: 100%;
         display: block;
     }
+
     .bars {
         width: 100%;
     }
-
 }
 
 #toolbar .select2-container {
     width: 100% !important;
 }
+
 #name-search .label.label-info.pull-left {
     float: unset !important;
-    &::after{
+
+    &::after {
         content: 'Search';
     }
 }
+
 #name-search .search-input {
     width: 89%;
 }
+
 #name-search .panel-body {
     padding: 0;
 }
+
 .bootstrap-table .pull-right.search {
     display: none;
 }
+
 #toolbar .search.col-md-5.tool {
-    margin-top: 0px;
+    margin-top: 0;
 }
+
 #toolbar .tool {
     padding: 0;
 }
+
 #toolbar .row .tool:nth-child(5) {
     padding-right: 15px;
 }
+
 #toolbar .row .tool:nth-child(1) {
     padding-left: 15px;
 }
+
 #toolbar .select2-selection.select2-selection--single {
     height: 38px;
-    border-radius: 0px;
+    border-radius: 0;
     border-left: none;
 }
+
 .custom-filter:nth-child(2) .select2-selection.select2-selection--single {
     border-right: none;
 }
+
 .search .form-control {
     border: 1px solid #aaa;
-    border-radius: 0px;
+    border-radius: 0;
 }
+
 #toolbar .col-md-1 p {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  background-color: white;
-  border: 1px solid #aaa;
-  border-right: none;
-  padding-left: 10px;
-  font-weight: bold;
-  height: 38px;
-  line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-color: white;
+    border: 1px solid #aaa;
+    border-right: none;
+    padding-left: 10px;
+    font-weight: bold;
+    height: 38px;
+    line-height: 24px;
 }
+
 .table-general {
     background-color: #fff;
 }
+
 #toolbar .select2-selection__rendered {
     padding-top: 3.5px;
 }
+
 #toolbar .select2-selection__arrow {
     margin-top: 4.5px;
 }
+
 .content-modal-business .select2 {
     width: 100% !important;
     text-align: left;
@@ -1000,7 +1021,6 @@ button.close span {
     padding: 0 !important;
     vertical-align: top;
 }
-
 
 .table-menu-link-2 {
     right: 100%;
@@ -1041,8 +1061,8 @@ button.close span {
 }
 
 .tiles {
-  width: 100%;
-  display: flex;
+    width: 100%;
+    display: flex;
 }
 
 #getting-started h3 {
@@ -1062,20 +1082,22 @@ button.close span {
 }
 
 .textarea-el {
-  display: none;
+    display: none;
 }
 
-.btn-save, .btn-edit {
+.btn-edit,
+.btn-save {
     width: 100%;
     margin-bottom: 10px;
     display: block;
 }
 
 .btn-save {
-  display: none;
+    display: none;
 }
 
-#table-assets th, #table-threatx th {
+#table-assets th,
+#table-threatx th {
     background: #3b6896;
     color: #fff;
     border: 0;
@@ -1086,11 +1108,11 @@ button.close span {
 }
 
 .actions-button {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .actions-button {
-  text-align: center;
+    text-align: center;
 }
 
 .table-general td {
@@ -1113,12 +1135,12 @@ button.close span {
 }
 
 .table-general td:hover .actions {
-  transform: translateX(0%);
+    transform: translateX(0%);
 }
 
 .table-general .actions a {
     line-height: 1;
-    margin: 0px 5px;
+    margin: 0 5px;
     font-size: 18px;
 }
 
@@ -1139,7 +1161,7 @@ button.close span {
 }
 
 .table-general .rowspan:hover .actions {
-  transform: none;
+    transform: none;
 }
 
 .rowspan .actions span {
@@ -1156,34 +1178,34 @@ button.close span {
 }
 
 .rowspan:hover .actions span {
-  transform: translateY(0%);
+    transform: translateY(0%);
 }
 
 .table-general .rowspan .actions .add-link {
     right: auto;
-    top: 0px;
+    top: 0;
     right: 0;
     padding-top: 10px;
     padding-right: 10px;
 }
 
 table[data-escape] select {
-  border: 1px solid #b3b3b3;
-      height: 26px;
-      background: #fff;
-      border-radius: 0px;
-      padding: 0 10px;
-      width: 100%;
-      margin: 7px 0;
-      color: #676767;
-      outline: 0;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      display: block;
-      padding: 0 0.4rem;
-      margin: 0;
-      color: #333;
-      border-radius: 0;
+    border: 1px solid #b3b3b3;
+    height: 26px;
+    background: #fff;
+    border-radius: 0;
+    padding: 0 10px;
+    width: 100%;
+    margin: 7px 0;
+    color: #676767;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    padding: 0 0.4rem;
+    margin: 0;
+    color: #333;
+    border-radius: 0;
     border: 0;
     background: #fff url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221.1%22%20width%3D%2232%22%20height%3D%2224%22%20viewBox%3D%220%200%2032%2024%22%3E%3Cpolygon%20points%3D%220%2C0%2032%2C0%2016%2C24%22%20style%3D%22fill%3A%20black%22%3E%3C/polygon%3E%3C/svg%3E") right 10px center no-repeat;
     background-size: 8px 8px;
@@ -1256,11 +1278,14 @@ table[data-escape] select {
     text-align: left;
 }
 
-.criteria-help table tr th, .criteria-help table tr td {
+.criteria-help table tr td,
+.criteria-help table tr th {
     padding: 10px 20px;
 }
 
-.criteria-help table tr:first-child {border-bottom: 10px solid #fff;}
+.criteria-help table tr:first-child {
+    border-bottom: 10px solid #fff;
+}
 
 .criteria-help table tr:not(:first-child) td:last-child {
     border: 1px solid #ddd;
@@ -1270,11 +1295,10 @@ table[data-escape] select {
 #table-home td {
     overflow: visible;
 }
-
 @media (min-width: 992px) {
-  .modal-lg {
-      max-width: 990px;
-  }
+    .modal-lg {
+        max-width: 990px;
+    }
 }
 
 .card-block > .icon-img {
@@ -1292,4 +1316,84 @@ table[data-escape] select {
     border: 5px solid #3e6994;
     color: #3e6994;
     padding: 10px 0;
+}
+
+#toolbar .search.col-md-5.tool {
+    flex: 0 0 57.266667%;
+    max-width: 57.266667%;
+}
+
+.custom-filter {
+    flex: 0 0 11%;
+    max-width: 11%;
+}
+
+#toolbar .row .tool:nth-child(5) {
+    padding-right: 0;
+}
+
+#toolbar .text-right .btn {
+    border: 0;
+    margin: 0;
+}
+
+.fixed-table-toolbar .search {
+    margin: 0;
+}
+
+#toolbar .col-md-1 p {
+    margin-bottom: 0;
+}
+
+#toolbar > .row {
+    padding-bottom: 8px;
+}
+
+.col-md-12:first-child .text-right > .btn {
+    margin: 0 4px;
+}
+
+.col-md-12:first-child .text-right > .btn-primary ~ .btn, .col-md-12:first-child .text-right > .btn-secondary, .col-md-12:first-child .text-right > .btn-secondary ~ .btn {
+    background: #3b6896;
+    color: #fff;
+    border: #3b6896;
+}
+
+.col-md-12:first-child .text-right > .btn-primary ~ .btn:hover, .col-md-12:first-child .text-right > .btn-secondary:hover, .col-md-12:first-child .text-right > .btn-secondary ~ .btn:hover {
+    background: #294d74;
+}
+
+.tags > div {
+    background: #274c75;
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 1;
+    padding: 5px 12px;
+    border-radius: 57px;
+}
+
+.tags a {
+    color: #fff;
+    margin-left: 9px;
+}
+
+.filter-field .btn {
+    float: right;
+    margin: 0;
+    border: 0;
+}
+
+.filter-field .tags {
+    float: left;
+}
+
+.filter-field {
+    overflow: hidden;
+}
+
+.info {
+    font-size: 14px;
+    color: #5f5f5f;
+    padding: 12px 0;
 }

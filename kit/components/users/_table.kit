@@ -35,15 +35,20 @@
                 </div>
             </div>
         </div>
+        <div class="filter-field">
+          <div class="tags">
+          </div>
+          <button type="button" class="btn btn-primary btn-sm">Clear Filter</button>
+        </div>
     </div>
-    <table id="table-home" class="table-general" data-toggle="table" data-height="560" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-search="true">
+    <table id="table-home" class="table-general table-user" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-search="true">
         <thead>
             <tr>
                 <th data-field="name" data-sortable="false">Name</th>
                 <th data-field="organisation" data-sortable="false">Organisation</th>
                 <th data-field="business-unit" data-sortable="false">Business Unit</th>
                 <th data-field="role" data-sortable="false">Role(s)*</th>
-                <th data-field="status" data-sortable="false">Status</th>
+                <th data-field="status" data-sortable="true">Status</th>
                 <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents"></th>
             </tr>
         </thead>
@@ -132,4 +137,9 @@
         </tbody>
     </table>
     <!-- @import "_table-menu.kit" -->
+</div>
+<div class="col-md-12">
+  <div class="info">
+    * Indicates that user has been assigned to multiple roles
+  </div>
 </div>

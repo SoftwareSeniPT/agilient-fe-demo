@@ -28,7 +28,9 @@
         // * This method make your code more modular and make it easy to toggle your function
         // * If you want to disable a function, just commented on function that you need to disable below
         // ==============================================================================================
-
+        homeFilter: [],
+        businessFilter: [],
+        userFilter: [],
         init: function($) {
             app.hideID();
             //app.addBlockTable();
@@ -176,24 +178,75 @@
           });
         },
         homeTableToolbar: function() {
-          app.filter('type', $('#table-home'), $('#filterType'));
-          app.filter('status', $('#table-home'), $('#filterStatus'));
-          app.sortSelectInit('status', $('#table-home'), $('#sortColumn'))
+          app.filter('type', 'home', $('.table-home'), $('#filterType'), true);
+          app.filter('status', 'home', $('.table-home'), $('#filterStatus'), false);
+          app.sortSelectInit('status', $('.table-home'), $('#sortColumn'));
+          app.removeFilter('type', 'home', $('.table-home'), $('#filterType'));
+
+          // Table business
+          app.filter('organisation', 'business', $('.table-business'), $('#filterType'), true);
+          app.filter('status', 'business', $('.table-business'), $('#filterStatus'), false);
+          app.sortSelectInit('status', $('.table-business'), $('#sortColumn'));
+          app.removeFilter('organisation', 'business', $('.table-business'), $('#filterType'));
+
+          // Table user
+          app.filter('organisation', 'user', $('.table-user'), $('#filterType'), true);
+          app.filter('status', 'user', $('.table-user'), $('#filterStatus'), false);
+          app.sortSelectInit('status', $('.table-user'), $('#sortColumn'));
+          app.removeFilter('organisation', 'user', $('.table-user'), $('#filterType'));
         },
-        filter: function(field, tableElement, selectElement) {
+        filter: function(field, section, tableElement, selectElement, record) {
           selectElement.on('change', function() {
+            if (!tableElement.length) {
+              return;
+            }
             var value = selectElement.val();
-            if (value === "") {
+            if (value === "" || value === "All") {
               tableElement.bootstrapTable('filterBy', "");
             } else {
+              if (record && app[`${section}Filter`].indexOf(value) === -1) {
+                app[`${section}Filter`] = [].concat(app[`${section}Filter`], value);
+                console.log(app[`${section}Filter`], field, `${section}Filter`);
+                // Add to filter div
+                jQuery('.filter-field .tags').append(`<div>${value} <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></div>`);
+              }
               tableElement.bootstrapTable('filterBy', {
-                  [field]: [value]
+                  [field]: record ? app[`${section}Filter`] : [value]
               });
             }
           });
         },
+        removeFilter: function(field, section, tableElement, selectElement) {
+          jQuery(document).on('click', '.filter-field .tags a', function(e){
+            e.preventDefault();
+            if (!tableElement.length) {
+              return;
+            }
+
+            var value = jQuery(this).parent().text();
+            // Remove from array
+            app[`${section}Filter`] = app[`${section}Filter`].filter(function(o, i) {
+              if (`${o} ` === value) return false;
+              return true;
+            });
+            // Update
+            if (!app[`${section}Filter`].length) {
+              tableElement.bootstrapTable('filterBy', "");
+              selectElement.select2("val", "")
+            } else {
+              tableElement.bootstrapTable('filterBy', {
+                  [field]: app[`${section}Filter`]
+              });
+            }
+            // Remove from DOM
+            jQuery(this).parent().remove();
+          });
+        },
         sortSelectInit: function(field, tableElement, selectElement) {
           selectElement.on('change', function() {
+            if (!tableElement.length) {
+              return;
+            }
             var value = selectElement.val();
             if (value === "Inactive") {
               app.sortingField(field, 'desc', tableElement);
