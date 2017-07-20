@@ -1086,4 +1086,20 @@ table[data-escape] select {
   color: #5f5f5f;
   padding: 12px 0; }
 
+.fixed-table-pagination .pagination-info {
+  display: none; }
+
+.fixed-table-pagination .page-list:before {
+  content: "View "; }
+
+.fixed-table-pagination .btn-group ~
+* {
+  opacity: 0; }
+
+.fixed-table-pagination div.pagination .pagination > * {
+  background: #fff;
+  padding: 3px 0;
+  border: 1px solid #ddd;
+  margin-left: -1px; }
+
 /*# sourceMappingURL=custom.css.map */
