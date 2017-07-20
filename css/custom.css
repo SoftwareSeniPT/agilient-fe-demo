@@ -1102,4 +1102,13 @@ table[data-escape] select {
   border: 1px solid #ddd;
   margin-left: -1px; }
 
+.fixed-table-pagination div.pagination .pagination > .active {
+  background: #3b6896;
+  color: #fff;
+  border-color: #3b6896; }
+
+.fixed-table-pagination div.pagination .pagination > .active
+a {
+  color: #fff; }
+
 /*# sourceMappingURL=custom.css.map */
