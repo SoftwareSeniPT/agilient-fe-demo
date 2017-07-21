@@ -17,6 +17,13 @@
   });
 })();
 
+(function loadTable() {
+  jQuery('.table-general').on('post-body.bs.table', function () {
+      jQuery('.loading').hide();
+      jQuery('.table-general, .info').show();
+  });
+})();
+
 (function(e) {
     e(window.jQuery, window, document);
 })(function($, window, document) {
