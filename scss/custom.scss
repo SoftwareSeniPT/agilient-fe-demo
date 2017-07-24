@@ -374,7 +374,7 @@ footer {
         background: 0 0;
         border-radius: 0;
         color: $white;
-        background-color: $blue;
+        background-color: #858585;
         font-size: 1rem;
 
         i {
@@ -1382,6 +1382,37 @@ table[data-escape] select {
 
 .badge-danger {
     background: #969696;
+}
+
+.navbar-toggleable-md .navbar-nav {width: 100%;}
+
+#navbarSupportedContent .nav-item:first-child {
+    width: 100%;
+}
+
+#navbarSupportedContent .nav-item:last-child {
+    width: 20%;
+}
+
+.navbar-form .form-control {
+    width: 100% !important;
+    background: #858585;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+}
+
+.navbar-form .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+.navbar-form .form-control::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+.navbar-form .form-control:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+.navbar-form .form-control:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
 }
 
 .tags > div {
