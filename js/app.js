@@ -59,12 +59,34 @@
             app.initTextEditor();
             app.initAssessmentTextEditor();
             app.initActionOnTable();
+            app.autoAddUserForm();
         },
 
         // ======================================================================
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
+        autoAddUserForm: function() {
+          jQuery(document).on('change', '#newUsers .content-modal-users .row:last-child select', function() {
+          	// Check if all select is filled
+          	// Get all select
+          	var filled = true;
+          	var that = this;
+          	var row = jQuery(this).parents('.content-modal-users').find('.row:last-child');
+          	var select = row.find('select');
+          	var html = row[0].outerHTML;
+              select.each(function(i, o) {
+          		if (!jQuery(o).val() || jQuery(o).val() === "") {
+          			filled = false;
+          		}
+          		if (i === (select.length - 1)) {
+          			if (filled) {
+          				row.after(html);
+          			}
+          		}
+          	})
+          });
+        },
         initActionOnTable: function() {
           app.initActionOn(jQuery('#table-assets'));
           app.initActionOn(jQuery('#table-threatx'));

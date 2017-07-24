@@ -28,67 +28,51 @@
 												New User
 											</div>
 										</div>
-										<div class="row content-modal-users">
-											<div class="col-md-4">
-												<input type="text" class="input-modal" placeholder="User Name">
-												<select name="" class="select-modal">
-                                                                    <option value="">Administrator</option>
-                                                                </select>
-												<select name="" class="select-modal">
-                                                                    <option value="">Business Unit Admin</option>
-                                                                    <option value="">Administrator</option>
-                                                                    <option value="">Assessor</option>
-                                                                    <option value="">Viewer</option>
-                                                                </select>
-												<select name="" class="select-modal">
-                                                                    <option value="">Business Unit Admin</option>
-                                                                    <option value="">Administrator</option>
-                                                                    <option value="">Assessor</option>
-                                                                    <option value="">Viewer</option>
-                                                                </select>
+										<div class="content-modal-users">
+											<div class="row">
+												<div class="col-md-4">
+													<input type="text" class="input-modal" placeholder="User Name">
+												</div>
+												<div class="col-md-4">
+													<input type="text" class="input-modal" placeholder="Email">
+												</div>
+												<div class="col-md-4">
+													<input type="text" class="input-modal" placeholder="Password">
+												</div>
 											</div>
-											<div class="col-md-4">
-												<input type="text" class="input-modal" placeholder="Email">
-												<select name="" class="select-modal">
-                                                                    <option value="">Organisations</option>
-                                                                </select>
-												<select name="" class="select-modal">
-                                                                    <option disabled="" selected="" value="">Select Business Unit</option>
-                                                                    <option value="">Organisations</option>
-                                                                    <option value="">Operations</option>
-                                                                    <option value="">Logistics</option>
-                                                                    <option value="">Marketings</option>
-                                                                    <option value="">Sales</option>
-                                                                </select>
-												<select name="" class="select-modal">
-                                                                    <option disabled="" selected="" value="">Select Business Unit</option>
-                                                                    <option value="">Organisations</option>
-                                                                    <option value="">Operations</option>
-                                                                    <option value="">Logistics</option>
-                                                                    <option value="">Marketings</option>
-                                                                    <option value="">Sales</option>
-                                                                </select>
-											</div>
-											<div class="col-md-4">
-												<input type="text" class="input-modal" placeholder="Password">
-												<select name="" class="select-modal">
-                                                                    <option value="">-</option>
-                                                                </select>
-												<select name="" class="select-modal">
-                                                                    <option value="">-</option>
-                                                                </select>
-												<select name="" class="select-modal">
-                                                                    <option disabled="" selected="" value="">Select Assessment</option>
-                                                                    <option value="">Task 1</option>
-                                                                    <option value="">Task 2</option>
-                                                                    <option value="">Task 3</option>
-                                                                    <option value="">Task 4</option>
-                                                                </select>
+											<div class="row">
+												<div class="col-md-4">
+													<select name="" class="select-modal">
+														<option value="" disabled selected>Select Organisation</option>
+														<option value="Administrator">Administrator</option>
+														<option value="Operation">Operation</option>
+														<option value="Sales">Sales</option>
+														<option value="Administrator">Administrator</option>
+													</select>
+												</div>
+												<div class="col-md-4">
+													<select name="" class="select-modal">
+															<option value="" disabled selected>Select Business Unit</option>
+															<option value="Business Unit Admin">Business Unit Admin</option>
+															<option value="Administrator">Administrator</option>
+															<option value="Assessor">Assessor</option>
+															<option value="Viewer">Viewer</option>
+													</select>
+												</div>
+												<div class="col-md-4">
+													<select name="" class="select-modal">
+															<option value="" disabled selected>Select Assessment</option>
+															<option value="Task 1">Task 1</option>
+															<option value="Task 2">Task 2</option>
+															<option value="Task 3">Task 3</option>
+															<option value="Task 4">Task 4</option>
+													</select>
+												</div>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-12 pull-right">
-												<button class="btn btn-primary btn-sm cancel-modal" type="submit">Cancel</button>
+												<button class="btn btn-primary btn-sm cancel-modal" type="submit" data-dismiss="modal">Cancel</button>
 												<button class="btn btn-primary btn-sm save-modal" type="submit">Save</button>
 											</div>
 										</div>
