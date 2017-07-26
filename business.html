@@ -482,7 +482,39 @@
             <i class="fa fa-trash"></i>
         </a>
     </div>
-    <div class="modal fade" id="editBusiness" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;"><div class="modal-dialog" role="document"><div class="modal-content"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><div class="modal-body"><div class="row title-modal-business"><div class="col-md-12">Edit Business</div></div><div class="row content-modal-business"><div class="col-md-12"><input type="text" id="edit-business-name" class="input-modal" placeholder="Business Name"></div><div class="col-md-12"><input type="text" id="edit-organisation-name" class="input-modal" placeholder="Organisation"></div><div class="col-md-12"><select name="" id="edit-business-status" class="select-modal"><option disabled="" selected="" value="">Select Status</option><option value="Active">Active</option><option value="Inactive">Inactive</option></select></div></div><div class="row"><div class="col-md-12 pull-right"><button class="btn btn-primary btn-sm cancel-modal" type="submit">Cancel</button><button id="updateBusiness" class="btn btn-primary btn-sm save-modal" type="submit">Save</button></div></div></div></div></div></div>
+    <div class="modal fade" id="editBusiness" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <div class="modal-body">
+                <div class="row title-modal-business">
+                    <div class="col-md-12">Edit Business</div>
+                </div>
+                <div class="row content-modal-business">
+                    <input type="hidden" name="" id="edit-id">
+                    <div class="col-md-12">
+                      <input type="text" id="edit-business-name" class="input-modal" placeholder="Business Name">
+                    </div>
+                    <div class="col-md-12">
+                      <input type="text" id="edit-organisation-name" class="input-modal" placeholder="Organisation">
+                    </div>
+                    <div class="col-md-12">
+                      <select name="" id="edit-business-status" class="select-modal">
+                        <option disabled="" selected="" value="">Select Status</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pull-right">
+                      <button class="btn btn-primary btn-sm cancel-modal" type="submit">Cancel</button>
+                      <button id="updateBusiness" class="btn btn-primary btn-sm save-modal" type="submit">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </div>
 </div>

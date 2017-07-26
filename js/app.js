@@ -81,11 +81,13 @@
             });
             const [businessName, organisation, status] = rowValue;
             // Init html
+            var idField = jQuery('#edit-id');
             var businessNameField = jQuery('#edit-business-name');
             var organisationField = jQuery('#edit-organisation-name');
             var statusField = jQuery('#edit-business-status');
             console.log({ businessName, organisation, status });
             // Insert new value
+            idField.val(selectedParent.index());
             businessNameField.val(businessName);
             organisationField.val(organisation);
             statusField.val(status);
