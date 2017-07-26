@@ -60,12 +60,37 @@
             app.initAssessmentTextEditor();
             app.initActionOnTable();
             app.autoAddUserForm();
+            app.detectBusinessModalShow();
         },
 
         // ======================================================================
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
+        detectBusinessModalShow: function() {
+          $('#editBusiness').on('shown.bs.modal', function (e) {
+            const selectedParent = jQuery(e.relatedTarget).parents('tr');
+            // get value from rows
+            var rowValue = [];
+            var td = selectedParent.find('td');
+            selectedParent.find('td').each(function(i, o){
+              if (i !== (td.length - 1)) {
+                rowValue.push(jQuery(o).text());
+              }
+
+            });
+            const [businessName, organisation, status] = rowValue;
+            // Init html
+            var businessNameField = jQuery('#edit-business-name');
+            var organisationField = jQuery('#edit-organisation-name');
+            var statusField = jQuery('#edit-business-status');
+            console.log({ businessName, organisation, status });
+            // Insert new value
+            businessNameField.val(businessName);
+            organisationField.val(organisation);
+            statusField.val(status);
+          })
+        },
         autoAddUserForm: function() {
           jQuery(document).on('change', '#newUsers .content-modal-users .row:last-child select', function() {
           	// Check if all select is filled
