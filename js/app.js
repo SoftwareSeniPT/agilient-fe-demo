@@ -87,7 +87,8 @@
           });
         },
         detectBusinessModalShow: function() {
-          $('#editBusiness').on('shown.bs.modal', function (e) {
+          $(document).on('shown.bs.modal', '#editBusiness', function (e) {
+            console.log('show');
             const selectedParent = jQuery(e.relatedTarget).parents('tr');
             // get value from rows
             var rowValue = [];
