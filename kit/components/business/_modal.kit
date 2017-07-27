@@ -7,16 +7,106 @@
                 </div>
                 <div class="row content-modal-business">
                     <div class="col-md-6">
-                      <select name="" id="select-modal" class='new-select'>
-                        <option disabled="" selected="" value="">Select Parent</option>
-                        <option value="">Organisations</option>
-                        <option value="">Operations</option>
-                        <option value="">Logistics</option>
-                        <option value="">Marketings</option>
-                        <option value="">Sales</option>
-                        <option value="">-- BU1</option>
-                        <option value="">-- Test</option>
-                      </select>                        </div>
+                      <div class="select-content">
+                          <button type="button" class="btn btn-default dropdown-toggle form-control mrg_0" aria-expanded="true"> <span data-bind="label" class="select-value">Select Parent</span>&nbsp;<span class="caret"></span> </button>
+                          <input type="hidden" id="new-business-unit-parent" value="0">
+                          <div class="dropdown-menu dropdown-menu-entity">
+                              <div id="" class="treeview selectbox_treeview">
+                                  <ul id="tree_group" class="tree">
+                                      <li><a href="#" data-entity_id="org_id">Root</a></li>
+                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="1" href="#">ABCW Bank</a>
+                                          <ul>
+                                              <li><a data-entity_id="147" href="#">zxcv</a></li>
+                                          </ul>
+                                      </li>
+                                      <li><a data-entity_id="7" href="#">Entity Two</a></li>
+                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="46" href="#">Demo</a>
+                                          <ul>
+                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="102" href="#">BU1</a>
+                                                  <ul>
+                                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="135" href="#">Test</a>
+                                                          <ul>
+                                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="136" href="#">ImadTest</a>
+                                                                  <ul>
+                                                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="148" href="#">testlg</a>
+                                                                          <ul>
+                                                                              <li><a data-entity_id="149" href="#">testtesttest</a></li>
+                                                                          </ul>
+                                                                      </li>
+                                                                  </ul>
+                                                              </li>
+                                                          </ul>
+                                                      </li>
+                                                  </ul>
+                                              </li>
+                                              <li><a data-entity_id="103" href="#">BU2</a></li>
+                                              <li><a data-entity_id="124" href="#">AB org</a></li>
+                                              <li><a data-entity_id="125" href="#">AB_Friday</a></li>
+                                              <li><a data-entity_id="127" href="#">ABEntity</a></li>
+                                          </ul>
+                                      </li>
+                                      <li><a data-entity_id="60" href="#">Trade Mart</a></li>
+                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="75" href="#">Demo1</a>
+                                          <ul>
+                                              <li><a data-entity_id="77" href="#">Demo 1A</a></li>
+                                          </ul>
+                                      </li>
+                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="82" href="#">Aardvark HQ</a>
+                                          <ul>
+                                              <li><a data-entity_id="84" href="#">Echidna BU</a></li>
+                                              <li><a data-entity_id="131" href="#">Leyla BU</a></li>
+                                          </ul>
+                                      </li>
+                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="85" href="#">Digital HTTPsters</a>
+                                          <ul>
+                                              <li><a data-entity_id="86" href="#">Parker BU#1</a></li>
+                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="87" href="#">Parker BU#2</a>
+                                                  <ul>
+                                                      <li><a data-entity_id="89" href="#">Parker BU#2A</a></li>
+                                                      <li><a data-entity_id="90" href="#">Parker BU#2B</a></li>
+                                                  </ul>
+                                              </li>
+                                              <li><a data-entity_id="91" href="#">Parker BU#3</a></li>
+                                          </ul>
+                                      </li>
+                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="95" href="#">Halifax Inc.</a>
+                                          <ul>
+                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="96" href="#">Business Unit North</a>
+                                                  <ul>
+                                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="100" href="#">Sub BU A</a>
+                                                          <ul>
+                                                              <li><a data-entity_id="101" href="#">Sub BU B</a></li>
+                                                          </ul>
+                                                      </li>
+                                                  </ul>
+                                              </li>
+                                              <li><a data-entity_id="97" href="#">Business Unit South</a></li>
+                                              <li><a data-entity_id="98" href="#">Business Unit East</a></li>
+                                              <li><a data-entity_id="99" href="#">Business Unit West</a></li>
+                                          </ul>
+                                      </li>
+                                      <li><a data-entity_id="109" href="#">Troy Park Pty Ltd</a></li>
+                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="138" href="#">satu dua tiga</a>
+                                          <ul>
+                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="139" href="#">BU</a>
+                                                  <ul>
+                                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="142" href="#">zzzz</a>
+                                                          <ul>
+                                                              <li><a data-entity_id="143" href="#">zzzzz</a></li>
+                                                          </ul>
+                                                      </li>
+                                                  </ul>
+                                              </li>
+                                          </ul>
+                                      </li>
+                                      <li><a data-entity_id="141" href="#">Organisasi</a></li>
+                                      <li><a data-entity_id="144" href="#">azzzzzz</a></li>
+                                      <li><a data-entity_id="145" href="#">aku sayang kamu</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
                     <div class="col-md-6"> <input type="text" id="input-modal" placeholder="Type Name">
                         <div class="row">
                             <div class="col-md-6"> <button class="btn btn-primary btn-sm save-modal" type="submit">Save</button> </div>

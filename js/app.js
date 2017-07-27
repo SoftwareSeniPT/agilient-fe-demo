@@ -61,12 +61,31 @@
             app.initActionOnTable();
             app.autoAddUserForm();
             app.detectBusinessModalShow();
+            app.businessPageTreeView();
         },
 
         // ======================================================================
         // Your function here
         // * Don't forget to use proper function name to describes your function
         // ======================================================================
+        businessPageTreeView: function() {
+          jQuery('.mrg_0').click(function(){
+          	if (!jQuery(this).parent().hasClass('show')) {
+          		jQuery(this).parent().addClass('show')
+          	} else {
+          		jQuery(this).parent().removeClass('show')
+          	}
+          })
+          jQuery('#tree_group').treeview();
+          jQuery('#tree_group a').click(function() {
+            var value = jQuery(this).text();
+            console.log(value);
+            // Change hidden input
+            jQuery('#new-business-unit-parent').val(value);
+            jQuery('.mrg_0 .select-value').text(value);
+            jQuery('.select-content').removeClass('show');
+          });
+        },
         detectBusinessModalShow: function() {
           $('#editBusiness').on('shown.bs.modal', function (e) {
             const selectedParent = jQuery(e.relatedTarget).parents('tr');

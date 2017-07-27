@@ -1496,3 +1496,23 @@ table[data-escape] select {
     border-left: 0;
     padding: 0 13px;
 }
+
+.mrg_0 {
+    border: 1px solid #aaaaaa;
+    border-radius: 0;
+    padding: 7px 20px;
+    text-align: left;
+}
+
+.select-content {
+  position: relative;
+}
+
+#tree_group ul {
+  display: none;
+}
+
+.select-content .dropdown-menu {
+    width: 100%;
+        padding: 10px;
+}
