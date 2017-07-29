@@ -41,7 +41,6 @@ var app = {
     // ======================================================================
     loadTable: function() {
       jQuery('.table-general').on('post-body.bs.table', function () {
-        console.log('oke');
           jQuery('.loading').hide();
           jQuery('.table-general, .info').show();
       });
@@ -142,6 +141,11 @@ var app = {
         jQuery('#table-home.table-home tbody tr').each(function(i, o){
           var lastTd = jQuery(this).find('td:last-child');
           var menuLink = jQuery(this).find('.table-menu-link-2');
+
+          if (menuLink.html() !== "") {
+            return false;
+          }
+
           var attrs = {};
           jQuery.each(lastTd[0].attributes, function(i, o) {
             attrs[o.name] = o.value === "" ? true : o.value ;
