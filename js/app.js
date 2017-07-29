@@ -13,6 +13,7 @@ var app = {
         //app.addBlockTable();
         //app.addBlockTableBusiness();
         // app.addBlockTableUsers();
+        app.detectAssetModal();
         app.menuToggle();
         app.select2();
         app.owlSlider();
@@ -286,13 +287,35 @@ var app = {
           var addLink = jQuery(object).data('add-link');
           var hasRemoveLink = typeof removeLink !== typeof undefined && removeLink !== false && removeLink !== "";
           var hasEditLink = typeof editLink !== typeof undefined && editLink !== false && editLink !== "";
+          var editLinkIsModal = editLink && editLink.substr(0, 1) === "#";
+          console.log(editLinkIsModal, 'dd');
           var hasAddLink = typeof addLink !== typeof undefined && addLink !== false && addLink !== "";
           if (hasRemoveLink || hasEditLink || hasAddLink) {
             // Add action html
-            var actions = `<div class="actions">${hasAddLink ? `<a href="${addLink}" class="add-link"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>` : ''} <span>${hasEditLink ? `<a href="${editLink}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>` : ''} ${hasRemoveLink ? `<a href="${removeLink}"><i class="fa fa-trash" aria-hidden="true"></i></a>` : ''}</span></div>`;
+            var actions = `<div class="actions">${hasAddLink ? `<a href="${addLink}" class="add-link"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>` : ''} <span>${hasEditLink ? `<a ${editLinkIsModal ? `data-toggle="modal" data-target="${editLink}"` : ''} href="${editLink}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>` : ''} ${hasRemoveLink ? `<a href="${removeLink}"><i class="fa fa-trash" aria-hidden="true"></i></a>` : ''}</span></div>`;
             jQuery(object).append(actions);
             }
         })
+      })
+    },
+    detectAssetModal: function() {
+      jQuery('#newAssets').on('shown.bs.modal', function (e) {
+        var td = jQuery(e.relatedTarget).parents('td');
+        var isEdit = !!td.attr('data-edit-link');
+        var text = td.text();
+        var category = td.next().text();
+        var criticality = td.next().next().find('select').val();
+
+        // Reset
+        jQuery('#asset-name').val('');
+        jQuery('#category').val('');
+        jQuery('#criticality').val('');
+
+        if (isEdit) {
+          jQuery('#asset-name').val(text);
+          jQuery('#category').val(category);
+          jQuery('#criticality').val(criticality);
+        }
       })
     },
     initTextEditor: function() {
