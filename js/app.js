@@ -136,15 +136,14 @@ var app = {
       app.initActionOn(jQuery('#table-risk'));
     },
     initHomeAction: function() {
-      jQuery(document).on('post-body.bs.table', '#table-home.table-home', function () {
-        console.log('ok');
+      jQuery(document).on('post-body.bs.table', '#table-home.table-home', function (data) {
         jQuery('#table-home.table-home tbody tr').each(function(i, o){
           var lastTd = jQuery(this).find('td:last-child');
           var menuLink = jQuery(this).find('.table-menu-link-2');
 
-          if (menuLink.html() !== "") {
-            return false;
-          }
+          menuLink.html('');
+
+          console.log(lastTd, 'khkh');
 
           var attrs = {};
           jQuery.each(lastTd[0].attributes, function(i, o) {
