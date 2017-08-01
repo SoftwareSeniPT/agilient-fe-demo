@@ -628,7 +628,7 @@ Create control categories and security controls, enter comments and select vulne
           </tr>
       </thead>
       <tbody>
-          <tr>
+          <tr class="parent">
               <td>0</td>
               <td class="rowspan" data-edit-link="#" data-remove-link="#" data-add-link="#">Personel Security</td>
               <td data-edit-link="#" data-remove-link="#" data-add-link="#">Management Support</td>
@@ -684,7 +684,7 @@ Create control categories and security controls, enter comments and select vulne
                 </select>
               </td>
           </tr>
-          <tr>
+          <tr class="parent">
               <td>4</td>
               <td class="rowspan" data-edit-link="#" data-remove-link="#" data-add-link="#">Physical Security</td>
               <td data-edit-link="#" data-remove-link="#" data-add-link="#">Management Support</td>
@@ -748,6 +748,14 @@ Create control categories and security controls, enter comments and select vulne
     <button type="button" class="btn btn-primary">Publish Assessment</button>
     <button type="button" class="btn btn-danger">Delete Assessment</button>
   </div>
+</div>
+
+<div id="dialog-confirm-remove-category" title="Remove category?" style="display:none">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+
+<div id="dialog-confirm-remove-control" title="Remove control?" style="display:none">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
 </div>
       <div class="tab-pane" id="risk" role="tabpanel">
   <p>

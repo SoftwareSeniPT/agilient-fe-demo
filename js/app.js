@@ -17,9 +17,6 @@ var app = {
         app.menuToggle();
         app.select2();
         app.owlSlider();
-        app.addActionAsset();
-        app.addActionThreat();
-        app.addActionControl();
         app.updateRow();
         app.menuToggleEachRow();
         app.refresh();
@@ -34,12 +31,150 @@ var app = {
         app.businessPageTreeView();
         app.initDialog();
         app.actionsHandler();
+        app.controlTable.init();
     },
 
     // ======================================================================
     // Your function here
     // * Don't forget to use proper function name to describes your function
     // ======================================================================
+    controlTable: {
+      init: function() {
+        app.controlTable.addCategory();
+        app.controlTable.removeCategory();
+        app.detectSaveControlTable();
+        app.detectEditControlTable();
+      },
+      addCategoryCallback(value) {
+        console.log(value, 'add');
+      },
+      addControlCallback(value) {
+        console.log(value, 'control');
+      },
+      removeCategoryCallback(value) {
+        console.log(value, 'remove CATEGORY');
+      },
+      removeControlCallback(value) {
+        console.log(value, 'remove control');
+      },
+      addCategory: function() {
+        jQuery(document).on('click', '#table-controls tr .add-link', function(e) {
+          e.preventDefault();
+          var parent = jQuery(this).parents('tr');
+          var lastTR = parent.nextUntil('tr.parent').last();
+          var isParent = jQuery(this).parents('td').index() === 0;
+
+          if (!lastTR.length || !isParent) {
+            lastTR = parent;
+          }
+
+          // Add new TR after last TR
+          jQuery(`<tr class="${isParent ? 'parent parent-edit-mode' : ''} edit-mode">
+                    ${isParent ? '<td class="rowspan" data-edit-link="#" data-remove-link="#" data-add-link="#" rowspan="1">Physical Security</td>' : '<td style="display:none"></td>'}
+                    <td data-edit-link="#" data-remove-link="#" data-add-link="#">Management Support</td>
+                    <td>Lorem Ipsum</td>
+                    <td>
+                      <select class="status-select" name="status">
+                        <option value="Lorem Ipsum" selected>Lorem ipsum</option>
+                        <option value="Dolor Sit">Dolor Sit</option>
+                        <option value="Consectetur">Consectetur</option>
+                        <option value="Quasi Et">Quasi Et</option>
+                      </select>
+                    </td>
+                </tr>`).insertAfter(lastTR);
+
+          // merge row
+          if (!isParent) {
+            var isAdded = jQuery(lastTR).next();
+            var parentWithClass = isAdded.prevAll('.parent').first().find('td').first();
+            var rowspan = parentWithClass.attr('rowspan');
+            parentWithClass.attr('rowspan', parseInt(parentWithClass.attr('rowspan')) + 1);
+          }
+          // Init actions
+          setTimeout(function () {
+            app.initActionOnTr(jQuery(lastTR).next());
+            app.initInputForm(jQuery(lastTR).next());
+          }, 500);
+        });
+      },
+      removeCategory() {
+          // Init dialog for remove category
+          var lastFunc = null;
+
+          jQuery( "#dialog-confirm-remove-category" ).dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            autoOpen : false,
+            buttons: {
+              "Delete item": function() {
+                if (lastFunc) {
+                  lastFunc();
+                }
+                jQuery( this ).dialog( "close" );
+              },
+              Cancel: function() {
+                jQuery( this ).dialog( "close" );
+              }
+            }
+          });
+
+          jQuery( "#dialog-confirm-remove-control" ).dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            autoOpen : false,
+            buttons: {
+              "Delete item": function() {
+                if (lastFunc) {
+                  lastFunc();
+                }
+                jQuery( this ).dialog( "close" );
+              },
+              Cancel: function() {
+                jQuery( this ).dialog( "close" );
+              }
+            }
+          });
+
+          jQuery(document).on('click', '#table-controls tr .remove-link', function(e) {
+            e.preventDefault();
+            var parent = jQuery(this).parents('tr');
+            var parentIndex = parent.index();
+            var parentName = parent.prevAll('.parent').first().find('td').first().text();
+            var realParentIndex = jQuery(this).parents('.parent').index();
+            var lastTR = parent.nextUntil('tr.parent').last();
+            var isParent = jQuery(this).parents('td').index() === 0;
+            var isFirstRow = jQuery(this).parents('tr').hasClass('parent');
+
+            if (!isParent && !isFirstRow) {
+              jQuery( "#dialog-confirm-remove-control" ).dialog( "open" );
+              lastFunc = function() {
+                var parentWithClass = parent.prevAll('.parent').first().find('td').first();
+                var rowspan = parentWithClass.attr('rowspan');
+                parentWithClass.attr('rowspan', parseInt(parentWithClass.attr('rowspan')) - 1);
+                parent.remove();
+                app.controlTable.removeControlCallback({
+                  index: parentIndex
+                })
+              }
+            }
+
+            if (isParent) {
+              jQuery( "#dialog-confirm-remove-category" ).dialog( "open" );
+              lastFunc = function() {
+                app.controlTable.removeCategoryCallback({
+                  index: realParentIndex,
+                })
+                parent.nextUntil('tr.parent').remove();
+                parent.remove();
+              }
+            }
+          })
+      },
+    },
     loadTable: function() {
       jQuery('.table-general').on('post-body.bs.table', function () {
           jQuery('.loading').hide();
@@ -49,6 +184,7 @@ var app = {
     mergeControlTable: function() {
       var table = jQuery('#table-controls');
       table.on('post-body.bs.table', function () {
+        console.log('ssdd');
         setTimeout(function () {
           // get table count
           var count = table.bootstrapTable('getData').length;
@@ -75,7 +211,6 @@ var app = {
       jQuery('#tree_group').treeview();
       jQuery('#tree_group a').click(function() {
         var value = jQuery(this).text();
-        console.log(value);
         // Change hidden input
         jQuery('#new-business-unit-parent').val(value);
         jQuery('.mrg_0 .select-value').text(value);
@@ -84,7 +219,6 @@ var app = {
     },
     detectBusinessModalShow: function() {
       $(document).on('shown.bs.modal', '#editBusiness', function (e) {
-        console.log('show');
         const selectedParent = jQuery(e.relatedTarget).parents('tr');
         // get value from rows
         var rowValue = [];
@@ -101,7 +235,6 @@ var app = {
         var businessNameField = jQuery('#edit-business-name');
         var organisationField = jQuery('#edit-organisation-name');
         var statusField = jQuery('#edit-business-status');
-        console.log({ businessName, organisation, status });
         // Insert new value
         idField.val(selectedParent.index());
         businessNameField.val(businessName);
@@ -131,10 +264,16 @@ var app = {
       });
     },
     initActionOnTable: function() {
-      app.initActionOn(jQuery('#table-assets'));
-      app.initActionOn(jQuery('#table-threatx'));
-      app.initActionOn(jQuery('#table-controls'));
-      app.initActionOn(jQuery('#table-risk'));
+      app.initActionTable(jQuery('#table-assets'));
+      app.initActionTable(jQuery('#table-threatx'));
+      app.initActionTable(jQuery('#table-controls'));
+      app.initActionTable(jQuery('#table-risk'));
+
+      // Init input
+      jQuery('#table-controls tr').each(function(i, o) {
+        app.initInputForm(o);
+      });
+
     },
     initHomeAction: function() {
       jQuery(document).on('post-body.bs.table', '#table-home.table-home', function (data) {
@@ -143,8 +282,6 @@ var app = {
           var menuLink = jQuery(this).find('.table-menu-link-2');
 
           menuLink.html('');
-
-          console.log(lastTd, 'khkh');
 
           var attrs = {};
           jQuery.each(lastTd[0].attributes, function(i, o) {
@@ -279,24 +416,87 @@ var app = {
         }
       });
     },
-    initActionOn: function(table) {
-      table.find('tr').each(function(i, o){
-        jQuery(o).find('td').each(function(index, object){
-          var removeLink = jQuery(object).data('remove-link');
-          var editLink = jQuery(object).data('edit-link');
-          var addLink = jQuery(object).data('add-link');
-          var hasRemoveLink = typeof removeLink !== typeof undefined && removeLink !== false && removeLink !== "";
-          var hasEditLink = typeof editLink !== typeof undefined && editLink !== false && editLink !== "";
-          var editLinkIsModal = editLink && editLink.substr(0, 1) === "#";
-          console.log(editLinkIsModal, 'dd');
-          var hasAddLink = typeof addLink !== typeof undefined && addLink !== false && addLink !== "";
-          if (hasRemoveLink || hasEditLink || hasAddLink) {
-            // Add action html
-            var actions = `<div class="actions">${hasAddLink ? `<a href="${addLink}" class="add-link"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>` : ''} <span>${hasEditLink ? `<a ${editLinkIsModal ? `data-toggle="modal" data-target="${editLink}"` : ''} href="${editLink}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>` : ''} ${hasRemoveLink ? `<a href="${removeLink}"><i class="fa fa-trash" aria-hidden="true"></i></a>` : ''}</span></div>`;
-            jQuery(object).append(actions);
-            }
-        })
+    initInputForm(tr) {
+      lastTD = jQuery(tr).find('td:not(:last)');
+      lastTD.each(function(index, object) {
+        var value = jQuery(object).text();
+        if (value !== "") {
+          jQuery(object).append(`
+            <input type="text" value="${value}" />
+            ${index === 0 || index === 1 ? `
+              <span class="save">Save</span>
+            ` : ""}
+          `)
+        }
+        // Init span
+        $(this.firstChild).wrap('<span></span>');
+      });
+    },
+    detectSaveControlTable: function() {
+      jQuery(document).on('click', '#table-controls .parent-edit-mode td:first-child .save', function(){
+        var parent = jQuery(this).parent();
+        var value = parent.find('input').val();
+        // Update span
+        parent.find('> span:not(.save)').text(value);
+        parent.parent().removeClass('parent-edit-mode');
+        // call callback
+        app.controlTable.addCategoryCallback({ category: value });
       })
+
+      jQuery(document).on('click', '#table-controls .edit-mode td:nth-child(2) .save', function(){
+        // control value
+        var parentSecurity = jQuery(this).parent();
+        var securityValue = parentSecurity.find('input').val();
+        var commentValue = parentSecurity.next().find('input').val();
+        var riskValue = parentSecurity.next().next().find('select').val();
+
+        // Update security
+        parentSecurity.find('> span:not(.save)').text(securityValue);
+        parentSecurity.next().find('> span:not(.save)').text(commentValue);
+        parentSecurity.parent().removeClass('edit-mode');
+
+        // call callback
+        app.controlTable.addControlCallback({
+          securityControl: securityValue,
+          controlComment: commentValue,
+          riskControl: riskValue
+        });
+      })
+    },
+    detectEditControlTable() {
+      jQuery(document).on('click', '#table-controls td:first-child .edit-link', function(e){
+        e.preventDefault();
+        jQuery(this).parents('tr').addClass('parent-edit-mode');
+      });
+
+      jQuery(document).on('click', '#table-controls td:not(:first-child) .edit-link', function(e){
+        e.preventDefault();
+        jQuery(this).parents('tr').addClass('edit-mode');
+      });
+    },
+    initActionTable(table) {
+      table.find('tr').each(function(i, o){
+        app.initActionOn(o);
+      });
+    },
+    initActionOnTr(tr) {
+      app.initActionOn(tr);
+    },
+    initActionOn: function(tr) {
+      jQuery(tr).find('td').each(function(index, object){
+        var removeLink = jQuery(object).data('remove-link');
+        var editLink = jQuery(object).data('edit-link');
+        var addLink = jQuery(object).data('add-link');
+        var hasRemoveLink = typeof removeLink !== typeof undefined && removeLink !== false && removeLink !== "";
+        var hasEditLink = typeof editLink !== typeof undefined && editLink !== false && editLink !== "";
+        var editLinkIsModal = editLink && editLink !== "#" && editLink.substr(0, 1) === "#";
+        var hasAddLink = typeof addLink !== typeof undefined && addLink !== false && addLink !== "";
+        if (hasRemoveLink || hasEditLink || hasAddLink) {
+          // Add action html
+          var actions = `<div class="actions">${hasAddLink ? `<a href="${addLink}" class="add-link"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>` : ''} <span>${hasEditLink ? `<a ${editLinkIsModal ? `data-toggle="modal" data-target="${editLink}"` : ''} class="edit-link" href="${editLink}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>` : ''} ${hasRemoveLink ? `<a href="${removeLink}" class="remove-link"><i class="fa fa-trash" aria-hidden="true"></i></a>` : ''}</span></div>`;
+          jQuery(object).append(actions);
+          }
+      });
     },
     detectAssetModal: function() {
       jQuery('#newAssets').on('shown.bs.modal', function (e) {
@@ -340,7 +540,6 @@ var app = {
             return false;
           }
 
-          console.log('complete');
           // Init tinymce
           setTimeout(function () {
             tinymce.init({
@@ -443,7 +642,6 @@ var app = {
         } else {
           if (record && app[`${section}Filter`].indexOf(value) === -1) {
             app[`${section}Filter`] = [].concat(app[`${section}Filter`], value);
-            console.log(app[`${section}Filter`], field, `${section}Filter`);
             // Add to filter div
             jQuery('.filter-field .tags').append(`<div>${value} <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></div>`);
           }
@@ -536,180 +734,6 @@ var app = {
         if (jQuery(window).width() <= 992) {
             jQuery('.menu-toggle').appendTo('header');
         }
-    },
-    addActionAsset: function() {
-        jQuery('#table-asset td:first-child').append(
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)">' +
-            '<i class="icon-trash"></i>' +
-            '</a>' +
-            '</span>' +
-
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)" data-toggle="modal" data-target="#editAsset">' +
-            '<i class="icon-edit"></i>' +
-            '</a>' +
-
-            '<div class="modal fade" id="editAsset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog modal-sm" role="document">' +
-            '<div class="modal-content">' +
-            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-            '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
-            '<div class="modal-body">' +
-            '<input type="text" id="input-asset" class="modal-input-edit" placeholder="ketik kene">' +
-            '<button id="updateAsset" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</span>'
-        );
-
-        jQuery('#table-asset td:nth-child(3)').append(
-
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)" data-toggle="modal" data-target="#editAssetCriticality">' +
-            '<i class="icon-edit"></i>' +
-            '</a>' +
-
-            '<div class="modal fade" id="editAssetCriticality" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog modal-sm" role="document">' +
-            '<div class="modal-content">' +
-            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-            '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
-            '<div class="modal-body">' +
-            '<select name="" id="select-assetCriticality" class="modal-select-edit">' +
-            '<option value="Vital">Vital</option>' +
-            '<option value="High">High</option>' +
-            '<option value="Low">Low</option>' +
-            '<option value="Significant">Significant</option>' +
-            '<option value="Very Low">Very Low</option>' +
-            '</select>' +
-
-            '<button id="updateAssetCriticality" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</span>'
-        );
-    },
-    addActionThreat: function() {
-        jQuery('#table-threat td:first-child').append(
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)">' +
-            '<i class="icon-trash"></i>' +
-            '</a>' +
-            '</span>' +
-
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)" data-toggle="modal" data-target="#editThreatActors">' +
-            '<i class="icon-edit"></i>' +
-            '</a>' +
-
-            '<div class="modal fade" id="editThreatActors" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog modal-sm" role="document">' +
-            '<div class="modal-content">' +
-            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-            '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
-            '<div class="modal-body">' +
-            '<input type="text" id="input-threatActors" class="modal-input-edit" placeholder="ketik kene">' +
-            '<button id="updateThreatActors" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-
-            '</span>'
-        );
-
-        jQuery('#table-threat td:nth-child(2)').append(
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)">' +
-            '<i class="icon-trash"></i>' +
-            '</a>' +
-            '</span>' +
-
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)" data-toggle="modal" data-target="#editThreatActs">' +
-            '<i class="icon-edit"></i>' +
-            '</a>' +
-
-            '<div class="modal fade" id="editThreatActs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog modal-sm" role="document">' +
-            '<div class="modal-content">' +
-            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-            '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
-            '<div class="modal-body">' +
-            '<input type="text" id="input-threatActs" class="modal-input-edit" placeholder="ketik kene">' +
-            '<button id="updateThreatActs" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-
-            '</span>'
-        );
-    },
-    addActionControl: function() {
-        jQuery('#table-control td:first-child').append(
-            '</span>' +
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)">' +
-            '<i class="icon-trash"></i>' +
-            '</a>' +
-            '</span>' +
-
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)" data-toggle="modal" data-target="#editControlCategory">' +
-            '<i class="icon-edit"></i>' +
-            '</a>' +
-
-            '<div class="modal fade" id="editControlCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog modal-sm" role="document">' +
-            '<div class="modal-content">' +
-            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-            '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
-            '<div class="modal-body">' +
-            '<input type="text" id="input-controlCategory" class="modal-input-edit" placeholder="ketik kene">' +
-            '<button id="updateControlCategory" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>'
-        );
-        jQuery('#table-control td:nth-child(2)').append(
-            '</span>' +
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)">' +
-            '<i class="icon-trash"></i>' +
-            '</a>' +
-            '</span>' +
-
-            '<span class="action-cell">' +
-            '<a href="javascript:void(0)" data-toggle="modal" data-target="#editControlSecurity">' +
-            '<i class="icon-edit"></i>' +
-            '</a>' +
-
-            '<div class="modal fade" id="editControlSecurity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog modal-sm" role="document">' +
-            '<div class="modal-content">' +
-            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-            '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
-            '<div class="modal-body">' +
-            '<input type="text" id="input-controlSecurity" class="modal-input-edit" placeholder="ketik kene">' +
-            '<button id="updateControlSecurity" class="btn btn-primary btn-sm save-modal" data-dismiss="modal" type="submit">Save</button>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>'
-        );
     },
     updateRow: function() {
         $('#table-asset').on('click', '.icon-edit', function() {
@@ -955,12 +979,12 @@ var app = {
 
 
 app.loadTable();
+app.mergeControlTable();
 (function(e) {
     e(window.jQuery, window, document);
 })(function($, window, document) {
     // This code will initialize your whole function in this JS file
     $(function() {
-        app.mergeControlTable();
         app.initHomeAction();
         app.init($);
     });
