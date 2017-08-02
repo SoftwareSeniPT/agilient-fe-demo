@@ -20,8 +20,8 @@
 							<div class="modal-dialog modal-lg" role="document">
 								<div class="modal-content">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">×</span>
-                                                    </button>
+                      <span aria-hidden="true">×</span>
+                  </button>
 									<div class="modal-body">
 										<div class="row title-modal-users">
 											<div class="col-md-12">
@@ -30,6 +30,9 @@
 										</div>
 										<div class="content-modal-users">
 											<div class="row">
+												<div class="col-md-12">
+													<input type="checkbox" name="" id="is-admin" value="true"> Is Admin
+												</div>
 												<div class="col-md-4">
 													<input type="text" class="input-modal" placeholder="User Name">
 												</div>
@@ -40,32 +43,116 @@
 													<input type="text" class="input-modal" placeholder="Password">
 												</div>
 											</div>
-											<div class="row">
+											<div class="row admin-view"style="display:none">
 												<div class="col-md-4">
-													<select name="" class="select-modal">
-														<option value="" disabled selected>Select Organisation</option>
-														<option value="Administrator">Administrator</option>
-														<option value="Operation">Operation</option>
-														<option value="Sales">Sales</option>
-														<option value="Administrator">Administrator</option>
+													<div class="select-content">
+		                          <button type="button" class="btn btn-default dropdown-toggle form-control mrg_0" aria-expanded="true"> <span data-bind="label" class="select-value">Select Parent</span>&nbsp;<span class="caret"></span> </button>
+		                          <input type="hidden" id="new-business-unit-parent" value="0">
+		                          <div class="dropdown-menu dropdown-menu-entity">
+		                              <div id="" class="treeview selectbox_treeview">
+		                                  <ul id="tree_group" class="tree">
+		                                      <li><a href="#" data-entity_id="org_id">Root</a></li>
+		                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="1" href="#">ABCW Bank</a>
+		                                          <ul>
+		                                              <li><a data-entity_id="147" href="#">zxcv</a></li>
+		                                          </ul>
+		                                      </li>
+		                                      <li><a data-entity_id="7" href="#">Entity Two</a></li>
+		                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="46" href="#">Demo</a>
+		                                          <ul>
+		                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="102" href="#">BU1</a>
+		                                                  <ul>
+		                                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="135" href="#">Test</a>
+		                                                          <ul>
+		                                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="136" href="#">ImadTest</a>
+		                                                                  <ul>
+		                                                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="148" href="#">testlg</a>
+		                                                                          <ul>
+		                                                                              <li><a data-entity_id="149" href="#">testtesttest</a></li>
+		                                                                          </ul>
+		                                                                      </li>
+		                                                                  </ul>
+		                                                              </li>
+		                                                          </ul>
+		                                                      </li>
+		                                                  </ul>
+		                                              </li>
+		                                              <li><a data-entity_id="103" href="#">BU2</a></li>
+		                                              <li><a data-entity_id="124" href="#">AB org</a></li>
+		                                              <li><a data-entity_id="125" href="#">AB_Friday</a></li>
+		                                              <li><a data-entity_id="127" href="#">ABEntity</a></li>
+		                                          </ul>
+		                                      </li>
+		                                      <li><a data-entity_id="60" href="#">Trade Mart</a></li>
+		                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="75" href="#">Demo1</a>
+		                                          <ul>
+		                                              <li><a data-entity_id="77" href="#">Demo 1A</a></li>
+		                                          </ul>
+		                                      </li>
+		                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="82" href="#">Aardvark HQ</a>
+		                                          <ul>
+		                                              <li><a data-entity_id="84" href="#">Echidna BU</a></li>
+		                                              <li><a data-entity_id="131" href="#">Leyla BU</a></li>
+		                                          </ul>
+		                                      </li>
+		                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="85" href="#">Digital HTTPsters</a>
+		                                          <ul>
+		                                              <li><a data-entity_id="86" href="#">Parker BU#1</a></li>
+		                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="87" href="#">Parker BU#2</a>
+		                                                  <ul>
+		                                                      <li><a data-entity_id="89" href="#">Parker BU#2A</a></li>
+		                                                      <li><a data-entity_id="90" href="#">Parker BU#2B</a></li>
+		                                                  </ul>
+		                                              </li>
+		                                              <li><a data-entity_id="91" href="#">Parker BU#3</a></li>
+		                                          </ul>
+		                                      </li>
+		                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="95" href="#">Halifax Inc.</a>
+		                                          <ul>
+		                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="96" href="#">Business Unit North</a>
+		                                                  <ul>
+		                                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="100" href="#">Sub BU A</a>
+		                                                          <ul>
+		                                                              <li><a data-entity_id="101" href="#">Sub BU B</a></li>
+		                                                          </ul>
+		                                                      </li>
+		                                                  </ul>
+		                                              </li>
+		                                              <li><a data-entity_id="97" href="#">Business Unit South</a></li>
+		                                              <li><a data-entity_id="98" href="#">Business Unit East</a></li>
+		                                              <li><a data-entity_id="99" href="#">Business Unit West</a></li>
+		                                          </ul>
+		                                      </li>
+		                                      <li><a data-entity_id="109" href="#">Troy Park Pty Ltd</a></li>
+		                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="138" href="#">satu dua tiga</a>
+		                                          <ul>
+		                                              <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="139" href="#">BU</a>
+		                                                  <ul>
+		                                                      <li class="branch"><i class="indicator glyphicon glyphicon-chevron-down"></i><a data-entity_id="142" href="#">zzzz</a>
+		                                                          <ul>
+		                                                              <li><a data-entity_id="143" href="#">zzzzz</a></li>
+		                                                          </ul>
+		                                                      </li>
+		                                                  </ul>
+		                                              </li>
+		                                          </ul>
+		                                      </li>
+		                                      <li><a data-entity_id="141" href="#">Organisasi</a></li>
+		                                      <li><a data-entity_id="144" href="#">azzzzzz</a></li>
+		                                      <li><a data-entity_id="145" href="#">aku sayang kamu</a></li>
+		                                  </ul>
+		                              </div>
+		                          </div>
+		                      </div>
+												</div>
+												<div class="col-md-4">
+													<select name="" class="select-modal select-assessment">
+															<option value="" disabled selected></option>
 													</select>
 												</div>
 												<div class="col-md-4">
 													<select name="" class="select-modal">
-															<option value="" disabled selected>Select Business Unit</option>
-															<option value="Business Unit Admin">Business Unit Admin</option>
-															<option value="Administrator">Administrator</option>
-															<option value="Assessor">Assessor</option>
-															<option value="Viewer">Viewer</option>
-													</select>
-												</div>
-												<div class="col-md-4">
-													<select name="" class="select-modal">
-															<option value="" disabled selected>Select Assessment</option>
-															<option value="Task 1">Task 1</option>
-															<option value="Task 2">Task 2</option>
-															<option value="Task 3">Task 3</option>
-															<option value="Task 4">Task 4</option>
+															<option value="" disabled selected></option>
 													</select>
 												</div>
 											</div>

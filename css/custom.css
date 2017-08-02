@@ -1288,4 +1288,7 @@ div#editHome .content-modal-home {
 .create-button:hover {
   background: #162433 !important; }
 
+.content-modal-users {
+  text-align: left; }
+
 /*# sourceMappingURL=custom.css.map */

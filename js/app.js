@@ -32,12 +32,87 @@ var app = {
         app.initDialog();
         app.actionsHandler();
         app.controlTable.init();
+        app.userModal();
+        app.initSelectValueAddUser();
     },
 
     // ======================================================================
     // Your function here
     // * Don't forget to use proper function name to describes your function
     // ======================================================================
+    initSelectValueAddUser: function() {
+      jQuery(document).on('click', '#tree_group a', function() {
+        function initAssessment(parent, value) {
+          var assessmentData = {
+            abcwBank: [
+              "PK Test Assessment",
+              "Cyber Security SRA",
+              "Sample SRA",
+              "AB Assess1"
+            ],
+            tradeMart: [
+              "AB Assess2",
+              "AB_AssessFri",
+              "Operations2",
+              "Sunday",
+            ],
+            entityTwo: [
+              "Digital HTTPsters",
+              "Echidna BU",
+              "Aardvark HQ",
+              "Trade Mart",
+            ],
+            else: [
+              "AB_AssessFri",
+              "Sample SRA",
+              "Digital HTTPsters",
+            ]
+          };
+          var data = assessmentData[value] || assessmentData.else;
+          data = [].concat(`null`, data);
+          var HTML = data.map(function(o, i) {
+            if (o === 'null') {
+              return `<option value="null" selected>Select assessment</option>`
+            }
+            return `<option value="${o}">${o}</option>`
+          }).join("\r\n");
+          parent.next().find('select').html(HTML);
+        }
+        var value = jQuery(this).text();
+        // Dummy conditional
+        if (value === "ABCW Bank") {
+          initAssessment(jQuery(this).parents('.col-md-4'), 'abcwBank');
+        } else if (value === "Trade Mart") {
+          initAssessment(jQuery(this).parents('.col-md-4'), 'tradeMart');
+        } else if (value === "Entity Two") {
+          initAssessment(jQuery(this).parents('.col-md-4'), 'entityTwo');
+        } else {
+          initAssessment(jQuery(this).parents('.col-md-4'), 'else');
+        }
+      });
+
+      // Select assessment
+      jQuery(document).on('change', '.select-assessment', function(e) {
+        if (e.target.value !== "null" && e.target.value !== "") {
+          jQuery(this).parents('.col-md-4').next().find('select').html(`
+            <option value="Accessor Viewer">Accessor Viewer</option>
+          `)
+        } else {
+          jQuery(this).parents('.col-md-4').next().find('select').html(`
+            <option value="">Admin BU</option>
+          `)
+        }
+      });
+    },
+    userModal: function() {
+      jQuery('#is-admin').on('change', function(e){
+        if (jQuery(this).is(":checked")) {
+          jQuery('.admin-view').show();
+        } else {
+          jQuery('.admin-view').hide();
+        }
+      });
+    },
     controlTable: {
       init: function() {
         app.controlTable.addCategory();
@@ -201,7 +276,7 @@ var app = {
       });
     },
     businessPageTreeView: function() {
-      jQuery('.mrg_0').click(function(){
+      jQuery(document).on('click', '.mrg_0', function(){
         if (!jQuery(this).parent().hasClass('show')) {
           jQuery(this).parent().addClass('show')
         } else {
@@ -209,12 +284,12 @@ var app = {
         }
       })
       jQuery('#tree_group').treeview();
-      jQuery('#tree_group a').click(function() {
+      jQuery(document).on('click', '#tree_group a', function() {
         var value = jQuery(this).text();
         // Change hidden input
-        jQuery('#new-business-unit-parent').val(value);
-        jQuery('.mrg_0 .select-value').text(value);
-        jQuery('.select-content').removeClass('show');
+        jQuery(this).parents('.select-content').find('input[type=hidden]').val(value);
+        jQuery(this).parents('.select-content').find('.mrg_0 .select-value').text(value);
+        jQuery(this).parents('.select-content').removeClass('show');
       });
     },
     detectBusinessModalShow: function() {
@@ -243,13 +318,13 @@ var app = {
       })
     },
     autoAddUserForm: function() {
-      jQuery(document).on('change', '#newUsers .content-modal-users .row:last-child select', function() {
+      jQuery(document).on('change', '#newUsers .content-modal-users .row:last-child select, #newUsers .content-modal-users .row:last-child input', function() {
         // Check if all select is filled
         // Get all select
         var filled = true;
         var that = this;
         var row = jQuery(this).parents('.content-modal-users').find('.row:last-child');
-        var select = row.find('select');
+        var select = row.find('select, input');
         var html = row[0].outerHTML;
           select.each(function(i, o) {
           if (!jQuery(o).val() || jQuery(o).val() === "") {
