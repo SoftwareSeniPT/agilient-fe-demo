@@ -1,0 +1,119 @@
+<div class="modal fade" id="myModalThreat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	           	<span aria-hidden="true">&times;</span>
+	        </button>
+
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+					<div class="col-md-2">
+						<div class="btn-group">
+						  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Test TM 1 3x3 <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						  </ul>
+						</div>
+					</div>
+					<div class="col-md-10">
+						<h2 class="text-center">Threat Assessment Criteria</h2>
+					</div>
+					</div>
+				</div>
+				<p>Select or create threat matrix ratings and criteria in the tables below. </p>
+				<div id="modal_asset-content">
+					<div class="container-fluid">
+						<div class="row">
+							<div id="tableThreat1">
+								<table class="threat_table wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
+								    <thead>
+								      <tr>
+								        <th class="col-md-2 pad_top38">Capability</th>
+								        <th class="col-md-10"> 
+								        <table class="threat_table right" width="100%" cellspacing="0" cellpadding="0" border="1">
+								            <thead>
+								              <tr>
+								                <th class="col-md-3"></th>
+								                <th class="col-md-3">Ambivalent</th>
+								                <th class="col-md-3">Contemplative</th>
+								                <th class="col-md-3">Dedicated</th>
+								              </tr>
+								            </thead>
+								            <tbody>
+							            	  <tr>
+												<td class="col-md-3">Extensive</td>
+												<td class="col-md-3">Medium</td>
+												<td class="col-md-3">Extreme</td>
+												<td class="col-md-3">Extreme</td>
+							            	  </tr>
+							            	  <tr>
+												<td class="col-md-3">Moderate</td>
+												<td class="col-md-3">Low</td>
+												<td class="col-md-3">Medium</td>
+												<td class="col-md-3">Extreme</td>
+							            	  </tr>
+							            	  <tr>
+												<td class="col-md-3">Nil</td>
+												<td class="col-md-3">Low</td>
+												<td class="col-md-3">Low</td>
+												<td class="col-md-3">Medium</td>
+							            	  </tr>
+								            </tbody>
+								        </table>
+								        </th>
+								      </tr>
+								    </thead>
+								</table>
+							</div>
+						</div>
+					</div>
+					<p>Select a higher tolerance rating if you don’t want lower level threats and threat acts to appear in the Security Risk Register. If you want to assess all threats and threat acts however (i.e. even the really low level ones), set the threat tolerance to the lowest level.</p>
+					<div class="container-fluid">
+						<div class="row">
+							<div id="tableThreat2">
+								<table class="threat_table wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
+								    <thead>
+								      <tr>
+								        <th class="col-md-2 pad_top38">Threat Tolerance</th>
+								        <th class="col-md-10"> 
+								        <table class="threat_table right" width="100%" cellspacing="0" cellpadding="0" border="1">
+								            <tbody>
+							            	  <tr>
+												<td class="col-md-3"></td>
+												<td class="col-md-3">Extreme</td>
+												<td class="col-md-3">Must be considered in risk assessment.</td>
+							            	  </tr>
+							            	  <tr>
+												<td class="col-md-3"></td>
+												<td class="col-md-3">Medium</td>
+												<td class="col-md-3">Consider including in risk assessment if threat act warrants.</td>
+							            	  </tr>
+							            	  <tr>
+												<td class="col-md-3"></td>
+												<td class="col-md-3">Low</td>
+												<td class="col-md-3">Monitor changes to threat level.</td>
+							            	  </tr>
+								            </tbody>
+								        </table>
+								        </th>
+								      </tr>
+								    </thead>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="btn_outer">
+						<button type="button" class="btn btn-success">Save as New Criteria</button>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
