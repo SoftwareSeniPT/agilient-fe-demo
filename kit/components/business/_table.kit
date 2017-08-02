@@ -43,13 +43,13 @@
         <div class="filter-field">
           <div class="tags">
           </div>
-          <button type="button" class="btn btn-primary btn-sm">Clear Filter</button>
+          <a href="#" class="clear-filter">Clear Filter</a>
         </div>
         <div class="loading">
           <img src="./img/loading.svg" alt="">
         </div>
     </div>
-    <table id="table-home" class="table-general table-business" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true" data-pagination="true" data-page-size="20" data-page-list="[10, 20, 30, 40]">
+    <table id="table-home" class="table-general table-business" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true" data-pagination="true" data-page-size="20" data-page-list="[10, 20, 30, 40]" data-escape="false">
         <thead>
             <tr>
                 <th data-field="id" id="id_header" data-visible="false"></th>
@@ -62,21 +62,105 @@
         <tbody>
             <tr data-type="BusinessUnit" data-status="Active">
                 <td>0</td>
-                <td>Sales</td>
+                <td>
+                  <div>
+                    <i class="fa fa-caret-right" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
+                    <a href="#">Entity Two</a>
+                  </div>
+                  <ul class="sub-bu collapse" id="sub-bu-1">
+                    <li>
+                      <a href="#">Internal Testing</a>
+                    </li>
+                    <li>
+                      <a href="#">PK Test Assessment</a>
+                    </li>
+                    <li>
+                      <a href="#">Cyber Security SRA</a>
+                    </li>
+                    <li class="has-sub-bu">
+                      <i class="fa fa-folder" aria-hidden="true" data-toggle="collapse" href="#sub-bu-children-1" aria-expanded="false" aria-controls="sub-bu-children-1"></i>
+                      <a href="#">Cyber Security SRA</a>
+                      <ul class="sub-bu collapse" id="sub-bu-children-1">
+                        <li>
+                          <a href="#">Internal Testing</a>
+                        </li>
+                        <li>
+                          <a href="#">PK Test Assessment</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
             <tr data-type="BusinessUnit" data-status="Active">
                 <td>1</td>
-                <td>Operations</td>
+                <td>
+                  <div>
+                    <i class="fa fa-caret-right" aria-hidden="true" data-toggle="collapse" href="#sub-bu-2" aria-expanded="false" aria-controls="sub-bu-2"></i>
+                    <a href="#">Operations</a>
+                  </div>
+                  <ul class="sub-bu collapse" id="sub-bu-2">
+                    <li>
+                      <a href="#">Internal Testing</a>
+                    </li>
+                    <li>
+                      <a href="#">PK Test Assessment</a>
+                    </li>
+                    <li>
+                      <a href="#">Cyber Security SRA</a>
+                    </li>
+                    <li class="has-sub-bu">
+                      <i class="fa fa-folder" aria-hidden="true" data-toggle="collapse" href="#sub-bu-children-2" aria-expanded="false" aria-controls="sub-bu-children-2"></i>
+                      <a href="#">Cyber Security SRA</a>
+                      <ul class="sub-bu collapse" id="sub-bu-children-2">
+                        <li>
+                          <a href="#">Internal Testing</a>
+                        </li>
+                        <li>
+                          <a href="#">PK Test Assessment</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
             <tr data-type="User" data-status="Active">
                 <td>2</td>
-                <td>Technology</td>
+                <td>
+                  <div>
+                    <i class="fa fa-caret-right" aria-hidden="true" data-toggle="collapse" href="#sub-bu-3" aria-expanded="false" aria-controls="sub-bu-3"></i>
+                    <a href="#">Technology</a>
+                  </div>
+                  <ul class="sub-bu collapse" id="sub-bu-3">
+                    <li>
+                      <a href="#">Internal Testing</a>
+                    </li>
+                    <li>
+                      <a href="#">PK Test Assessment</a>
+                    </li>
+                    <li>
+                      <a href="#">Cyber Security SRA</a>
+                    </li>
+                    <li class="has-sub-bu">
+                      <i class="fa fa-folder" aria-hidden="true" data-toggle="collapse" href="#sub-bu-children-3" aria-expanded="false" aria-controls="sub-bu-children-3"></i>
+                      <a href="#">Cyber Security SRA</a>
+                      <ul class="sub-bu collapse" id="sub-bu-children-3">
+                        <li>
+                          <a href="#">Internal Testing</a>
+                        </li>
+                        <li>
+                          <a href="#">PK Test Assessment</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>

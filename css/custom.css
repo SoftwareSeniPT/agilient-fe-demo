@@ -1253,4 +1253,39 @@ div#editHome .content-modal-home {
 #table-controls .parent-edit-mode td:first-child, #table-controls .edit-mode td:nth-child(2) {
   padding-left: 60px; }
 
+.sub-bu {
+  list-style: none;
+  padding-left: 20px; }
+
+.table-business a {
+  color: #333; }
+
+.table-business td i[data-toggle="collapse"] {
+  cursor: pointer;
+  margin-right: 5px; }
+
+.sub-bu li:before {
+  content: "\f002";
+  font: normal normal normal 14px/1 FontAwesome;
+  margin-right: 6px; }
+
+.sub-bu li.has-sub-bu:before {
+  display: none; }
+
+.sub-bu li {
+  margin: 6px 0; }
+
+.table-business th[data-field=name] {
+  width: 50%; }
+
+.clear-filter {
+  float: right;
+  text-decoration: underline; }
+
+.create-button {
+  background: #274f7c !important; }
+
+.create-button:hover {
+  background: #162433 !important; }
+
 /*# sourceMappingURL=custom.css.map */
