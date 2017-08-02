@@ -95,7 +95,8 @@ var app = {
       jQuery(document).on('change', '.select-assessment', function(e) {
         if (e.target.value !== "null" && e.target.value !== "") {
           jQuery(this).parents('.col-md-4').next().find('select').html(`
-            <option value="Accessor Viewer">Accessor Viewer</option>
+            <option value="Accessor">Accessor</option>
+            <option value="Viewer">Viewer</option>
           `)
         } else {
           jQuery(this).parents('.col-md-4').next().find('select').html(`
@@ -107,9 +108,9 @@ var app = {
     userModal: function() {
       jQuery('#is-admin').on('change', function(e){
         if (jQuery(this).is(":checked")) {
-          jQuery('.admin-view').show();
-        } else {
           jQuery('.admin-view').hide();
+        } else {
+          jQuery('.admin-view').show();
         }
       });
     },
