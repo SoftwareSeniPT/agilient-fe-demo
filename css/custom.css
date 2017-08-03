@@ -1291,6 +1291,7 @@ div#editHome .content-modal-home {
 .content-modal-users {
   text-align: left; }
 
+<<<<<<< HEAD
 .select-risk {
   padding-left: 24px;
   position: relative; }
@@ -1357,5 +1358,55 @@ table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {
 
 .select-risk .delete {
   cursor: pointer; }
+=======
+.modal-body h2 {
+  font-size: 20px; }
+
+.modal-body p {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 5px; }
+
+#modal_asset_table th {
+  background: #F4F4F4;
+  text-align: center; }
+
+.body_asset_table .very-high {
+  background: #D31429; }
+
+.body_asset_table .high {
+  background: #FF8836; }
+
+.body_asset_table .vital {
+  background: #D31429; }
+
+.body_asset_table .significant, .body_asset_table .moderate {
+  background: #FEDF3A; }
+  .body_asset_table .significant div, .body_asset_table .moderate div {
+    color: #333; }
+
+.body_asset_table .low {
+  background: #008000; }
+
+.body_asset_table .very-low {
+  background: #359FD8; }
+
+.criticality-rating {
+  text-align: center;
+  color: #fff; }
+
+.btn_outer button {
+  display: block;
+  margin: 20px auto 0px; }
+
+#tableThreat1, #tableThreat2 {
+  width: 100%; }
+
+.threat_table.right th {
+  text-align: center; }
+
+.threat_table.right td {
+  text-align: center; }
+>>>>>>> 194cd2e3806ea5d64e62def5cfde5fb8ab8cd57b
 
 /*# sourceMappingURL=custom.css.map */

@@ -135,7 +135,7 @@
 					<div class="card-block">
 						<div class="row">
 							<div class="col-md-3">
-								<a href="#" data-toggle="modal" data-target="#myModal" class="card card-icon">
+								<a href="#" data-toggle="modal" data-target="#myModalAssets" class="card card-icon">
 									<div class="row">
 										<div class="col-md-12 text-center">
 											<div class="card-block">
@@ -149,24 +149,138 @@
 								</a>
 
 								<!-- Modal -->
-								<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-									<div class="modal-dialog" role="document">
-										<div class="modal-content">
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
+								<div class="modal fade" id="myModalAssets" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	           	<span aria-hidden="true">&times;</span>
+	        </button>
 
-											<div class="modal-body">
-												...
-											</div>
-
-										</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+					<div class="col-md-2">
+						<div class="btn-group">
+						  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Default <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						  </ul>
+						</div>
+					</div>
+					<div class="col-md-10">
+						<h2 class="text-center">Asset Criticality Assessment Criteria</h2>
+					</div>
+					</div>
+				</div>
+				<p>Select or create asset criticality ratings and criteria in the table below. This information will be used to identify which assets are most critical within the scope of the assessment.</p>
+				<div id="modal_asset-content">
+					<table id="modal_asset_table" class="master_table col-md-12" cellspacing="15" cellpadding="15" border="1">
+						<thead class="head_asset_table">
+							<tr class="col-md-12">
+								<th class="col-md-2">Criticality Rating</th>
+								<th class="col-md-10">Criteria</th>
+							</tr>
+						</thead>
+						<tbody class="body_asset_table">
+							<tr class="col-md-12">
+								<td class="col-md-2 high">
+									<div class="criticality-rating">HIGH</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom-bullet">•</span>
+										If services and/or facilities are disrupted, major restrictions to core business practices will result. <br>
+										<span class="custom_bullet">•</span>
+										Service/facility will require extensive assistance from State or Federal agency resources.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will have a significant impact on the economic and social well-being of the community.
 									</div>
-								</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 vital">
+									<div class="criticality-rating">VITAL</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Alternative services and/or facilities cannot be provided by State or Federal agencies.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will result in abandonment or long-term cessation of the functions or core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will have a severe impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 significant">
+									<div class="criticality-rating">SIGNIFICANT</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Services and/or facilities will be available, but with some restrictions to core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Reduced responsiveness and/or capacity compared to normal operations.<br>
+										<span class="custom_bullet">•</span>
+										Maintaining a level of service may require assistance from State agencies from other jurisdictions.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will result in medium term disruption of the functions or core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Minimal impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 low">
+									<div class="criticality-rating">LOW</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Normal services and/or facilities can be provided by State or Federal resources located within the region.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will have very limited effect on the functions or core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise of functionality will have no impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 very-low">
+									<div class="criticality-rating">VERY LOW</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Normal services and/or facilities can be provided by resources located within the region.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will have no effect on the functions or core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise of functionality will have no impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn_outer">
+						<button type="button" class="btn btn-success">Save as New Criteria</button>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
 
 							</div>
 							<div class="col-md-3">
-								<a href="#" class="card card-icon">
+								<a href="#" data-toggle="modal" data-target="#myModalThreat" class="card card-icon">
 									<div class="row">
 										<div class="col-md-12 text-center">
 											<div class="card-block">
@@ -178,10 +292,131 @@
 										</div>
 									</div>
 								</a>
+
+								<!-- Modal -->
+								<div class="modal fade" id="myModalThreat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	           	<span aria-hidden="true">&times;</span>
+	        </button>
+
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+					<div class="col-md-2">
+						<div class="btn-group">
+						  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Test TM 1 3x3 <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						  </ul>
+						</div>
+					</div>
+					<div class="col-md-10">
+						<h2 class="text-center">Threat Assessment Criteria</h2>
+					</div>
+					</div>
+				</div>
+				<p>Select or create threat matrix ratings and criteria in the tables below. </p>
+				<div id="modal_asset-content">
+					<div class="container-fluid">
+						<div class="row">
+							<div id="tableThreat1">
+								<table class="threat_table wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
+								    <thead>
+								      <tr>
+								        <th class="col-md-2 pad_top38">Capability</th>
+								        <th class="col-md-10"> 
+								        <table class="threat_table right" width="100%" cellspacing="0" cellpadding="0" border="1">
+								            <thead>
+								              <tr>
+								                <th class="col-md-3"></th>
+								                <th class="col-md-3">Ambivalent</th>
+								                <th class="col-md-3">Contemplative</th>
+								                <th class="col-md-3">Dedicated</th>
+								              </tr>
+								            </thead>
+								            <tbody>
+							            	  <tr>
+												<td class="col-md-3">Extensive</td>
+												<td class="col-md-3">Medium</td>
+												<td class="col-md-3">Extreme</td>
+												<td class="col-md-3">Extreme</td>
+							            	  </tr>
+							            	  <tr>
+												<td class="col-md-3">Moderate</td>
+												<td class="col-md-3">Low</td>
+												<td class="col-md-3">Medium</td>
+												<td class="col-md-3">Extreme</td>
+							            	  </tr>
+							            	  <tr>
+												<td class="col-md-3">Nil</td>
+												<td class="col-md-3">Low</td>
+												<td class="col-md-3">Low</td>
+												<td class="col-md-3">Medium</td>
+							            	  </tr>
+								            </tbody>
+								        </table>
+								        </th>
+								      </tr>
+								    </thead>
+								</table>
+							</div>
+						</div>
+					</div>
+					<p>Select a higher tolerance rating if you don’t want lower level threats and threat acts to appear in the Security Risk Register. If you want to assess all threats and threat acts however (i.e. even the really low level ones), set the threat tolerance to the lowest level.</p>
+					<div class="container-fluid">
+						<div class="row">
+							<div id="tableThreat2">
+								<table class="threat_table wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
+								    <thead>
+								      <tr>
+								        <th class="col-md-2 pad_top38">Threat Tolerance</th>
+								        <th class="col-md-10"> 
+								        <table class="threat_table right" width="100%" cellspacing="0" cellpadding="0" border="1">
+								            <tbody>
+							            	  <tr>
+												<td class="col-md-3"></td>
+												<td class="col-md-3">Extreme</td>
+												<td class="col-md-3">Must be considered in risk assessment.</td>
+							            	  </tr>
+							            	  <tr>
+												<td class="col-md-3"></td>
+												<td class="col-md-3">Medium</td>
+												<td class="col-md-3">Consider including in risk assessment if threat act warrants.</td>
+							            	  </tr>
+							            	  <tr>
+												<td class="col-md-3"></td>
+												<td class="col-md-3">Low</td>
+												<td class="col-md-3">Monitor changes to threat level.</td>
+							            	  </tr>
+								            </tbody>
+								        </table>
+								        </th>
+								      </tr>
+								    </thead>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="btn_outer">
+						<button type="button" class="btn btn-success">Save as New Criteria</button>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
 							</div>
 
 							<div class="col-md-3">
-								<a href="#" class="card card-icon">
+								<a href="#" data-toggle="modal" data-target="#myModalRiskControl" class="card card-icon">
 									<div class="row">
 										<div class="col-md-12 text-center">
 											<div class="card-block">
@@ -193,6 +428,142 @@
 										</div>
 									</div>
 								</a>
+
+								<!-- Modal -->
+								<div class="modal fade" id="myModalRiskControl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               	<span aria-hidden="true">&times;</span>
+            </button>
+
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+					<div class="col-md-2">
+						<div class="btn-group">
+						  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Default <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						  </ul>
+						</div>
+					</div>
+					<div class="col-md-10">
+						<h2 class="text-center">Vulnerability Assessment Criteria</h2>
+					</div>
+					</div>
+				</div>
+				<p>Select or create vulnerability ratings and criteria in the table below. This information will be used to identify the effectiveness of security controls relevant to the scope of the assessment.</p>
+				<div id="modal_asset-content">
+					<table id="modal_asset_table" class="master_table col-md-12" cellspacing="15" cellpadding="15" border="1">
+						<thead class="head_asset_table">
+							<tr class="col-md-12">
+								<th class="col-md-2">Vulnerability Rating</th>
+								<th class="col-md-10">Criteria</th>
+							</tr>
+						</thead>
+						<tbody class="body_asset_table">
+							<tr class="col-md-12">
+								<td class="col-md-2 very-high">
+									<div class="criticality-rating">VERY HIGH</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Security controls are non-existent.<br>
+										<span class="custom_bullet">•</span>
+										It is almost certain that security controls will be breached or will fail.<br>
+										<span class="custom_bullet">•</span>
+										There is recent evidence of widespread security control failures.<br>
+										<span class="custom_bullet">•</span>
+										There are no contingencies in place; severe disruptions to operations are likely.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 very-low">
+									<div class="criticality-rating">VERY LOW</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Security controls are optimum and sustainable.<br>
+										<span class="custom_bullet">•</span>
+										There is an extremely low probability of the security controls being breached in the future.<br>
+										<span class="custom_bullet">•</span>
+										There are no previous incidents of the security controls being breached.<br>
+										<span class="custom_bullet">•</span>
+										Comprehensive contingencies are in place to manage most potential disruptions to operations.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 high">
+									<div class="criticality-rating">HIGH</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Security controls are largely ineffective.<br>
+										<span class="custom_bullet">•</span>
+										There is an increasing probability of the security controls being breached.<br>
+										<span class="custom_bullet">•</span>
+										There is recent evidence of significant numbers of security controls being breached.<br>
+										<span class="custom_bullet">•</span>
+										Few contingencies are in place and significant disruptions to operations are likely.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 moderate">
+									<div class="criticality-rating">MODERATE</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										The majority of controls are functioning as intended but are not fit for purpose.<br>
+										<span class="custom_bullet">•</span>
+										There is moderate probability of the security controls being breached.<br>
+										<span class="custom_bullet">•</span>
+										There is recent evidence of small number of security controls being breached.<br>
+										<span class="custom_bullet">•</span>
+										Contingencies are in place for only a few key areas of operations to manage potential disruptions.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 low">
+									<div class="criticality-rating">LOW</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Security controls are effective, but small improvements could be made.<br>
+										<span class="custom_bullet">•</span>
+										There is low probability of the security controls being breached in the future.<br>
+										<span class="custom_bullet">•</span>
+										There are no recent examples of security controls being breached.<br>
+										<span class="custom_bullet">•</span>
+										Contingencies are in place for key areas of operations to manage potential disruptions.
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn_outer">
+						<button type="button" class="btn btn-success">Save as New Criteria</button>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
 							</div>
 
 							<div class="col-md-3">

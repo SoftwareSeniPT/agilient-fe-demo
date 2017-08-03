@@ -1,0 +1,128 @@
+<div class="modal fade" id="myModalAssets" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	           	<span aria-hidden="true">&times;</span>
+	        </button>
+
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+					<div class="col-md-2">
+						<div class="btn-group">
+						  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Default <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						  </ul>
+						</div>
+					</div>
+					<div class="col-md-10">
+						<h2 class="text-center">Asset Criticality Assessment Criteria</h2>
+					</div>
+					</div>
+				</div>
+				<p>Select or create asset criticality ratings and criteria in the table below. This information will be used to identify which assets are most critical within the scope of the assessment.</p>
+				<div id="modal_asset-content">
+					<table id="modal_asset_table" class="master_table col-md-12" cellspacing="15" cellpadding="15" border="1">
+						<thead class="head_asset_table">
+							<tr class="col-md-12">
+								<th class="col-md-2">Criticality Rating</th>
+								<th class="col-md-10">Criteria</th>
+							</tr>
+						</thead>
+						<tbody class="body_asset_table">
+							<tr class="col-md-12">
+								<td class="col-md-2 high">
+									<div class="criticality-rating">HIGH</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom-bullet">•</span>
+										If services and/or facilities are disrupted, major restrictions to core business practices will result. <br>
+										<span class="custom_bullet">•</span>
+										Service/facility will require extensive assistance from State or Federal agency resources.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will have a significant impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 vital">
+									<div class="criticality-rating">VITAL</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Alternative services and/or facilities cannot be provided by State or Federal agencies.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will result in abandonment or long-term cessation of the functions or core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will have a severe impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 significant">
+									<div class="criticality-rating">SIGNIFICANT</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Services and/or facilities will be available, but with some restrictions to core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Reduced responsiveness and/or capacity compared to normal operations.<br>
+										<span class="custom_bullet">•</span>
+										Maintaining a level of service may require assistance from State agencies from other jurisdictions.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will result in medium term disruption of the functions or core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Minimal impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 low">
+									<div class="criticality-rating">LOW</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Normal services and/or facilities can be provided by State or Federal resources located within the region.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will have very limited effect on the functions or core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise of functionality will have no impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+							<tr class="col-md-12">
+								<td class="col-md-2 very-low">
+									<div class="criticality-rating">VERY LOW</div>
+								</td>
+								<td class="col-md-10">
+									<div>
+										<span class="custom_bullet">•</span>
+										Normal services and/or facilities can be provided by resources located within the region.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise will have no effect on the functions or core business practices.<br>
+										<span class="custom_bullet">•</span>
+										Loss or compromise of functionality will have no impact on the economic and social well-being of the community.
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn_outer">
+						<button type="button" class="btn btn-success">Save as New Criteria</button>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>

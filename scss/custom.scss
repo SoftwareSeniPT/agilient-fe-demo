@@ -1640,6 +1640,7 @@ div#editHome .content-modal-home {
     text-align: left;
 }
 
+<<<<<<< HEAD
 .select-risk {
     padding-left: 24px;
     position: relative;
@@ -1719,3 +1720,61 @@ table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {border-
 .select-risk .delete {
     cursor: pointer;
 }
+=======
+.modal-body {
+    h2{
+        font-size: 20px;
+    }  
+    p{
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+#modal_asset_table th {
+    background: #F4F4F4;
+    text-align: center;
+}
+.body_asset_table {
+    .very-high{
+        background: #D31429;
+    }
+    .high{
+        background: #FF8836;
+    }
+    .vital{
+        background: #D31429;
+    }
+    .significant, .moderate{
+        background: #FEDF3A;
+        div{
+            color: #333;
+        }
+    }
+    .low{
+        background: #008000;
+    }
+    .very-low{
+        background: #359FD8;
+    }
+}
+.criticality-rating {
+    text-align: center;
+    color: #fff;
+}
+.btn_outer button {
+    display: block;
+    margin: 20px auto 0px;
+}
+#tableThreat1, #tableThreat2 {
+    width: 100%;
+}
+.threat_table.right{
+    th{
+        text-align: center;
+    }
+    td{
+        text-align: center;
+    }
+}
+>>>>>>> 194cd2e3806ea5d64e62def5cfde5fb8ab8cd57b
