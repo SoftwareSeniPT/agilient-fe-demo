@@ -745,18 +745,21 @@ var app = {
       app.filter('status', 'home', $('.table-home'), $('#filterStatus'), false);
       app.sortSelectInit('status', $('.table-home'), $('#sortColumn'));
       app.removeFilter('type', 'home', $('.table-home'), $('#filterType'));
+      app.resetFilter('home', $('.table-home'), $('#filterType'));
 
       // Table business
       app.filter('organisation', 'business', $('.table-business'), $('#filterType'), true);
       app.filter('status', 'business', $('.table-business'), $('#filterStatus'), false);
       app.sortSelectInit('status', $('.table-business'), $('#sortColumn'));
       app.removeFilter('organisation', 'business', $('.table-business'), $('#filterType'));
+      app.resetFilter('business', $('.table-business'), $('#filterType'));
 
       // Table user
       app.filter('organisation', 'user', $('.table-user'), $('#filterType'), true);
       app.filter('status', 'user', $('.table-user'), $('#filterStatus'), false);
       app.sortSelectInit('status', $('.table-user'), $('#sortColumn'));
       app.removeFilter('organisation', 'user', $('.table-user'), $('#filterType'));
+      app.resetFilter('user', $('.table-user'), $('#filterType'));
     },
     filter: function(field, section, tableElement, selectElement, record) {
       selectElement.on('change', function() {
@@ -776,6 +779,21 @@ var app = {
               [field]: record ? app[`${section}Filter`] : [value]
           });
         }
+      });
+    },
+    resetFilter: function(section, tableElement, selectElement) {
+      jQuery(document).on('click', '.clear-filter', function(e){
+        e.preventDefault();
+        if (!tableElement.length) {
+          return;
+        }
+        var value = jQuery(this).parent().text();
+        // Remove from array
+        app[`${section}Filter`] = [];
+        tableElement.bootstrapTable('filterBy', "");
+        selectElement.select2("val", "")
+        // Remove from DOM
+        jQuery('.tags').html('');
       });
     },
     removeFilter: function(field, section, tableElement, selectElement) {
