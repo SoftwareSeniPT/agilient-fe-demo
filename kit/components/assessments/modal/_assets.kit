@@ -1,5 +1,5 @@
 <div class="modal fade" id="myModalAssets" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	           	<span aria-hidden="true">&times;</span>
@@ -27,19 +27,19 @@
 				</div>
 				<p>Select or create asset criticality ratings and criteria in the table below. This information will be used to identify which assets are most critical within the scope of the assessment.</p>
 				<div id="modal_asset-content">
-					<table id="modal_asset_table" class="master_table col-md-12" cellspacing="15" cellpadding="15" border="1">
+					<table id="modal_asset_table" class="master_table" cellspacing="15" cellpadding="15" border="1">
 						<thead class="head_asset_table">
-							<tr class="col-md-12">
-								<th class="col-md-2">Criticality Rating</th>
-								<th class="col-md-10">Criteria</th>
+							<tr>
+								<th>Criticality Rating</th>
+								<th>Criteria</th>
 							</tr>
 						</thead>
 						<tbody class="body_asset_table">
-							<tr class="col-md-12">
-								<td class="col-md-2 high">
+							<tr>
+								<td class="high">
 									<div class="criticality-rating">HIGH</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom-bullet">•</span>
 										If services and/or facilities are disrupted, major restrictions to core business practices will result. <br>
@@ -50,11 +50,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 vital">
+							<tr>
+								<td class="vital">
 									<div class="criticality-rating">VITAL</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Alternative services and/or facilities cannot be provided by State or Federal agencies.<br>
@@ -65,11 +65,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 significant">
+							<tr>
+								<td class="significant">
 									<div class="criticality-rating">SIGNIFICANT</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Services and/or facilities will be available, but with some restrictions to core business practices.<br>
@@ -84,11 +84,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 low">
+							<tr>
+								<td class="low">
 									<div class="criticality-rating">LOW</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Normal services and/or facilities can be provided by State or Federal resources located within the region.<br>
@@ -99,11 +99,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 very-low">
+							<tr>
+								<td class="very-low">
 									<div class="criticality-rating">VERY LOW</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Normal services and/or facilities can be provided by resources located within the region.<br>

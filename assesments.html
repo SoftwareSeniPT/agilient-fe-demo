@@ -150,7 +150,7 @@
 
 								<!-- Modal -->
 								<div class="modal fade" id="myModalAssets" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	           	<span aria-hidden="true">&times;</span>
@@ -178,19 +178,19 @@
 				</div>
 				<p>Select or create asset criticality ratings and criteria in the table below. This information will be used to identify which assets are most critical within the scope of the assessment.</p>
 				<div id="modal_asset-content">
-					<table id="modal_asset_table" class="master_table col-md-12" cellspacing="15" cellpadding="15" border="1">
+					<table id="modal_asset_table" class="master_table" cellspacing="15" cellpadding="15" border="1">
 						<thead class="head_asset_table">
-							<tr class="col-md-12">
-								<th class="col-md-2">Criticality Rating</th>
-								<th class="col-md-10">Criteria</th>
+							<tr>
+								<th>Criticality Rating</th>
+								<th>Criteria</th>
 							</tr>
 						</thead>
 						<tbody class="body_asset_table">
-							<tr class="col-md-12">
-								<td class="col-md-2 high">
+							<tr>
+								<td class="high">
 									<div class="criticality-rating">HIGH</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom-bullet">•</span>
 										If services and/or facilities are disrupted, major restrictions to core business practices will result. <br>
@@ -201,11 +201,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 vital">
+							<tr>
+								<td class="vital">
 									<div class="criticality-rating">VITAL</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Alternative services and/or facilities cannot be provided by State or Federal agencies.<br>
@@ -216,11 +216,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 significant">
+							<tr>
+								<td class="significant">
 									<div class="criticality-rating">SIGNIFICANT</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Services and/or facilities will be available, but with some restrictions to core business practices.<br>
@@ -235,11 +235,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 low">
+							<tr>
+								<td class="low">
 									<div class="criticality-rating">LOW</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Normal services and/or facilities can be provided by State or Federal resources located within the region.<br>
@@ -250,11 +250,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 very-low">
+							<tr>
+								<td class="very-low">
 									<div class="criticality-rating">VERY LOW</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Normal services and/or facilities can be provided by resources located within the region.<br>
@@ -278,6 +278,7 @@
 	</div>
 	</div>
 
+
 							</div>
 							<div class="col-md-3">
 								<a href="#" data-toggle="modal" data-target="#myModalThreat" class="card card-icon">
@@ -295,7 +296,7 @@
 
 								<!-- Modal -->
 								<div class="modal fade" id="myModalThreat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	           	<span aria-hidden="true">&times;</span>
@@ -329,35 +330,35 @@
 								<table class="threat_table wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
 								    <thead>
 								      <tr>
-								        <th class="col-md-2 pad_top38">Capability</th>
-								        <th class="col-md-10"> 
+								        <th class="pad_top38">Capability</th>
+								        <th>
 								        <table class="threat_table right" width="100%" cellspacing="0" cellpadding="0" border="1">
 								            <thead>
 								              <tr>
-								                <th class="col-md-3"></th>
-								                <th class="col-md-3">Ambivalent</th>
-								                <th class="col-md-3">Contemplative</th>
-								                <th class="col-md-3">Dedicated</th>
+								                <th></th>
+								                <th>Ambivalent</th>
+								                <th>Contemplative</th>
+								                <th>Dedicated</th>
 								              </tr>
 								            </thead>
 								            <tbody>
 							            	  <tr>
-												<td class="col-md-3">Extensive</td>
-												<td class="col-md-3">Medium</td>
-												<td class="col-md-3">Extreme</td>
-												<td class="col-md-3">Extreme</td>
+												<td>Extensive</td>
+												<td>Medium</td>
+												<td>Extreme</td>
+												<td>Extreme</td>
 							            	  </tr>
 							            	  <tr>
-												<td class="col-md-3">Moderate</td>
-												<td class="col-md-3">Low</td>
-												<td class="col-md-3">Medium</td>
-												<td class="col-md-3">Extreme</td>
+												<td>Moderate</td>
+												<td>Low</td>
+												<td>Medium</td>
+												<td>Extreme</td>
 							            	  </tr>
 							            	  <tr>
-												<td class="col-md-3">Nil</td>
-												<td class="col-md-3">Low</td>
-												<td class="col-md-3">Low</td>
-												<td class="col-md-3">Medium</td>
+												<td>Nil</td>
+												<td>Low</td>
+												<td>Low</td>
+												<td>Medium</td>
 							            	  </tr>
 								            </tbody>
 								        </table>
@@ -375,24 +376,21 @@
 								<table class="threat_table wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
 								    <thead>
 								      <tr>
-								        <th class="col-md-2 pad_top38">Threat Tolerance</th>
-								        <th class="col-md-10"> 
+								        <th class="pad_top38">Threat Tolerance</th>
+								        <th>
 								        <table class="threat_table right" width="100%" cellspacing="0" cellpadding="0" border="1">
 								            <tbody>
 							            	  <tr>
-												<td class="col-md-3"></td>
-												<td class="col-md-3">Extreme</td>
-												<td class="col-md-3">Must be considered in risk assessment.</td>
+												<td>Extreme</td>
+												<td>Must be considered in risk assessment.</td>
 							            	  </tr>
 							            	  <tr>
-												<td class="col-md-3"></td>
-												<td class="col-md-3">Medium</td>
-												<td class="col-md-3">Consider including in risk assessment if threat act warrants.</td>
+												<td>Medium</td>
+												<td>Consider including in risk assessment if threat act warrants.</td>
 							            	  </tr>
 							            	  <tr>
-												<td class="col-md-3"></td>
-												<td class="col-md-3">Low</td>
-												<td class="col-md-3">Monitor changes to threat level.</td>
+												<td>Low</td>
+												<td>Monitor changes to threat level.</td>
 							            	  </tr>
 								            </tbody>
 								        </table>
@@ -413,6 +411,7 @@
 		</div>
 	</div>
 	</div>
+
 							</div>
 
 							<div class="col-md-3">
@@ -431,7 +430,7 @@
 
 								<!-- Modal -->
 								<div class="modal fade" id="myModalRiskControl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                	<span aria-hidden="true">&times;</span>
@@ -459,19 +458,19 @@
 				</div>
 				<p>Select or create vulnerability ratings and criteria in the table below. This information will be used to identify the effectiveness of security controls relevant to the scope of the assessment.</p>
 				<div id="modal_asset-content">
-					<table id="modal_asset_table" class="master_table col-md-12" cellspacing="15" cellpadding="15" border="1">
+					<table id="modal_asset_table" class="master_table" cellspacing="15" cellpadding="15" border="1">
 						<thead class="head_asset_table">
-							<tr class="col-md-12">
-								<th class="col-md-2">Vulnerability Rating</th>
-								<th class="col-md-10">Criteria</th>
+							<tr>
+								<th>Vulnerability Rating</th>
+								<th>Criteria</th>
 							</tr>
 						</thead>
 						<tbody class="body_asset_table">
-							<tr class="col-md-12">
-								<td class="col-md-2 very-high">
+							<tr>
+								<td class="very-high">
 									<div class="criticality-rating">VERY HIGH</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Security controls are non-existent.<br>
@@ -484,11 +483,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 very-low">
+							<tr>
+								<td class="very-low">
 									<div class="criticality-rating">VERY LOW</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Security controls are optimum and sustainable.<br>
@@ -501,11 +500,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 high">
+							<tr>
+								<td class="high">
 									<div class="criticality-rating">HIGH</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Security controls are largely ineffective.<br>
@@ -518,11 +517,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 moderate">
+							<tr>
+								<td class="moderate">
 									<div class="criticality-rating">MODERATE</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										The majority of controls are functioning as intended but are not fit for purpose.<br>
@@ -535,11 +534,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 low">
+							<tr>
+								<td class="low">
 									<div class="criticality-rating">LOW</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Security controls are effective, but small improvements could be made.<br>
@@ -564,6 +563,7 @@
 		</div>
 	</div>
 </div>
+
 							</div>
 
 							<div class="col-md-3">

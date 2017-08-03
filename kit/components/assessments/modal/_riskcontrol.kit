@@ -1,5 +1,5 @@
 <div class="modal fade" id="myModalRiskControl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document" style="max-width: 1536px;">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                	<span aria-hidden="true">&times;</span>
@@ -27,19 +27,19 @@
 				</div>
 				<p>Select or create vulnerability ratings and criteria in the table below. This information will be used to identify the effectiveness of security controls relevant to the scope of the assessment.</p>
 				<div id="modal_asset-content">
-					<table id="modal_asset_table" class="master_table col-md-12" cellspacing="15" cellpadding="15" border="1">
+					<table id="modal_asset_table" class="master_table" cellspacing="15" cellpadding="15" border="1">
 						<thead class="head_asset_table">
-							<tr class="col-md-12">
-								<th class="col-md-2">Vulnerability Rating</th>
-								<th class="col-md-10">Criteria</th>
+							<tr>
+								<th>Vulnerability Rating</th>
+								<th>Criteria</th>
 							</tr>
 						</thead>
 						<tbody class="body_asset_table">
-							<tr class="col-md-12">
-								<td class="col-md-2 very-high">
+							<tr>
+								<td class="very-high">
 									<div class="criticality-rating">VERY HIGH</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Security controls are non-existent.<br>
@@ -52,11 +52,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 very-low">
+							<tr>
+								<td class="very-low">
 									<div class="criticality-rating">VERY LOW</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Security controls are optimum and sustainable.<br>
@@ -69,11 +69,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 high">
+							<tr>
+								<td class="high">
 									<div class="criticality-rating">HIGH</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Security controls are largely ineffective.<br>
@@ -86,11 +86,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 moderate">
+							<tr>
+								<td class="moderate">
 									<div class="criticality-rating">MODERATE</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										The majority of controls are functioning as intended but are not fit for purpose.<br>
@@ -103,11 +103,11 @@
 									</div>
 								</td>
 							</tr>
-							<tr class="col-md-12">
-								<td class="col-md-2 low">
+							<tr>
+								<td class="low">
 									<div class="criticality-rating">LOW</div>
 								</td>
-								<td class="col-md-10">
+								<td>
 									<div>
 										<span class="custom_bullet">•</span>
 										Security controls are effective, but small improvements could be made.<br>

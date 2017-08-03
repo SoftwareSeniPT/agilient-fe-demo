@@ -1291,7 +1291,6 @@ div#editHome .content-modal-home {
 .content-modal-users {
   text-align: left; }
 
-<<<<<<< HEAD
 .select-risk {
   padding-left: 24px;
   position: relative; }
@@ -1358,7 +1357,7 @@ table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {
 
 .select-risk .delete {
   cursor: pointer; }
-=======
+
 .modal-body h2 {
   font-size: 20px; }
 
@@ -1407,6 +1406,24 @@ table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {
 
 .threat_table.right td {
   text-align: center; }
->>>>>>> 194cd2e3806ea5d64e62def5cfde5fb8ab8cd57b
+
+#riskTypeModal {
+  font-size: 14px; }
+
+#modal_asset_table {
+  width: 100%;
+  font-size: 14px; }
+
+#modal_asset_table th:first-child {
+  width: 20%; }
+
+th.pad_top38 {
+  width: 20%; }
+
+table.threat_table.right td:last-child {
+  width: 80%; }
+
+.threat_table td, .threat_table th {
+  padding: 4px 7px; }
 
 /*# sourceMappingURL=custom.css.map */
