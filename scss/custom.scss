@@ -1220,7 +1220,7 @@ table[data-escape] select {
 }
 
 #table-risk .add-link:before {
-    content: "Add Type ";
+    content: "Add ";
 }
 
 #table-risk .add-link {
@@ -1638,4 +1638,84 @@ div#editHome .content-modal-home {
 
 .content-modal-users {
     text-align: left;
+}
+
+.select-risk {
+    padding-left: 24px;
+    position: relative;
+}
+
+.select-risk .delete {
+    position: absolute;
+    left: 0;
+}
+
+#table-risk td {
+    vertical-align: top;
+}
+
+.select-template {
+    display: none;
+}
+
+.select-risk {
+    margin-bottom: 5px;
+}
+
+#riskTypeModal .modal-body {
+    padding: 50px;
+}
+
+#riskTypeModal table a {color: #fff;}
+
+table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 .col-xs-2 {
+    width: 22%;
+}
+
+table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 td, table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {
+    padding: 5px 10px;
+}
+
+table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;}
+
+.thread-matrix-col-row-values-form > table {
+    border: 1px solid #ddd;
+}
+
+.border_0.table.threat_tablecustom {
+    border: 1px solid #ddd;
+}
+
+.modal-select {
+    display: block;
+    border: 2px dashed #ddd;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.modal-select.high {
+    border: 0;
+    background: #fedf3a;
+}
+
+.modal-select.moderate {
+    border: 0;
+    background: #ff8836;
+    color: #fff;
+}
+
+.modal-select.low {
+    border: 0;
+    background: #008000;
+    color: #fff;
+}
+
+.modal-select.extreme {
+    border: 0;
+    background: #d31429;
+    color: #fff;
+}
+
+.select-risk .delete {
+    cursor: pointer;
 }

@@ -761,7 +761,7 @@ Create control categories and security controls, enter comments and select vulne
   <p>
 Populate the Security Risk Register below; note that some details have been automatically created based on entries made within Asset and the Threat Registers
   </p>
-  <table id="table-risk" data-toggle="table" data-striped="true">
+  <table id="table-risk" data-toggle="table" data-striped="true" data-escape="false">
       <thead>
           <tr>
               <th data-field="id" data-visible="false"></th>
@@ -780,23 +780,89 @@ Populate the Security Risk Register below; note that some details have been auto
               <td>0</td>
               <td>Trusted Insiders - Financial or other forms of fraud.</td>
               <td>Private Data (HIGH) Private Data (HIGH)</td>
-              <td data-add-link="#">Management Support Mail Screening</td>
+              <td data-add-link="#">
+                <div class="select-risk">
+                  <span class="delete"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                  <select>
+                    <option value="Management Support">Management Support</option>
+                    <option value="Security policies &amp; procedures">Security policies &amp; procedures</option>
+                    <option value="Security risk assessments &amp; threat assessments">Security risk assessments &amp; threat assessments</option>
+                    <option value="Review of previous incidents &amp; risk assessments">Review of previous incidents &amp; risk assessments</option>
+                    <option value="Inventory control systems">Inventory control systems</option>
+                    <option value="Housekeeping">Housekeeping</option>
+                  </select>
+                </div>
+              </td>
               <td>Insider access private customer records, copy and steal information</td>
-              <td data-add-link="#">Information Information</td>
-              <td>HIGH</td>
-              <td data-add-link="#">Recommended Threatment Recommended Threatment</td>
-              <td>LOW</td>
+              <td data-add-link="#">
+                <div class="select-risk">
+                  <span class="delete"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                  <select>
+                    <option value="Physical">Physical</option>
+                    <option value="Information">Information</option>
+                    <option value="Cyber">Cyber</option>
+                    <option value="Personel">Personel</option>
+                    <option value="Fraud">Fraud</option>
+                    <option value="Operation">Operation</option>
+                    <option value="AB Risk type 1">AB Risk type 1</option>
+                    <option value="Risk Type AB1">Risk Type AB1</option>
+                  </select>
+                </div>
+              </td>
+              <td><span class="modal-select high" data-toggle="modal" data-target="#riskTypeModal">HIGH</span></td>
+              <td data-add-link="#">
+                <div class="select-risk">
+                  <span class="delete"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                  <input type="text" placeholder="Recommended Threatment">
+                </div>
+              </td>
+              <td><span class="modal-select low" data-toggle="modal" data-target="#riskTypeModal">LOW</span></td>
           </tr>
           <tr>
               <td>1</td>
               <td>Trusted Insiders - Financial or other forms of fraud.</td>
               <td>Private Data (HIGH) Private Data (HIGH)</td>
-              <td data-add-link="#">Management Support Mail Screening</td>
+              <td data-add-link="#">
+                <div class="select-risk">
+                  <span class="delete"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                  <select>
+                    <option value="Management Support">Management Support</option>
+                    <option value="Security policies &amp; procedures">Security policies &amp; procedures</option>
+                    <option value="Security risk assessments &amp; threat assessments">Security risk assessments &amp; threat assessments</option>
+                    <option value="Review of previous incidents &amp; risk assessments">Review of previous incidents &amp; risk assessments</option>
+                    <option value="Inventory control systems">Inventory control systems</option>
+                    <option value="Housekeeping">Housekeeping</option>
+                  </select>
+                </div>
+              </td>
               <td>Insider access private customer records, copy and steal information</td>
-              <td data-add-link="#">Information Information</td>
-              <td>HIGH</td>
-              <td data-add-link="#">Recommended Threatment Recommended Threatment</td>
-              <td>LOW</td>
+              <td data-add-link="#">
+                <div class="select-risk">
+                  <span class="delete"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                  <select>
+                    <option value="Physical">Physical</option>
+                    <option value="Information">Information</option>
+                    <option value="Cyber">Cyber</option>
+                    <option value="Personel">Personel</option>
+                    <option value="Fraud">Fraud</option>
+                    <option value="Operation">Operation</option>
+                    <option value="AB Risk type 1">AB Risk type 1</option>
+                    <option value="Risk Type AB1">Risk Type AB1</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <span class="modal-select high" data-toggle="modal" data-target="#riskTypeModal">HIGH</span>
+              </td>
+              <td data-add-link="#">
+                <div class="select-risk">
+                  <span class="delete"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                  <input type="text" placeholder="Recommended Threatment">
+                </div>
+              </td>
+              <td>
+                <span class="modal-select low" data-toggle="modal" data-target="#riskTypeModal">LOW</span>
+              </td>
           </tr>
       </tbody>
   </table>
@@ -806,6 +872,198 @@ Populate the Security Risk Register below; note that some details have been auto
     <button type="button" class="btn btn-primary">Publish Assessment</button>
     <button type="button" class="btn btn-danger">Delete Assessment</button>
   </div>
+</div>
+
+<!-- Risk type modal -->
+<div class="modal fade" id="riskTypeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <div class="modal-body">
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" class="border_0 table threat_tablecustom">
+                 <thead>
+                    <tr>
+                       <th class="width_8cell emt_cell"></th>
+                       <th class="width_8cell js_col_value_1">Insignificant<input type="hidden" name="consequences_header_id" class="js_consequences_header_id" value="211"></th>
+                       <th class="width_8cell js_col_value_2">Minor<input type="hidden" name="consequences_header_id" class="js_consequences_header_id" value="212"></th>
+                       <th class="width_8cell js_col_value_3">Moderate<input type="hidden" name="consequences_header_id" class="js_consequences_header_id" value="213"></th>
+                       <th class="width_8cell js_col_value_4">Major<input type="hidden" name="consequences_header_id" class="js_consequences_header_id" value="214"></th>
+                       <th class="width_8cell js_col_value_5">Severe<input type="hidden" name="consequences_header_id" class="js_consequences_header_id" value="215"></th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    <tr>
+                       <td class="width_8cell js_row_value">Almost Certain<input type="hidden" name="likelihood_header_id" class="js_likelihood_header_id" value="216"></td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1076" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_1">
+                          Moderate			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FEDF3A; ">
+                          <a rel="1077" data-tolerance_id="86" href="#" class="js_select_cell_value  js_col_check_2">
+                          High			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FEDF3A; ">
+                          <a rel="1078" data-tolerance_id="86" href="#" class="js_select_cell_value  js_col_check_3">
+                          High			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#D31429; color:#ffffff;">
+                          <a rel="1079" data-tolerance_id="85" href="#" class="js_select_cell_value  js_col_check_4">
+                          Extreme			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#D31429; color:#ffffff;">
+                          <a rel="1080" data-tolerance_id="85" href="#" class="js_select_cell_value  js_col_check_5">
+                          Extreme			                      							</a>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td class="width_8cell js_row_value">Likely<input type="hidden" name="likelihood_header_id" class="js_likelihood_header_id" value="217"></td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1081" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_1">
+                          Moderate			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1082" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_2">
+                          Moderate			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FEDF3A; ">
+                          <a rel="1083" data-tolerance_id="86" href="#" class="js_select_cell_value  js_col_check_3">
+                          High			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#D31429; color:#ffffff;">
+                          <a rel="1084" data-tolerance_id="85" href="#" class="js_select_cell_value  js_col_check_4">
+                          Extreme			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#D31429; color:#ffffff;">
+                          <a rel="1085" data-tolerance_id="85" href="#" class="js_select_cell_value  js_col_check_5">
+                          Extreme			                      							</a>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td class="width_8cell js_row_value">Possible<input type="hidden" name="likelihood_header_id" class="js_likelihood_header_id" value="218"></td>
+                       <td class="width_8cell" style="background-color:#008000; color:#ffffff;">
+                          <a rel="1086" data-tolerance_id="88" href="#" class="js_select_cell_value  js_col_check_1">
+                          Low			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1087" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_2">
+                          Moderate			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1088" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_3">
+                          Moderate			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FEDF3A; ">
+                          <a rel="1089" data-tolerance_id="86" href="#" class="js_select_cell_value  js_col_check_4">
+                          High			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#D31429; color:#ffffff;">
+                          <a rel="1090" data-tolerance_id="85" href="#" class="js_select_cell_value  js_col_check_5">
+                          Extreme			                      							</a>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td class="width_8cell js_row_value">Unlikely<input type="hidden" name="likelihood_header_id" class="js_likelihood_header_id" value="219"></td>
+                       <td class="width_8cell" style="background-color:#008000; color:#ffffff;">
+                          <a rel="1091" data-tolerance_id="88" href="#" class="js_select_cell_value  js_col_check_1">
+                          Low			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#008000; color:#ffffff;">
+                          <a rel="1092" data-tolerance_id="88" href="#" class="js_select_cell_value  js_col_check_2">
+                          Low			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1093" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_3">
+                          Moderate			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1094" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_4">
+                          Moderate			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FEDF3A; ">
+                          <a rel="1095" data-tolerance_id="86" href="#" class="js_select_cell_value  js_col_check_5">
+                          High			                      							</a>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td class="width_8cell js_row_value">Rare<input type="hidden" name="likelihood_header_id" class="js_likelihood_header_id" value="220"></td>
+                       <td class="width_8cell" style="background-color:#008000; color:#ffffff;">
+                          <a rel="1096" data-tolerance_id="88" href="#" class="js_select_cell_value  js_col_check_1">
+                          Low			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#008000; color:#ffffff;">
+                          <a rel="1097" data-tolerance_id="88" href="#" class="js_select_cell_value  js_col_check_2">
+                          Low			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#008000; color:#ffffff;">
+                          <a rel="1098" data-tolerance_id="88" href="#" class="js_select_cell_value  js_col_check_3">
+                          Low			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1099" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_4">
+                          Moderate			                      							</a>
+                       </td>
+                       <td class="width_8cell" style="background-color:#FF8836; color:#ffffff;">
+                          <a rel="1100" data-tolerance_id="87" href="#" class="js_select_cell_value  js_col_check_5">
+                          Moderate			                      							</a>
+                       </td>
+                    </tr>
+                 </tbody>
+              </table>
+              <div class="thread-matrix-col-row-values-form">
+               <table cellspacing="0" cellpadding="0" border="0" width="100%" class="reset_table fontweight_normal">
+                  <thead>
+                     <tr>
+                        <th class="col-xs-2">Tolerance</th>
+                        <th class="col-xs-10">
+                           <table cellspacing="0" cellpadding="0" border="0" width="100%" class="threat_table threat_table_sortable threat_tablereset mrg_top10">
+                              <thead>
+                                 <tr>
+                                    <th class="col-xs-2">Risk Ratings</th>
+                                    <th class="col-xs-10">Risk Treatment Requirements</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr id="item-85">
+                                    <td class="col-xs-2" style="background-color:#D31429; color:#ffffff;">
+                                       Extreme
+                                    </td>
+                                    <td class="txt_left col-xs-10">
+                                       Detailed treatment plan required (including treatment measures and allocation of treatment owners); immediate Executive Leadership Group attention and regular monitoring.
+                                    </td>
+                                 </tr>
+                                 <tr id="item-86">
+                                    <td class="col-xs-2" style="background-color:#FEDF3A; ">
+                                       High
+                                    </td>
+                                    <td class="txt_left col-xs-10">
+                                       Detailed treatment plan required (including treatment measures and allocation of treatment owners); immediate Senior Managment Group attention and regular monitoring.
+                                    </td>
+                                 </tr>
+                                 <tr id="item-87">
+                                    <td class="col-xs-2" style="background-color:#FF8836; color:#ffffff;">
+                                       Moderate
+                                    </td>
+                                    <td class="txt_left col-xs-10">
+                                       Management responsibility must be specified and treatment measures managed within the specific area.
+                                    </td>
+                                 </tr>
+                                 <tr id="item-88">
+                                    <td class="col-xs-2" style="background-color:#008000; color:#ffffff;">
+                                       Low
+                                    </td>
+                                    <td class="txt_left col-xs-10">
+                                       Managed within the specific area and / or routing procedures.
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </th>
+                     </tr>
+                  </thead>
+               </table>
+            </div>
+            </div>
+        </div>
+    </div>
 </div>
 		</div>
 

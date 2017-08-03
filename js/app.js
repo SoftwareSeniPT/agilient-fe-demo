@@ -34,12 +34,63 @@ var app = {
         app.controlTable.init();
         app.userModal();
         app.initSelectValueAddUser();
+        app.initRiskSelect2();
+        app.riskTableAdd();
+        app.modalSelect();
+        app.riskTableDelete();
     },
 
     // ======================================================================
     // Your function here
     // * Don't forget to use proper function name to describes your function
     // ======================================================================
+    modalSelectTarget: null,
+    modalSelect: function() {
+      jQuery('#riskTypeModal').on('shown.bs.modal', function (e) {
+        app.modalSelectTarget = e.relatedTarget;
+      });
+      jQuery('.js_select_cell_value').click(function(e){
+        e.preventDefault();
+        jQuery('#riskTypeModal').modal('hide');
+        var value = jQuery(this).text();
+        // Update target
+        if (app.modalSelectTarget) {
+          jQuery(app.modalSelectTarget).text(value);
+          // Change class
+          jQuery(app.modalSelectTarget)
+            .removeClass('high low moderate extreme')
+            .addClass(value.toLowerCase());
+        }
+      });
+    },
+    riskTableAdd: function() {
+      jQuery('#table-risk .add-link').click(function(e){
+        e.preventDefault();
+        var content = jQuery(this).parents('td').find('.select-template .select-risk')[0].outerHTML;
+        jQuery(content).appendTo(jQuery(this).parents('td'));
+        // Init select 2
+        jQuery('.select-risk select').not('.select-template select').select2();
+      });
+    },
+    riskTableDelete: function() {
+      jQuery(document).on('click', '.select-risk .delete', function() {
+        jQuery(this).parents('.select-risk').remove();
+      });
+    },
+    initRiskSelect2: function() {
+      // save Template
+      jQuery('.select-risk').each(function(){
+        var HTML = jQuery(this)[0].outerHTML;
+        jQuery(`
+          <div class="select-template">
+            ${HTML}
+          </div>
+        `).insertBefore(this)
+      });
+      setTimeout(function () {
+        jQuery('.select-risk select').not('.select-template select').select2();
+      }, 500);
+    },
     initSelectValueAddUser: function() {
       jQuery(document).on('click', '#tree_group a', function() {
         function initAssessment(parent, value) {
