@@ -52,8 +52,8 @@ a:hover {
 
 /* Buttons */
 .btn-primary {
-  background-color: #737373;
-  border-color: #737373; }
+  background-color: #344154;
+  border-color: #344154; }
   .btn-primary:hover {
     background-color: #858585;
     border-color: #858585; }
@@ -1053,7 +1053,7 @@ table[data-escape] select {
   margin: 0 4px; }
 
 .col-md-12:first-child .text-right > .btn-primary ~ .btn, .col-md-12:first-child .text-right > .btn-secondary, .col-md-12:first-child .text-right > .btn-secondary ~ .btn {
-  background: #737373;
+  background: #6580ac;
   color: #fff;
   border: #737373; }
 
@@ -1067,11 +1067,6 @@ table[data-escape] select {
   padding: 16px 0; }
 
 #tiles img {
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  filter: grayscale(100%);
   max-width: 90%; }
 
 .badge-danger {
@@ -1283,10 +1278,14 @@ div#editHome .content-modal-home {
   text-decoration: underline; }
 
 .create-button {
-  background: #274f7c !important; }
+  background: #5ed2f7 !important;
+  border-color: #5ed2f7 !important; }
 
 .create-button:hover {
   background: #162433 !important; }
+
+.side-nav .nav-item.active, .side-nav .nav-item.active a {
+  color: #56d6fb; }
 
 .content-modal-users {
   text-align: left; }
@@ -1366,7 +1365,7 @@ table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {
   margin-top: 10px;
   margin-bottom: 5px; }
 
-#modal_asset_table th {
+.master_table th {
   background: #F4F4F4;
   text-align: center; }
 
@@ -1410,11 +1409,11 @@ table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {
 #riskTypeModal {
   font-size: 14px; }
 
-#modal_asset_table {
+.master_table {
   width: 100%;
   font-size: 14px; }
 
-#modal_asset_table th:first-child {
+.master_table th:first-child {
   width: 20%; }
 
 th.pad_top38 {
@@ -1449,5 +1448,24 @@ table.threat_table.right td:last-child {
 
 .create-dropdown > a, .create-dropdown > a.dropdown-toggle {
   color: #fff !important; }
+
+.modal-actions .form-modal {
+  display: none; }
+
+.modal-actions .remove {
+  font-size: 21px;
+  color: #fff !important;
+  background: #d31429;
+  position: absolute;
+  top: 10px;
+  padding: 6px 14px;
+  left: 0;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border: 2px solid #fff;
+  border-left: 0; }
+
+.body_asset_table td {
+  position: relative; }
 
 /*# sourceMappingURL=custom.css.map */

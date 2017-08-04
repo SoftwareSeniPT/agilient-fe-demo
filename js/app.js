@@ -39,12 +39,47 @@ var app = {
         app.modalSelect();
         app.riskTableDelete();
         app.BUTableCollapse();
+        app.initActionToTable();
     },
 
     // ======================================================================
     // Your function here
     // * Don't forget to use proper function name to describes your function
     // ======================================================================
+    initActionToTable: function() {
+      jQuery('#myModalAssets table tbody tr td:first-child').append(`
+        <div class="modal-actions">
+          <div class="remove">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </div>
+          <div class="form-modal">
+            <form>
+              <input type="text" placeholder="Vital" />
+              <select name="color" class="color_selector">
+                 <option class="white" value="#FFFFFF">White</option>
+                 <option class="blue" value="#359FD8">Blue</option>
+                 <option class="darkgreen" value="#008000">Dark Green</option>
+                 <option class="lightgreen" value="#BED948">Light Green</option>
+                 <option class="lightyellow" value="#FEDF3A">Light Yellow</option>
+                 <option class="darkyellow" value="#FFB938">Dark Yellow</option>
+                 <option class="orange" value="#FF8836">Orange</option>
+                 <option class="darkorange" value="#FB4E22">Dark Orange</option>
+                 <option class="red" value="#FB2511">Red</option>
+                 <option selected="" class="darkred" value="#D31429">Dark Red</option>
+              </select>
+              <div class="modal-buttons">
+                <span class="confirm-btn">
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+                <span class="confirm-btn">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      `)
+    },
     modalSelectTarget: null,
     modalSelect: function() {
       jQuery('#riskTypeModal').on('shown.bs.modal', function (e) {

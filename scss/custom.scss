@@ -76,8 +76,8 @@ a:hover {
 }
 /* Buttons */
 .btn-primary {
-    background-color: $blue;
-    border-color: $blue;
+    background-color: #344154;
+    border-color: #344154;
 
     &:hover {
         background-color: $light-blue;
@@ -1357,7 +1357,7 @@ table[data-escape] select {
 }
 
 .col-md-12:first-child .text-right > .btn-primary ~ .btn, .col-md-12:first-child .text-right > .btn-secondary, .col-md-12:first-child .text-right > .btn-secondary ~ .btn {
-    background: #737373;
+    background: #6580ac;
     color: #fff;
     border: #737373;
 }
@@ -1374,11 +1374,6 @@ table[data-escape] select {
 }
 
 #tiles img {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    filter: grayscale(100%);
     max-width: 90%;
 }
 
@@ -1629,11 +1624,16 @@ div#editHome .content-modal-home {
 }
 
 .create-button {
-    background: #274f7c !important;
+    background: #5ed2f7 !important;
+    border-color: #5ed2f7 !important;
 }
 
 .create-button:hover {
     background: #162433 !important;
+}
+
+.side-nav .nav-item.active, .side-nav .nav-item.active a {
+    color: #56d6fb;
 }
 
 .content-modal-users {
@@ -1729,7 +1729,7 @@ table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {border-
         margin-bottom: 5px;
     }
 }
-#modal_asset_table th {
+.master_table th {
     background: #F4F4F4;
     text-align: center;
 }
@@ -1780,12 +1780,12 @@ table.threat_table.threat_table_sortable.threat_tablereset.mrg_top10 th {border-
     font-size: 14px;
 }
 
-#modal_asset_table {
+.master_table {
     width: 100%;
     font-size: 14px;
 }
 
-#modal_asset_table th:first-child {
+.master_table th:first-child {
     width: 20%;
 }
 
@@ -1830,4 +1830,29 @@ table.threat_table.right td:last-child {
 
 .create-dropdown > a, .create-dropdown > a.dropdown-toggle {
     color: #fff !important;
+}
+
+
+.modal-actions .form-modal {
+    display: none;
+}
+
+.modal-actions .remove {
+    font-size: 21px;
+    color: #fff !important;
+    background: #d31429;
+    position: absolute;
+    top: 10px;
+    padding: 6px 14px;
+    left: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 2px solid #fff;
+    border-left: 0;
+}
+
+.modal-actions .remove i {}
+
+.body_asset_table td {
+    position: relative;
 }
