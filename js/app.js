@@ -38,6 +38,7 @@ var app = {
         app.riskTableAdd();
         app.modalSelect();
         app.riskTableDelete();
+        app.BUTableCollapse();
     },
 
     // ======================================================================
@@ -62,6 +63,31 @@ var app = {
             .addClass(value.toLowerCase());
         }
       });
+    },
+    BUTableCollapse: function() {
+      function collapse(triggerClass, parentClass, childClass, closeSubChild) {
+        jQuery(triggerClass).click(function(){
+          var parent = jQuery(this).parents('tr');
+          if(!parent.hasClass('open')) {
+            parent.remove('closed');
+            parent.addClass('open');
+            parent.nextUntil(parentClass).each(function(i, o){
+              if (jQuery(o).hasClass(childClass)) {
+                console.log(o);
+                jQuery(o).show();
+              }
+            });
+          } else {
+            parent.removeClass('open');
+            parent.addClass('closed');
+            parent.nextUntil(parentClass).each(function(i, o){
+              jQuery(o).removeClass('open').hide();
+            });
+          }
+        });
+      }
+      collapse('.has-child i', '.parent', 'child');
+      collapse('.has-sub-children i', '.parent, .sub-parent', 'sub-child');
     },
     riskTableAdd: function() {
       jQuery('#table-risk .add-link').click(function(e){
@@ -364,7 +390,7 @@ var app = {
         var statusField = jQuery('#edit-business-status');
         // Insert new value
         idField.val(selectedParent.index());
-        businessNameField.val(businessName);
+        businessNameField.val(businessName.replace(/\s\s+/g, ''));
         organisationField.val(organisation);
         statusField.val(status);
       })

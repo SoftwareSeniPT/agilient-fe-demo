@@ -60,340 +60,236 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-type="BusinessUnit" data-status="Active">
+            <tr class="parent has-child">
                 <td>0</td>
                 <td>
-                  <div>
-                    <i class="fa fa-caret-right" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
-                    <a href="#">Entity Two</a>
-                  </div>
-                  <ul class="sub-bu collapse" id="sub-bu-1">
-                    <li>
-                      <a href="#">Internal Testing</a>
-                    </li>
-                    <li>
-                      <a href="#">PK Test Assessment</a>
-                    </li>
-                    <li>
-                      <a href="#">Cyber Security SRA</a>
-                    </li>
-                    <li class="has-sub-bu">
-                      <i class="fa fa-folder" aria-hidden="true" data-toggle="collapse" href="#sub-bu-children-1" aria-expanded="false" aria-controls="sub-bu-children-1"></i>
-                      <a href="#">Cyber Security SRA</a>
-                      <ul class="sub-bu collapse" id="sub-bu-children-1">
-                        <li>
-                          <a href="#">Internal Testing</a>
-                        </li>
-                        <li>
-                          <a href="#">PK Test Assessment</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                  <i class="fa fa-caret-right" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
+                  <a href="#">Entity Two</a>
                 </td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
+            <tr class="child">
                 <td>1</td>
                 <td>
-                  <div>
-                    <i class="fa fa-caret-right" aria-hidden="true" data-toggle="collapse" href="#sub-bu-2" aria-expanded="false" aria-controls="sub-bu-2"></i>
-                    <a href="#">Operations</a>
-                  </div>
-                  <ul class="sub-bu collapse" id="sub-bu-2">
-                    <li>
-                      <a href="#">Internal Testing</a>
-                    </li>
-                    <li>
-                      <a href="#">PK Test Assessment</a>
-                    </li>
-                    <li>
-                      <a href="#">Cyber Security SRA</a>
-                    </li>
-                    <li class="has-sub-bu">
-                      <i class="fa fa-folder" aria-hidden="true" data-toggle="collapse" href="#sub-bu-children-2" aria-expanded="false" aria-controls="sub-bu-children-2"></i>
-                      <a href="#">Cyber Security SRA</a>
-                      <ul class="sub-bu collapse" id="sub-bu-children-2">
-                        <li>
-                          <a href="#">Internal Testing</a>
-                        </li>
-                        <li>
-                          <a href="#">PK Test Assessment</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <a href="#">Internal Testing</a>
                 </td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="User" data-status="Active">
+            <tr class="child">
                 <td>2</td>
                 <td>
-                  <div>
-                    <i class="fa fa-caret-right" aria-hidden="true" data-toggle="collapse" href="#sub-bu-3" aria-expanded="false" aria-controls="sub-bu-3"></i>
-                    <a href="#">Technology</a>
-                  </div>
-                  <ul class="sub-bu collapse" id="sub-bu-3">
-                    <li>
-                      <a href="#">Internal Testing</a>
-                    </li>
-                    <li>
-                      <a href="#">PK Test Assessment</a>
-                    </li>
-                    <li>
-                      <a href="#">Cyber Security SRA</a>
-                    </li>
-                    <li class="has-sub-bu">
-                      <i class="fa fa-folder" aria-hidden="true" data-toggle="collapse" href="#sub-bu-children-3" aria-expanded="false" aria-controls="sub-bu-children-3"></i>
-                      <a href="#">Cyber Security SRA</a>
-                      <ul class="sub-bu collapse" id="sub-bu-children-3">
-                        <li>
-                          <a href="#">Internal Testing</a>
-                        </li>
-                        <li>
-                          <a href="#">PK Test Assessment</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <a href="#">PK Test Assessment</a>
                 </td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="Assessement" data-status="Inactive">
+            <tr class="child sub-parent has-sub-children">
                 <td>3</td>
-                <td>Finance and IT</td>
+                <td>
+                  <i class="fa fa-folder" aria-hidden="true"></i>
+                  <a href="#">Cyber Security SRA</a>
+                </td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="User" data-status="Inactive" data-index="4">
+            <tr class="sub-child">
+                <td>4</td>
+                <td>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <a href="#">Internal Testing</a>
+                </td>
+                <td>Demo Org</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr class="sub-child">
+                <td>5</td>
+                <td>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <a href="#">PK Test Assessment</a>
+                </td>
+                <td>Demo Org</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr class="parent has-child">
+                <td>0</td>
+                <td>
+                  <i class="fa fa-caret-right" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
+                  <a href="#">Entity Two</a>
+                </td>
+                <td>Demo Org</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr class="child">
+                <td>1</td>
+                <td>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <a href="#">Internal Testing</a>
+                </td>
+                <td>Demo Org</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr class="child">
+                <td>2</td>
+                <td>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <a href="#">PK Test Assessment</a>
+                </td>
+                <td>Demo Org</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr class="child sub-parent has-sub-children">
+                <td>3</td>
+                <td>
+                  <i class="fa fa-folder" aria-hidden="true"></i>
+                  <a href="#">Cyber Security SRA</a>
+                </td>
+                <td>Demo Org</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr class="sub-child">
+                <td>4</td>
+                <td>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <a href="#">Internal Testing</a>
+                </td>
+                <td>Demo Org</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr class="sub-child">
+                <td>5</td>
+                <td>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <a href="#">PK Test Assessment</a>
+                </td>
+                <td>Demo Org</td>
+                <td>Active</td>
+                <td></td>
+            </tr>
+            <tr class="parent">
                 <td>4</td>
                 <td>Marketing</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="Assessement" data-status="Inactive">
+            <tr class="parent">
                 <td>5</td>
                 <td>Distribution</td>
                 <td>Demo Org</td>
                 <td>Inactive</td>
                 <td></td>
             </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
+            <tr class="parent">
                 <td>0</td>
                 <td>Sales</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
+            <tr class="parent">
                 <td>1</td>
                 <td>Operations</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="User" data-status="Active">
+            <tr class="parent">
                 <td>2</td>
                 <td>Technology</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="Assessement" data-status="Inactive">
+            <tr class="parent">
                 <td>3</td>
                 <td>Finance and IT</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="User" data-status="Inactive" data-index="4">
+            <tr class="parent">
                 <td>4</td>
                 <td>Marketing</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="Assessement" data-status="Inactive">
+            <tr class="parent">
                 <td>5</td>
                 <td>Distribution</td>
                 <td>Demo Org</td>
                 <td>Inactive</td>
                 <td></td>
             </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
+            <tr class="parent">
                 <td>0</td>
                 <td>Sales</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
+            <tr class="parent">
                 <td>1</td>
                 <td>Operations</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="User" data-status="Active">
+            <tr class="parent">
                 <td>2</td>
                 <td>Technology</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="Assessement" data-status="Inactive">
+            <tr class="parent">
                 <td>3</td>
                 <td>Finance and IT</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="User" data-status="Inactive" data-index="4">
+            <tr class="parent">
                 <td>4</td>
                 <td>Marketing</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="Assessement" data-status="Inactive">
+            <tr class="parent">
                 <td>5</td>
                 <td>Distribution</td>
                 <td>Demo Org</td>
                 <td>Inactive</td>
                 <td></td>
             </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
+            <tr class="parent">
                 <td>0</td>
                 <td>Sales</td>
                 <td>Demo Org</td>
                 <td>Active</td>
                 <td></td>
             </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
+            <tr class="parent">
                 <td>1</td>
                 <td>Operations</td>
                 <td>Demo Org</td>
                 <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="User" data-status="Active">
-                <td>2</td>
-                <td>Technology</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="Assessement" data-status="Inactive">
-                <td>3</td>
-                <td>Finance and IT</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="User" data-status="Inactive" data-index="4">
-                <td>4</td>
-                <td>Marketing</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="Assessement" data-status="Inactive">
-                <td>5</td>
-                <td>Distribution</td>
-                <td>Demo Org</td>
-                <td>Inactive</td>
-                <td></td>
-            </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
-                <td>0</td>
-                <td>Sales</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
-                <td>1</td>
-                <td>Operations</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="User" data-status="Active">
-                <td>2</td>
-                <td>Technology</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="Assessement" data-status="Inactive">
-                <td>3</td>
-                <td>Finance and IT</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="User" data-status="Inactive" data-index="4">
-                <td>4</td>
-                <td>Marketing</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="Assessement" data-status="Inactive">
-                <td>5</td>
-                <td>Distribution</td>
-                <td>Demo Org</td>
-                <td>Inactive</td>
-                <td></td>
-            </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
-                <td>0</td>
-                <td>Sales</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="BusinessUnit" data-status="Active">
-                <td>1</td>
-                <td>Operations</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="User" data-status="Active">
-                <td>2</td>
-                <td>Technology</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="Assessement" data-status="Inactive">
-                <td>3</td>
-                <td>Finance and IT</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="User" data-status="Inactive" data-index="4">
-                <td>4</td>
-                <td>Marketing</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr data-type="Assessement" data-status="Inactive">
-                <td>5</td>
-                <td>Distribution</td>
-                <td>Demo Org</td>
-                <td>Inactive</td>
                 <td></td>
             </tr>
         </tbody>

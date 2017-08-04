@@ -1800,3 +1800,15 @@ table.threat_table.right td:last-child {
 .threat_table td, .threat_table th {
     padding: 4px 7px;
 }
+
+.child td:first-child {
+    padding-left: 30px !important;
+}
+
+.sub-child td:first-child {
+    padding-left: 60px !important;
+}
+
+.child, .sub-child {
+    display: none;
+}
