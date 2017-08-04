@@ -195,8 +195,8 @@ var app = {
       init: function() {
         app.controlTable.addCategory();
         app.controlTable.removeCategory();
-        app.detectSaveControlTable();
-        app.detectEditControlTable();
+        app.controlTable.detectSaveControlTable();
+        app.controlTable.detectEditControlTable();
       },
       addCategoryCallback(value) {
         console.log(value, 'add');
@@ -216,25 +216,46 @@ var app = {
           var parent = jQuery(this).parents('tr');
           var lastTR = parent.nextUntil('tr.parent').last();
           var isParent = jQuery(this).parents('td').index() === 0;
+          var parentTable = jQuery(this).parents('table');
 
           if (!lastTR.length || !isParent) {
             lastTR = parent;
           }
 
           // Add new TR after last TR
-          jQuery(`<tr class="${isParent ? 'parent parent-edit-mode' : ''} edit-mode">
-                    ${isParent ? '<td class="rowspan" data-edit-link="#" data-remove-link="#" data-add-link="#" rowspan="1">Physical Security</td>' : '<td style="display:none"></td>'}
-                    <td data-edit-link="#" data-remove-link="#" data-add-link="#">Management Support</td>
-                    <td>Lorem Ipsum</td>
-                    <td>
-                      <select class="status-select" name="status">
-                        <option value="Lorem Ipsum" selected>Lorem ipsum</option>
-                        <option value="Dolor Sit">Dolor Sit</option>
-                        <option value="Consectetur">Consectetur</option>
-                        <option value="Quasi Et">Quasi Et</option>
-                      </select>
-                    </td>
-                </tr>`).insertAfter(lastTR);
+          if (parentTable.hasClass('table-threat')) {
+            jQuery(`<tr class="${isParent ? 'parent parent-edit-mode' : ''} edit-mode">
+                      ${isParent ? '<td class="rowspan" data-edit-link="#" data-remove-link="#" data-add-link="#" rowspan="1">Physical Security</td>' : '<td style="display:none"></td>'}
+                      <td data-edit-link="#" data-remove-link="#" data-add-link="#"></td>
+                      <td>
+                        <select class="status-select" name="status">
+                          <option value="" selected>Lorem ipsum</option>
+                          <option value="">Dolor Sit</option>
+                          <option value="">Consectetur</option>
+                          <option value="">Quasi Et</option>
+                        </select>
+                      </td>
+                      <td>
+                        <select class="status-select" name="status">
+                          <option value="" selected disabled>Select threat rating</option>
+                        </select>
+                      </td>
+                  </tr>`).insertAfter(lastTR);
+          } else {
+            jQuery(`<tr class="${isParent ? 'parent parent-edit-mode' : ''} edit-mode">
+                      ${isParent ? '<td class="rowspan" data-edit-link="#" data-remove-link="#" data-add-link="#" rowspan="1">Physical Security</td>' : '<td style="display:none"></td>'}
+                      <td data-edit-link="#" data-remove-link="#" data-add-link="#">Management Support</td>
+                      <td>Lorem Ipsum</td>
+                      <td>
+                        <select class="status-select" name="status">
+                          <option value="Lorem Ipsum" selected>Lorem ipsum</option>
+                          <option value="Dolor Sit">Dolor Sit</option>
+                          <option value="Consectetur">Consectetur</option>
+                          <option value="Quasi Et">Quasi Et</option>
+                        </select>
+                      </td>
+                  </tr>`).insertAfter(lastTR);
+          }
 
           // merge row
           if (!isParent) {
@@ -246,7 +267,7 @@ var app = {
           // Init actions
           setTimeout(function () {
             app.initActionOnTr(jQuery(lastTR).next());
-            app.initInputForm(jQuery(lastTR).next());
+            app.controlTable.initInputForm(jQuery(lastTR).next());
           }, 500);
         });
       },
@@ -326,6 +347,68 @@ var app = {
               }
             }
           })
+      },
+      initInputForm(tr) {
+        var table = jQuery(tr).parents('table');
+        var lastTD = jQuery(tr).find('td:not(:last)');
+        if (table.hasClass('table-threat')) {
+          var lastTD = jQuery(tr).find('td:not(:nth-child(3), :nth-child(4))');
+        }
+        lastTD.each(function(index, object) {
+          var value = jQuery(object).text();
+          if (value !== "") {
+            jQuery(object).append(`
+              <input type="text" value="${value}" />
+              ${index === 0 || index === 1 ? `
+                <span class="save">Save</span>
+              ` : ""}
+            `)
+          }
+          // Init span
+          $(this.firstChild).wrap('<span></span>');
+        });
+      },
+      detectSaveControlTable: function() {
+        jQuery(document).on('click', '#table-controls .parent-edit-mode td:first-child .save', function(){
+          var parent = jQuery(this).parent();
+          var value = parent.find('input').val();
+          // Update span
+          parent.find('> span:not(.save)').text(value);
+          parent.parent().removeClass('parent-edit-mode');
+          // call callback
+          app.controlTable.addCategoryCallback({ category: value });
+        })
+
+        jQuery(document).on('click', '#table-controls .edit-mode td:nth-child(2) .save', function(){
+          // control value
+          var parentSecurity = jQuery(this).parent();
+          var securityValue = parentSecurity.find('input').val();
+          var commentValue = parentSecurity.next().find('input').val();
+          var riskValue = parentSecurity.next().next().find('select').val();
+
+          // Update security
+          parentSecurity.find('> span:not(.save)').text(securityValue);
+          parentSecurity.next().find('> span:not(.save)').text(commentValue);
+          parentSecurity.parent().removeClass('edit-mode');
+
+          // call callback
+          app.controlTable.addControlCallback({
+            securityControl: securityValue,
+            controlComment: commentValue,
+            riskControl: riskValue
+          });
+        })
+      },
+      detectEditControlTable() {
+        jQuery(document).on('click', '#table-controls td:first-child .edit-link', function(e){
+          e.preventDefault();
+          jQuery(this).parents('tr').addClass('parent-edit-mode');
+        });
+
+        jQuery(document).on('click', '#table-controls td:not(:first-child) .edit-link', function(e){
+          e.preventDefault();
+          jQuery(this).parents('tr').addClass('edit-mode');
+        });
       },
     },
     loadTable: function() {
@@ -424,7 +507,7 @@ var app = {
 
       // Init input
       jQuery('#table-controls tr').each(function(i, o) {
-        app.initInputForm(o);
+        app.controlTable.initInputForm(o);
       });
 
     },
@@ -567,64 +650,6 @@ var app = {
             $(this).dialog( "close" );
           }
         }
-      });
-    },
-    initInputForm(tr) {
-      lastTD = jQuery(tr).find('td:not(:last)');
-      lastTD.each(function(index, object) {
-        var value = jQuery(object).text();
-        if (value !== "") {
-          jQuery(object).append(`
-            <input type="text" value="${value}" />
-            ${index === 0 || index === 1 ? `
-              <span class="save">Save</span>
-            ` : ""}
-          `)
-        }
-        // Init span
-        $(this.firstChild).wrap('<span></span>');
-      });
-    },
-    detectSaveControlTable: function() {
-      jQuery(document).on('click', '#table-controls .parent-edit-mode td:first-child .save', function(){
-        var parent = jQuery(this).parent();
-        var value = parent.find('input').val();
-        // Update span
-        parent.find('> span:not(.save)').text(value);
-        parent.parent().removeClass('parent-edit-mode');
-        // call callback
-        app.controlTable.addCategoryCallback({ category: value });
-      })
-
-      jQuery(document).on('click', '#table-controls .edit-mode td:nth-child(2) .save', function(){
-        // control value
-        var parentSecurity = jQuery(this).parent();
-        var securityValue = parentSecurity.find('input').val();
-        var commentValue = parentSecurity.next().find('input').val();
-        var riskValue = parentSecurity.next().next().find('select').val();
-
-        // Update security
-        parentSecurity.find('> span:not(.save)').text(securityValue);
-        parentSecurity.next().find('> span:not(.save)').text(commentValue);
-        parentSecurity.parent().removeClass('edit-mode');
-
-        // call callback
-        app.controlTable.addControlCallback({
-          securityControl: securityValue,
-          controlComment: commentValue,
-          riskControl: riskValue
-        });
-      })
-    },
-    detectEditControlTable() {
-      jQuery(document).on('click', '#table-controls td:first-child .edit-link', function(e){
-        e.preventDefault();
-        jQuery(this).parents('tr').addClass('parent-edit-mode');
-      });
-
-      jQuery(document).on('click', '#table-controls td:not(:first-child) .edit-link', function(e){
-        e.preventDefault();
-        jQuery(this).parents('tr').addClass('edit-mode');
       });
     },
     initActionTable(table) {
