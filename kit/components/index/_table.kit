@@ -13,7 +13,7 @@
               </select>
           </div>
 
-          <div class="search col-md-5 tool">
+          <div class="search col-md-4 tool">
           <input class="form-control" placeholder="Search" type="text">
           </div>
 
@@ -22,6 +22,15 @@
                   <option class="attributeOptions" value="">Status</option>
                   <option class="attributeOptions" value="Active">Active</option>
                   <option class="attributeOptions" value="Inactive">Inactive</option>
+              </select>
+          </div>
+          <div class="custom-filter col-md-2 tool">
+              <select class="filterOptions" id="filterParent" data-filter="status">
+                  <option class="attributeOptions" value="">Parent</option>
+                  <option class="attributeOptions" value="Intangible">Intangible</option>
+                  <option class="attributeOptions" value="Badu">Badu</option>
+                  <option class="attributeOptions" value="Dido">Dido</option>
+                  <option class="attributeOptions" value="Adi">Adi</option>
               </select>
           </div>
           <div class="custom-filter col-md-2 tool">
@@ -57,6 +66,7 @@
               <th data-field="type" id="type_header" data-sortable="true">Type</th>
               <th data-field="status" id="status_header" data-sortable="true" data-escape="false">Status</th>
               <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents"></th>
+              <th data-field="parent" data-visible="false"></th>
           </tr>
       </thead>
       <tbody>
@@ -66,6 +76,7 @@
               <td>Business Unit</td>
               <td>Active</td>
               <td data-delete-link="http://google.com" data-archive-link="http://yahoo.com" data-user-access-modal=".user-access-modal-content-1" data-entity-history-modal=".entity-modal-content-1" data-edit-name="Business Unit" data-assessment-link="http://google.com" data-detail-link="http://yahoo.com"></td>
+              <td>Intangible</td>
           </tr>
           <tr data-type="BusinessUnit" data-status="Active" >
               <td>1</td>
@@ -74,6 +85,7 @@
               <td>Active</td>
               <td data-delete-link="http://google.com" data-archive-link="http://yahoo.com" data-user-access-modal=".user-access-modal-content-1" data-entity-history-modal=".entity-modal-content-1" data-edit-name="Business Unit" data-assessment-link="http://google.com" data-detail-link="http://yahoo.com">
               </td>
+              <td>Intangible</td>
           </tr>
           <tr data-type="Assessement" data-status="Inactive" >
               <td>3</td>
@@ -82,6 +94,7 @@
               <td>Inactive</td>
               <td data-delete-link="http://google.com" data-archive-link="http://yahoo.com" data-user-access-modal=".user-access-modal-content-1" data-entity-history-modal=".entity-modal-content-1" data-detail-link="http://yahoo.com">
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="User" data-status="Active" >
               <td>2</td>
@@ -90,6 +103,7 @@
               <td>Active</td>
               <td data-entity-history-modal=".entity-modal-content-1" data-edit-name="User" data-inactive-link="http://google.com">
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="Asset Category" data-status="Inactive" >
               <td>3</td>
@@ -98,6 +112,7 @@
               <td>Inactive</td>
               <td data-delete-link="http://google.com" data-edit-name="Intangible">
               </td>
+              <td>Badu</td>
           </tr>
           <tr data-type="Criteria" data-status="Inactive" data-index="4">
               <td>4</td>
@@ -106,6 +121,7 @@
               <td>Active</td>
               <td data-delete-link="http://google.com" data-entity-history-modal=".entity-modal-content-1" data-detail-link="http://yahoo.com">
               </td>
+              <td>Adi</td>
           </tr>
           <tr data-type="Risk Type" data-status="Inactive" >
               <td>5</td>
@@ -114,6 +130,7 @@
               <td>Inactive</td>
               <td data-delete-link="http://google.com" data-edit-name="Physical">
               </td>
+              <td>Intangible</td>
           </tr>
           <tr data-type="User" data-status="Inactive" >
               <td>6</td>
@@ -122,6 +139,7 @@
               <td>Inactive</td>
               <td>
               </td>
+              <td>Adi</td>
           </tr>
           <tr data-type="User" data-status="Inactive" >
               <td>7</td>
@@ -130,6 +148,7 @@
               <td>Inactive</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="BusinessUnit" data-status="Active" >
               <td>0</td>
@@ -138,6 +157,7 @@
               <td>Active</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="BusinessUnit" data-status="Active" >
               <td>1</td>
@@ -146,6 +166,7 @@
               <td>Active</td>
               <td>
               </td>
+              <td>Intangible</td>
           </tr>
           <tr data-type="User" data-status="Active" >
               <td>2</td>
@@ -154,6 +175,7 @@
               <td>Active</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="Assessement" data-status="Inactive" >
               <td>3</td>
@@ -162,6 +184,7 @@
               <td>Inactive</td>
               <td data-delete-link="http://google.com" data-archive-link="http://yahoo.com" data-user-access-modal=".user-access-modal-content-1" data-entity-history-modal=".entity-modal-content-1" data-detail-link="http://yahoo.com">
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="User" data-status="Inactive" data-index="4">
               <td>4</td>
@@ -170,6 +193,7 @@
               <td>Active</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="Assessement" data-status="Inactive" >
               <td>5</td>
@@ -178,6 +202,7 @@
               <td>Inactive</td>
               <td>
               </td>
+              <td>Intangible</td>
           </tr>
           <tr data-type="User" data-status="Inactive" >
               <td>6</td>
@@ -186,6 +211,7 @@
               <td>Inactive</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="User" data-status="Inactive" >
               <td>7</td>
@@ -194,6 +220,7 @@
               <td>Inactive</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="BusinessUnit" data-status="Active" >
               <td>0</td>
@@ -202,6 +229,7 @@
               <td>Active</td>
               <td>
               </td>
+              <td>Intangible</td>
           </tr>
           <tr data-type="BusinessUnit" data-status="Active" >
               <td>1</td>
@@ -210,6 +238,7 @@
               <td>Active</td>
               <td>
               </td>
+              <td>Intangible</td>
           </tr>
           <tr data-type="User" data-status="Active" >
               <td>2</td>
@@ -218,6 +247,7 @@
               <td>Active</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="Assessement" data-status="Inactive" >
               <td>3</td>
@@ -226,6 +256,7 @@
               <td>Inactive</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="User" data-status="Inactive" data-index="4">
               <td>4</td>
@@ -234,6 +265,7 @@
               <td>Active</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="Assessement" data-status="Inactive" >
               <td>5</td>
@@ -242,6 +274,7 @@
               <td>Inactive</td>
               <td>
               </td>
+              <td>Dido</td>
           </tr>
           <tr data-type="User" data-status="Inactive" >
               <td>6</td>
@@ -250,6 +283,7 @@
               <td>Inactive</td>
               <td>
               </td>
+              <td>Intangible</td>
           </tr>
           <tr data-type="User" data-status="Inactive">
               <td>7</td>
@@ -258,6 +292,7 @@
               <td>Inactive</td>
               <td data-delete-link="http://google.com" data-archive-link="http://yahoo.com" data-user-access-modal=".user-access-modal-content-1" data-entity-history-modal=".entity-modal-content-1" data-edit-name="Business Unit" data-assessment-link="http://google.com" data-detail-link="http://yahoo.com">
               </td>
+              <td>Intangible</td>
           </tr>
       </tbody>
   </table>

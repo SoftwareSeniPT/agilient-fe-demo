@@ -1812,3 +1812,22 @@ table.threat_table.right td:last-child {
 .child, .sub-child {
     display: none;
 }
+
+.create-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.create-dropdown > a:before {
+  display: none;
+}
+
+.fixed-table-toolbar .search {
+    margin: 0;
+    flex: 0 0 46.333333%;
+    max-width: 46.333333%;
+}
+
+.create-dropdown > a, .create-dropdown > a.dropdown-toggle {
+    color: #fff !important;
+}

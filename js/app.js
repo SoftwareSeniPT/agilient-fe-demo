@@ -794,6 +794,7 @@ var app = {
     homeTableToolbar: function() {
       app.filter('type', 'home', $('.table-home'), $('#filterType'), true);
       app.filter('status', 'home', $('.table-home'), $('#filterStatus'), false);
+      app.filter('parent', 'home', $('.table-home'), $('#filterParent'), false);
       app.sortSelectInit('status', $('.table-home'), $('#sortColumn'));
       app.removeFilter('type', 'home', $('.table-home'), $('#filterType'));
       app.resetFilter('home', $('.table-home'), $('#filterType'));
@@ -826,6 +827,12 @@ var app = {
             // Add to filter div
             jQuery('.filter-field .tags').append(`<div>${value} <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></div>`);
           }
+          console.log({
+            field,
+            record,
+            value,
+            section
+          });
           tableElement.bootstrapTable('filterBy', {
               [field]: record ? app[`${section}Filter`] : [value]
           });
