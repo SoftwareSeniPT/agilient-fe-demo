@@ -1856,3 +1856,44 @@ table.threat_table.right td:last-child {
 .body_asset_table td {
     position: relative;
 }
+
+#myModalCriteria table button {
+    background: transparent;
+    border: 0;
+    font-size: 14px;
+    color: inherit;
+    text-align: left;
+}
+
+#myModalCriteria table td {
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+#myModalCriteria table td:first-child {
+    background: #f4f4f4;
+}
+
+#myModalCriteria table th {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+}
+
+#myModalCriteria table {
+    margin: 30px 0;
+}
+
+#myModalCriteria table table {
+    margin: 0;
+}
+
+table.threat_table.threat_table_sortable.threat_tablereset th:last-child, table.threat_table.threat_table_sortable.threat_tablereset td:last-child {
+    width: 80%;
+    text-align: left;
+}
+
+table.reset_table.fontweight_normal th:first-child {
+    background: #fff !important;
+    border: 0 !important;
+    padding-right: 30px;
+}
