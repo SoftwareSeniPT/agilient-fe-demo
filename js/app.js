@@ -228,10 +228,25 @@ var app = {
     },
     controlTable: {
       init: function() {
+        app.controlTable.initMultipleSelectThreatTable();
         app.controlTable.addCategory();
         app.controlTable.removeCategory();
         app.controlTable.detectSaveControlTable();
         app.controlTable.detectEditControlTable();
+      },
+      initMultipleSelectThreatTable() {
+        // Init select2 on table threat on first init
+        if (jQuery('#table-threat').length) {
+          jQuery('#table-threat').find('select').select2();
+        }
+
+        // Init select2 when new row added
+        jQuery('body').on('tableRowInit', function(event, row, isTableThreat){
+          // Init select2
+          if (isTableThreat) {
+            jQuery(row).find('select').select2();
+          }
+        });
       },
       addCategoryCallback(value) {
         console.log(value, 'add');
@@ -246,7 +261,7 @@ var app = {
         console.log(value, 'remove control');
       },
       addCategory: function() {
-        jQuery(document).on('click', '#table-controls tr .add-link', function(e) {
+        jQuery(document).on('click', '#table-controls tr .add-link, #table-threat tr .add-link', function(e) {
           e.preventDefault();
           var parent = jQuery(this).parents('tr');
           var lastTR = parent.nextUntil('tr.parent').last();
@@ -261,9 +276,9 @@ var app = {
           if (parentTable.hasClass('table-threat')) {
             jQuery(`<tr class="${isParent ? 'parent parent-edit-mode' : ''} edit-mode">
                       ${isParent ? '<td class="rowspan" data-edit-link="#" data-remove-link="#" data-add-link="#" rowspan="1">Physical Security</td>' : '<td style="display:none"></td>'}
-                      <td data-edit-link="#" data-remove-link="#" data-add-link="#"></td>
+                      <td data-edit-link="#" data-remove-link="#" data-add-link="#">Lorem Ipsum</td>
                       <td>
-                        <select class="status-select" name="status">
+                        <select class="status-select" name="status" multiple="multiple">
                           <option value="" selected>Lorem ipsum</option>
                           <option value="">Dolor Sit</option>
                           <option value="">Consectetur</option>
@@ -303,6 +318,9 @@ var app = {
           setTimeout(function () {
             app.initActionOnTr(jQuery(lastTR).next());
             app.controlTable.initInputForm(jQuery(lastTR).next());
+            // trigger event
+            var isTableThreat = parentTable.hasClass('table-threat');
+            jQuery("body").trigger("tableRowInit", [jQuery(lastTR).next(), isTableThreat]);
           }, 500);
         });
       },
@@ -348,7 +366,7 @@ var app = {
             }
           });
 
-          jQuery(document).on('click', '#table-controls tr .remove-link', function(e) {
+          jQuery(document).on('click', '#table-controls tr .remove-link, #table-threat tr .remove-link', function(e) {
             e.preventDefault();
             var parent = jQuery(this).parents('tr');
             var parentIndex = parent.index();
@@ -404,17 +422,17 @@ var app = {
         });
       },
       detectSaveControlTable: function() {
-        jQuery(document).on('click', '#table-controls .parent-edit-mode td:first-child .save', function(){
+        jQuery(document).on('click', '#table-controls .parent-edit-mode td:first-child .save, #table-threat .parent-edit-mode td:first-child .save', function(){
           var parent = jQuery(this).parent();
           var value = parent.find('input').val();
           // Update span
-          parent.find('> span:not(.save)').text(value);
+          parent.find('> span:not([class])').text(value);
           parent.parent().removeClass('parent-edit-mode');
           // call callback
           app.controlTable.addCategoryCallback({ category: value });
         })
 
-        jQuery(document).on('click', '#table-controls .edit-mode td:nth-child(2) .save', function(){
+        jQuery(document).on('click', '#table-controls .edit-mode td:nth-child(2) .save, #table-threat .edit-mode td:nth-child(2) .save', function(){
           // control value
           var parentSecurity = jQuery(this).parent();
           var securityValue = parentSecurity.find('input').val();
@@ -422,8 +440,8 @@ var app = {
           var riskValue = parentSecurity.next().next().find('select').val();
 
           // Update security
-          parentSecurity.find('> span:not(.save)').text(securityValue);
-          parentSecurity.next().find('> span:not(.save)').text(commentValue);
+          parentSecurity.find('> span:not([class])').text(securityValue);
+          parentSecurity.next().find('> span:not([class])').text(commentValue);
           parentSecurity.parent().removeClass('edit-mode');
 
           // call callback
@@ -435,12 +453,12 @@ var app = {
         })
       },
       detectEditControlTable() {
-        jQuery(document).on('click', '#table-controls td:first-child .edit-link', function(e){
+        jQuery(document).on('click', '#table-controls td:first-child .edit-link, #table-threat td:first-child .edit-link', function(e){
           e.preventDefault();
           jQuery(this).parents('tr').addClass('parent-edit-mode');
         });
 
-        jQuery(document).on('click', '#table-controls td:not(:first-child) .edit-link', function(e){
+        jQuery(document).on('click', '#table-controls td:not(:first-child) .edit-link, #table-threat td:not(:first-child) .edit-link', function(e){
           e.preventDefault();
           jQuery(this).parents('tr').addClass('edit-mode');
         });
@@ -453,9 +471,8 @@ var app = {
       });
     },
     mergeControlTable: function() {
-      var table = jQuery('#table-controls');
+      var table = jQuery('#table-controls, #table-threat');
       table.on('post-body.bs.table', function () {
-        console.log('ssdd');
         setTimeout(function () {
           // get table count
           var count = table.bootstrapTable('getData').length;
@@ -538,10 +555,11 @@ var app = {
       app.initActionTable(jQuery('#table-assets'));
       app.initActionTable(jQuery('#table-threatx'));
       app.initActionTable(jQuery('#table-controls'));
+      app.initActionTable(jQuery('#table-threat'));
       app.initActionTable(jQuery('#table-risk'));
 
       // Init input
-      jQuery('#table-controls tr').each(function(i, o) {
+      jQuery('#table-controls tr, #table-threat tr').each(function(i, o) {
         app.controlTable.initInputForm(o);
       });
 
@@ -707,7 +725,7 @@ var app = {
         if (hasRemoveLink || hasEditLink || hasAddLink) {
           // Add action html
           var actions = `<div class="actions">${hasAddLink ? `<a href="${addLink}" class="add-link"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>` : ''} <span>${hasEditLink ? `<a ${editLinkIsModal ? `data-toggle="modal" data-target="${editLink}"` : ''} class="edit-link" href="${editLink}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>` : ''} ${hasRemoveLink ? `<a href="${removeLink}" class="remove-link"><i class="fa fa-trash" aria-hidden="true"></i></a>` : ''}</span></div>`;
-          jQuery(object).append(actions);
+          jQuery(actions).appendTo(object);
           }
       });
     },

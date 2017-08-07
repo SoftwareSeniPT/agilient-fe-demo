@@ -1205,36 +1205,39 @@ div#editHome .content-modal-home {
   padding-left: 20px;
   padding-right: 20px; }
 
-#table-controls input {
-  display: none; }
-
-#table-controls .parent-edit-mode td:first-child input {
-  display: block; }
-
-#table-controls .parent-edit-mode td:first-child span {
-  display: none; }
-
-#table-controls .edit-mode td:not(:first-child) input {
-  display: block; }
-
-#table-controls .edit-mode td:not(:first-child) span {
-  display: none; }
-
 .parent-edit-mode td:first-child .actions {
   display: none; }
 
 .edit-mode td:not(:first-child) .actions {
   display: none; }
 
-#table-controls input {
+#table-controls td:nth-child(3) .select2-container, #table-threat td:nth-child(3) .select2-container {
+  width: 190px !important; }
+
+#table-controls input:not(.select2-search__field), #table-threat input:not(.select2-search__field) {
+  display: none; }
+
+#table-controls .parent-edit-mode td:first-child input:not(.select2-search__field), #table-threat .parent-edit-mode td:first-child input:not(.select2-search__field) {
+  display: block; }
+
+#table-controls .parent-edit-mode td:first-child span, #table-threat .parent-edit-mode td:first-child span {
+  display: none; }
+
+#table-controls .edit-mode td:not(:first-child) input:not(.select2-search__field), #table-threat .edit-mode td:not(:first-child) input:not(.select2-search__field) {
+  display: block; }
+
+#table-controls .edit-mode td:not(:first-child) span:not([class]), #table-threat .edit-mode td:not(:first-child) span:not([class]) {
+  display: none; }
+
+#table-controls input:not(.select2-search__field), #table-threat input:not(.select2-search__field) {
   width: 100%;
   border: 1px solid #ddd;
   padding: 5px 10px; }
 
-#table-controls .save {
+#table-controls .save, #table-threat .save {
   display: none; }
 
-#table-controls .parent-edit-mode td:first-child .save, #table-controls .edit-mode td:nth-child(2) .save {
+#table-controls .parent-edit-mode td:first-child .save, #table-controls .edit-mode td:nth-child(2) .save, #table-threat .parent-edit-mode td:first-child .save, #table-threat .edit-mode td:nth-child(2) .save {
   display: block;
   position: absolute;
   top: 0;
@@ -1245,7 +1248,7 @@ div#editHome .content-modal-home {
   padding: 13px 10px;
   cursor: pointer; }
 
-#table-controls .parent-edit-mode td:first-child, #table-controls .edit-mode td:nth-child(2) {
+#table-controls .parent-edit-mode td:first-child, #table-controls .edit-mode td:nth-child(2), #table-threat .parent-edit-mode td:first-child, #table-threat .edit-mode td:nth-child(2) {
   padding-left: 60px; }
 
 .sub-bu {
