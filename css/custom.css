@@ -1847,4 +1847,8 @@ table.threat_table.separate2col_risk tr {
 .action-cell {
   display: none; }
 
+.img-icon img {
+  max-width: 80px;
+  margin: 20px; }
+
 /*# sourceMappingURL=custom.css.map */
