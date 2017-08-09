@@ -475,6 +475,8 @@ var app = {
             jQuery(parent.next().next()[0].firstChild).text(value3);
           }
 
+          parent.parent().removeClass('edit-mode');
+
           // call callback
           app.controlTable.addControlCallback({
             value1,
