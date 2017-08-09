@@ -1851,4 +1851,10 @@ table.threat_table.separate2col_risk tr {
   max-width: 80px;
   margin: 20px; }
 
+#table-threat .edit-mode.parent-edit-mode td:nth-child(2) .save {
+  display: none; }
+
+#table-threat .edit-mode.parent-edit-mode td:nth-child(2) {
+  padding-left: 10px; }
+
 /*# sourceMappingURL=custom.css.map */

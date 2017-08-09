@@ -408,7 +408,7 @@ var app = {
           var lastTD = jQuery(tr).find('td:not(:nth-child(3), :nth-child(4))');
         }
         lastTD.each(function(index, object) {
-          var value = jQuery(object).text();
+          var value = jQuery(this.firstChild).text();
           if (value !== "") {
             jQuery(object).append(`
               <input type="text" value="${value}" />
@@ -424,38 +424,69 @@ var app = {
       detectSaveControlTable: function() {
         jQuery(document).on('click', '#table-controls .parent-edit-mode td:first-child .save, #table-threat .parent-edit-mode td:first-child .save', function(){
           var parent = jQuery(this).parent();
-          var value = parent.find('input').val();
-          // Update span
-          parent.find('> span:not([class])').text(value);
-          parent.parent().removeClass('parent-edit-mode');
+          var value1 = parent.find('> input').first().val();
+          var value2 = parent.next().find('> input, > select').first().val();
+          var value3 = parent.next().next().find('> input, > select').first().val();
+          var value4 = parent.next().next().next().find('> input, > select').first().val();
+          // Updating value
+          if (value1 && parent.find('> input').length) {
+            jQuery(parent[0].firstChild).text(value1);
+          }
+
+          if (value2 && parent.next().find('> input').length) {
+            jQuery(parent.next()[0].firstChild).text(value2);
+          }
+
+          if (value3 && parent.next().next().find('> input').length) {
+            jQuery(parent.next().next()[0].firstChild).text(value3);
+          }
+
+          if (value4 && parent.next().next().next().find('> input').length) {
+            jQuery(parent.next().next().next()[0].firstChild).text(value4);
+          }
+
+          parent.parent().removeClass('parent-edit-mode').removeClass('edit-mode');
           // call callback
-          app.controlTable.addCategoryCallback({ category: value });
+          app.controlTable.addCategoryCallback({
+            value1,
+            value2,
+            value3,
+            value4,
+          });
         })
 
         jQuery(document).on('click', '#table-controls .edit-mode td:nth-child(2) .save, #table-threat .edit-mode td:nth-child(2) .save', function(){
           // control value
-          var parentSecurity = jQuery(this).parent();
-          var securityValue = parentSecurity.find('input').val();
-          var commentValue = parentSecurity.next().find('input').val();
-          var riskValue = parentSecurity.next().next().find('select').val();
+          var parent = jQuery(this).parent();
+          var value1 = parent.find('> input, > select').first().val();
+          var value2 = parent.next().find('> input, > select').first().val();
+          var value3 = parent.next().next().find('> input, > select').first().val();
 
-          // Update security
-          parentSecurity.find('> span:not([class])').text(securityValue);
-          parentSecurity.next().find('> span:not([class])').text(commentValue);
-          parentSecurity.parent().removeClass('edit-mode');
+          // Updating value
+          if (value1 && parent.find('> input').length) {
+            jQuery(parent[0].firstChild).text(value1);
+          }
+
+          if (value2 && parent.next().find('> input').length) {
+            jQuery(parent.next()[0].firstChild).text(value2);
+          }
+
+          if (value3 && parent.next().next().find('> input').length) {
+            jQuery(parent.next().next()[0].firstChild).text(value3);
+          }
 
           // call callback
           app.controlTable.addControlCallback({
-            securityControl: securityValue,
-            controlComment: commentValue,
-            riskControl: riskValue
+            value1,
+            value2,
+            value3
           });
         })
       },
       detectEditControlTable() {
         jQuery(document).on('click', '#table-controls td:first-child .edit-link, #table-threat td:first-child .edit-link', function(e){
           e.preventDefault();
-          jQuery(this).parents('tr').addClass('parent-edit-mode');
+          jQuery(this).parents('tr').addClass('parent-edit-mode').addClass('edit-mode');
         });
 
         jQuery(document).on('click', '#table-controls td:not(:first-child) .edit-link, #table-threat td:not(:first-child) .edit-link', function(e){
@@ -474,17 +505,18 @@ var app = {
       var table = jQuery('#table-controls, #table-threat');
       table.on('post-body.bs.table', function () {
         setTimeout(function () {
-          // get table count
-          var count = table.bootstrapTable('getData').length;
-          for (i = 0; i < count; i++) {
-            if (i === 0 || (i && (i % 4 === 0))) {
-              table.bootstrapTable('mergeCells', {
-                index: i,
-                field: 'category',
-                rowspan: 4
-              });
+          table.find('tr.parent').each(function(){
+          	var child = jQuery(this).data('child');
+            if (!child || child === "") {
+              return;
             }
-          }
+          	var index = jQuery(this).index();
+          	table.bootstrapTable('mergeCells', {
+                  index: index,
+                  field: 'category',
+                  rowspan: (child + 1)
+                });
+          });
         }, 500);
       });
     },
@@ -880,12 +912,6 @@ var app = {
             // Add to filter div
             jQuery('.filter-field .tags').append(`<div>${value} <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></div>`);
           }
-          console.log({
-            field,
-            record,
-            value,
-            section
-          });
           tableElement.bootstrapTable('filterBy', {
               [field]: record ? app[`${section}Filter`] : [value]
           });
