@@ -100,8 +100,8 @@ var app = {
       });
     },
     BUTableCollapse: function() {
-      function collapse(triggerClass, parentClass, childClass, closeSubChild) {
-        jQuery(triggerClass).click(function(){
+      function collapse(parentClass, childClass) {
+        jQuery(`${parentClass} > td > i`).click(function(){
           var parent = jQuery(this).parents('tr');
           if(!parent.hasClass('open')) {
             parent.remove('closed');
@@ -116,14 +116,36 @@ var app = {
             parent.removeClass('open');
             parent.addClass('closed');
             parent.nextUntil(parentClass).each(function(i, o){
+              console.log(o, '0');
               jQuery(o).removeClass('open').hide();
             });
           }
         });
       }
-      collapse('.has-child i', '.parent', 'child');
-      collapse('.has-sub-children i', '.parent, .sub-parent', 'sub-child');
+      collapse('.parent-1', 'child-1');
+      collapse('.parent-1, .parent-2', 'child-2');
+      collapse('.parent-1, .parent-2, .parent-3', 'child-3');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4', 'child-4');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5', 'child-5');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6', 'child-6');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7', 'child-7');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8', 'child-8');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9', 'child-9');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10', 'child-10');
+
+      //Define for addClass child have parent
+      jQuery('.child-1 + .child-2').prev().addClass('last-child-1');
+      jQuery('.child-2 + .child-3').prev().addClass('last-child-2');
+      jQuery('.child-3 + .child-4').prev().addClass('last-child-3');
+      jQuery('.child-4 + .child-5').prev().addClass('last-child-4');
+      jQuery('.child-5 + .child-6').prev().addClass('last-child-5');
+      jQuery('.child-6 + .child-7').prev().addClass('last-child-6');
+      jQuery('.child-7 + .child-8').prev().addClass('last-child-7');
+      jQuery('.child-8 + .child-9').prev().addClass('last-child-8');
+      jQuery('.child-9 + .child-10').prev().addClass('last-child-9');
+      jQuery('.child-10 + .child-11').prev().addClass('last-child-10');
     },
+
     riskTableAdd: function() {
       jQuery('#table-risk .add-link').click(function(e){
         e.preventDefault();

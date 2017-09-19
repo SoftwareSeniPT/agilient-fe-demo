@@ -1857,4 +1857,81 @@ table.threat_table.separate2col_risk tr {
 #table-threat .edit-mode.parent-edit-mode td:nth-child(2) {
   padding-left: 10px; }
 
+/*
+* Phase 2 style
+*/
+.open tr .fa-search::before {
+  content: "\f0d7"; }
+
+.child-1, .child-2, .child-3, .child-4, .child-5, .child-6, .child-7, .child-8, .child-9, .child-10 {
+  display: none; }
+
+.child-1 td:first-child {
+  padding-left: 35px !important; }
+
+.child-2 td:first-child {
+  padding-left: 102px !important; }
+
+.child-3 td:first-child {
+  padding-left: 133px !important; }
+
+.child-4 td:first-child {
+  padding-left: 170px !important; }
+
+.child-5 td:first-child {
+  padding-left: 210px !important; }
+
+.child-6 td:first-child {
+  padding-left: 235px !important; }
+
+.child-1 td:first-child {
+  margin-left: 20px;
+  display: inline;
+  height: 22px !important;
+  position: absolute;
+  border-radius: 3px; }
+
+.child-1 td:first-child::after,
+.child-2 td:first-child::after,
+.child-3 td:first-child::after,
+.child-4 td:first-child::after,
+.child-5 td:first-child::after {
+  border: 1px dotted #000;
+  content: '';
+  border-width: 0 0 1px 1px;
+  display: list-item;
+  margin-left: -47px;
+  list-style-type: none;
+  position: relative;
+  width: 41px;
+  top: -13px;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.child-1 td:first-child::before,
+.child-2 td:first-child::before,
+.child-3 td:first-child::before,
+.child-4 td:first-child::before,
+.child-5 td:first-child::before {
+  border: 1px dotted #000;
+  content: '';
+  border-width: 0 0 1px 1px;
+  display: list-item;
+  margin-left: -27px;
+  list-style-type: none;
+  position: relative;
+  width: 30px;
+  top: 13px; }
+
+.child-1.last-child-1 td:first-child::after,
+.child-2.last-child-2 td:first-child::after,
+.child-3.last-child-3 td:first-child::after,
+.child-4.last-child-4 td:first-child::after {
+  margin-left: -37px !important;
+  width: 21px !important;
+  top: -23px !important; }
+
 /*# sourceMappingURL=custom.css.map */
