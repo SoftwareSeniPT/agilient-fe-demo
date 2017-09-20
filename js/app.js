@@ -134,9 +134,9 @@ var app = {
       collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10', 'child-10');
 
       /*Detect css who have has-childs class on parent*/
-      jQuery('tr[class*="parent-"]').each(function(){
-        jQuery(this).find('td i').addClass('has-childs');
-      })
+      // jQuery('tr[class*="parent-"]').each(function(){
+      //   jQuery(this).find('td i').addClass('has-childs');
+      // });
 
       //Define for addClass child have parent for line vertical
       jQuery('.child-1 + .child-2').prev().addClass('last-child-1');
