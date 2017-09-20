@@ -6,6 +6,14 @@
     Author URI: bayuslari.com
     Version: 1.0
 */
+/* Define url fontAwesome */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 /**
  *
  * GENERAL
@@ -1860,9 +1868,6 @@ table.threat_table.separate2col_risk tr {
 /*
 * Phase 2 style
 */
-.open tr .fa-search::before {
-  content: "\f0d7"; }
-
 .child-1, .child-2, .child-3, .child-4, .child-5, .child-6, .child-7, .child-8, .child-9, .child-10 {
   display: none; }
 
@@ -1923,8 +1928,8 @@ table.threat_table.separate2col_risk tr {
   margin-left: -27px;
   list-style-type: none;
   position: relative;
-  width: 30px;
-  top: 13px; }
+  width: 20px;
+  top: 14px; }
 
 .child-1.last-child-1 td:first-child::after,
 .child-2.last-child-2 td:first-child::after,
@@ -1933,5 +1938,22 @@ table.threat_table.separate2col_risk tr {
   margin-left: -37px !important;
   width: 21px !important;
   top: -23px !important; }
+
+tr td:first-child i.has-childs::before {
+  font-family: 'FontAwesome';
+  content: "\f054";
+  font-size: 10px;
+  font-style: normal;
+  margin: 0 0 0 -7px; }
+
+tr.open td:first-child i.has-childs::before {
+  font-family: 'FontAwesome';
+  content: "\f078";
+  font-size: 10px;
+  font-style: normal;
+  margin: 0 0 0 -7px; }
+
+tr.parent-1 td:first-child {
+  padding-left: 15px !important; }
 
 /*# sourceMappingURL=custom.css.map */

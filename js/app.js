@@ -133,7 +133,12 @@ var app = {
       collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9', 'child-9');
       collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10', 'child-10');
 
-      //Define for addClass child have parent
+      /*Detect css who have has-childs class on parent*/
+      jQuery('tr[class*="parent-"]').each(function(){
+        jQuery(this).find('td i').addClass('has-childs');
+      })
+
+      //Define for addClass child have parent for line vertical
       jQuery('.child-1 + .child-2').prev().addClass('last-child-1');
       jQuery('.child-2 + .child-3').prev().addClass('last-child-2');
       jQuery('.child-3 + .child-4').prev().addClass('last-child-3');
