@@ -296,336 +296,367 @@
         </div>
     </div>
 
-    <table id="table-home" class="table-general table-business" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true" data-pagination="true" data-page-size="20" data-page-list="[10, 20, 30, 40]" data-escape="false">
-        <thead>
-            <tr>
-                <th data-field="id" id="id_header" data-visible="false"></th>
-                <th data-field="name" id="name_header" data-sortable="true">Name</th>
-                <th data-field="organisation" id="organisasion_header" data-sortable="true">Organisation</th>
-                <th data-field="status" id="status_header" data-sortable="true">Status</th>
-                <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="parent-1">
-                <td>0</td>
-                <td>
-                  <i class="" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
-                  <a href="#">Entity Two</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-1">
-                <td>1</td>
-                <td>
-                  <a href="#">Internal Testing</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-1">
-                <td>2</td>
-                <td>
-                  <a href="#">PK Test Assessment</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-1 parent-2">
-                <td>3</td>
-                <td>
-                  <i class="" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
-                  <a href="#">Cyber Security SRA xxxx</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-2">
-                <td>4</td>
-                <td>
-                  <a href="#">child-2 1</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-2">
-                <td>5</td>
-                <td>
-                  <a href="#">child-2 2</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-2 parent-3">
-                <td>5a</td>
-                <td>
-                  <i class="" aria-hidden="true"></i>
-                  <a href="#">Assessment Childer child</a>
-                </td>
-                <td>Org Demo</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-3">
-                <td>4</td>
-                <td>
-                  <a href="#">child-3 1</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-3">
-                <td>5</td>
-                <td>
-                  <a href="#">child-3 2</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-3 parent-4">
-                <td>5a</td>
-                <td>
-                  <i class="" aria-hidden="true"></i>
-                  <a href="#">Assessment Childer child</a>
-                </td>
-                <td>Org Demo</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-4">
-                <td>4</td>
-                <td>
-                  <a href="#">child-4 1</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-4 parent-5">
-                <td>4</td>
-                <td>
-                  <i class="" aria-hidden="true"></i>
-                  <a href="#">child-5 1</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-5">
-                <td>5</td>
-                <td>
-                  <a href="#">child-5 2</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-5">
-                <td>5</td>
-                <td>
-                  <a href="#">child-5 2</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-4">
-                <td>5</td>
-                <td>
-                  <a href="#">child-4 2</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-4">
-                <td>5</td>
-                <td>
-                  <a href="#">child-4 3</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>0</td>
-                <td>
-                  <i class="" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
-                  <a href="#">Entity Two</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-1">
-                <td>1</td>
-                <td>
-                  <a href="#">Internal Testing</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-1">
-                <td>2</td>
-                <td>
-                  <a href="#">PK Test Assessment</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-1 parent-2">
-                <td>3</td>
-                <td>
-                  <i class="" aria-hidden="true"></i>
-                  <a href="#">Cyber Security SRA</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-2">
-                <td>4</td>
-                <td>
-                  <a href="#">Internal Testing</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="child-2">
-                <td>5</td>
-                <td>
-                  <a href="#">PK Test Assessment</a>
-                </td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>4</td>
-                <td>Marketing</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>5</td>
-                <td>Distribution</td>
-                <td>Demo Org</td>
-                <td>Inactive</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>0</td>
-                <td>Sales</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>1</td>
-                <td>Operations</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>2</td>
-                <td>Technology</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>3</td>
-                <td>Finance and IT</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>4</td>
-                <td>Marketing</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>5</td>
-                <td>Distribution</td>
-                <td>Demo Org</td>
-                <td>Inactive</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>0</td>
-                <td>Sales</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>1</td>
-                <td>Operations</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>2</td>
-                <td>Technology</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>3</td>
-                <td>Finance and IT</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>4</td>
-                <td>Marketing</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>5</td>
-                <td>Distribution</td>
-                <td>Demo Org</td>
-                <td>Inactive</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>0</td>
-                <td>Sales</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-            <tr class="parent-1">
-                <td>1</td>
-                <td>Operations</td>
-                <td>Demo Org</td>
-                <td>Active</td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <ul class="nav nav-tabs-bu" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#business" role="tab">Business Units</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#assesments" role="tab">Assesments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#users" role="tab">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#logrecord" role="tab">Log Record</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="business" class="tab-pane active" role="tabpanel">
+
+        <table id="table-home" class="table-general table-business" data-toggle="table" data-toolbar="#toolbar" data-query-params="queryParams" data-response-handler="responseHandler" data-unique-id="id" data-search="true" data-pagination="false" data-page-size="20" data-page-list="[10, 20, 30, 40]" data-escape="false">
+            <thead>
+                <tr>
+                    <th data-field="id" id="id_header" data-visible="false"></th>
+                    <th data-field="name" id="name_header" data-sortable="true">Name</th>
+                    <th data-field="organisation" id="organisasion_header" data-sortable="true">Organisation</th>
+                    <th data-field="status" id="status_header" data-sortable="true">Status</th>
+                    <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="parent-1">
+                    <td>0</td>
+                    <td>
+                      <i class="" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
+                      <a href="#">Entity Two</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-1">
+                    <td>1</td>
+                    <td>
+                      <a href="#">Internal Testing</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-1">
+                    <td>2</td>
+                    <td>
+                      <a href="#">PK Test Assessment</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-1 parent-2">
+                    <td>3</td>
+                    <td>
+                      <i class="" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
+                      <a href="#">Cyber Security SRA xxxx</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-2">
+                    <td>4</td>
+                    <td>
+                      <a href="#">child-2 1</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-2">
+                    <td>5</td>
+                    <td>
+                      <a href="#">child-2 2</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-2 parent-3">
+                    <td>5a</td>
+                    <td>
+                      <i class="" aria-hidden="true"></i>
+                      <a href="#">Assessment Childer child</a>
+                    </td>
+                    <td>Org Demo</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-3">
+                    <td>4</td>
+                    <td>
+                      <a href="#">child-3 1</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-3">
+                    <td>5</td>
+                    <td>
+                      <a href="#">child-3 2</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-3 parent-4">
+                    <td>5a</td>
+                    <td>
+                      <i class="" aria-hidden="true"></i>
+                      <a href="#">Assessment Childer child</a>
+                    </td>
+                    <td>Org Demo</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-4">
+                    <td>4</td>
+                    <td>
+                      <a href="#">child-4 1</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-4 parent-5">
+                    <td>4</td>
+                    <td>
+                      <i class="" aria-hidden="true"></i>
+                      <a href="#">child-5 1</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-5">
+                    <td>5</td>
+                    <td>
+                      <a href="#">child-5 2</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-5">
+                    <td>5</td>
+                    <td>
+                      <a href="#">child-5 2</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-4">
+                    <td>5</td>
+                    <td>
+                      <a href="#">child-4 2</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-4">
+                    <td>5</td>
+                    <td>
+                      <a href="#">child-4 3</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>0</td>
+                    <td>
+                      <i class="" aria-hidden="true" data-toggle="collapse" href="#sub-bu-1" aria-expanded="false" aria-controls="sub-bu-1"></i>
+                      <a href="#">Entity Two</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-1">
+                    <td>1</td>
+                    <td>
+                      <a href="#">Internal Testing</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-1">
+                    <td>2</td>
+                    <td>
+                      <a href="#">PK Test Assessment</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-1 parent-2">
+                    <td>3</td>
+                    <td>
+                      <i class="" aria-hidden="true"></i>
+                      <a href="#">Cyber Security SRA</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-2">
+                    <td>4</td>
+                    <td>
+                      <a href="#">Internal Testing</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="child-2">
+                    <td>5</td>
+                    <td>
+                      <a href="#">PK Test Assessment</a>
+                    </td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>4</td>
+                    <td>Marketing</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>5</td>
+                    <td>Distribution</td>
+                    <td>Demo Org</td>
+                    <td>Inactive</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>0</td>
+                    <td>Sales</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>1</td>
+                    <td>Operations</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>2</td>
+                    <td>Technology</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>3</td>
+                    <td>Finance and IT</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>4</td>
+                    <td>Marketing</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>5</td>
+                    <td>Distribution</td>
+                    <td>Demo Org</td>
+                    <td>Inactive</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>0</td>
+                    <td>Sales</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>1</td>
+                    <td>Operations</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>2</td>
+                    <td>Technology</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>3</td>
+                    <td>Finance and IT</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>4</td>
+                    <td>Marketing</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>5</td>
+                    <td>Distribution</td>
+                    <td>Demo Org</td>
+                    <td>Inactive</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>0</td>
+                    <td>Sales</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+                <tr class="parent-1">
+                    <td>1</td>
+                    <td>Operations</td>
+                    <td>Demo Org</td>
+                    <td>Active</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <div id="assesments" class="tab-pane fade" role="tabpanel">
+        <h3>Menu 1</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div id="users" class="tab-pane fade" role="tabpanel">
+        <h3>Menu 2</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      </div>
+      <div id="logrecord" class="tab-pane fade" role="tabpanel">
+        <h3>Menu 3</h3>
+        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
     <div class="table-menu" style="display: none">
     <a href="#0" class="table-toggle"><i class="icon-options-vertical"></i></a>
     <div class="table-menu-link-2">
