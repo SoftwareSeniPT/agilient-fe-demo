@@ -407,6 +407,7 @@ footer {
 .breadcrumb-item+.breadcrumb-item::before {
     content: '>>';
 }
+
 /* Accordion */
 #accordion .card-header {
     background: transparent;
@@ -2345,9 +2346,9 @@ table.threat_table.separate2col_risk tr {
 * Phase 2 style
 */
 
-.child-1, .child-2, .child-3, .child-4, .child-5, .child-6, .child-7, .child-8, .child-9, .child-10 {
-  display: none;
-}
+// .child-1, .child-2, .child-3, .child-4, .child-5, .child-6, .child-7, .child-8, .child-9, .child-10 {
+//   display: none;
+// }
 
 .child-1 td:first-child {
     padding-left: 35px !important;
@@ -2386,7 +2387,22 @@ table.threat_table.separate2col_risk tr {
 .child-2 td:first-child::after,
 .child-3 td:first-child::after,
 .child-4 td:first-child::after,
-.child-5 td:first-child::after {
+.child-5 td:first-child::after,
+.child-6 td:first-child::after,
+.child-7 td:first-child::after,
+.child-8 td:first-child::after,
+.child-9 td:first-child::after,
+.child-10 td:first-child::after,
+.child-11 td:first-child::after,
+.child-12 td:first-child::after,
+.child-13 td:first-child::after,
+.child-14 td:first-child::after,
+.child-15 td:first-child::after,
+.child-16 td:first-child::after,
+.child-17 td:first-child::after,
+.child-18 td:first-child::after,
+.child-19 td:first-child::after,
+.child-20 td:first-child::after {
     border: 1px dotted #000;
     content: '';
     border-width: 0 0 1px 1px;
@@ -2407,7 +2423,22 @@ table.threat_table.separate2col_risk tr {
 .child-2 td:first-child::before,
 .child-3 td:first-child::before,
 .child-4 td:first-child::before,
-.child-5 td:first-child::before {
+.child-5 td:first-child::before,
+.child-6 td:first-child::before,
+.child-7 td:first-child::before,
+.child-8 td:first-child::before,
+.child-9 td:first-child::before,
+.child-10 td:first-child::before,
+.child-11 td:first-child::before,
+.child-12 td:first-child::before,
+.child-13 td:first-child::before,
+.child-14 td:first-child::before,
+.child-15 td:first-child::before,
+.child-16 td:first-child::before,
+.child-17 td:first-child::before,
+.child-18 td:first-child::before,
+.child-19 td:first-child::before,
+.child-20 td:first-child::before {
     border: 1px dotted #000;
     content: '';
     border-width: 0 0 1px 1px;
@@ -2419,10 +2450,45 @@ table.threat_table.separate2col_risk tr {
     top: 14px;
 }
 
+.child-1.preRev-last-child td:first-child::after,
 .child-1.last-child-1 td:first-child::after,
 .child-2.last-child-2 td:first-child::after,
+.child-2.rev-last-child-1 td:first-child::after,
 .child-3.last-child-3 td:first-child::after,
-.child-4.last-child-4 td:first-child::after {
+.child-3.rev-last-child-2 td:first-child::after,
+.child-3.last-child-3-1 td:first-child::after,
+.child-4.last-child-4 td:first-child::after,
+.child-5.rev-last-child-4 td:first-child::after,
+.child-6.rev-last-child-5 td:first-child::after,
+.child-6.last-child-6 td:first-child::after,
+.child-7.rev-last-child-6 td:first-child::after,
+.child-7.last-child-7 td:first-child::after,
+.child-8.rev-last-child-7 td:first-child::after,
+.child-8.last-child-8 td:first-child::after,
+.child-9.rev-last-child-8 td:first-child::after,
+.child-9.last-child-9 td:first-child::after,
+.child-10.rev-last-child-9 td:first-child::after,
+.child-10.last-child-10 td:first-child::after,
+.child-11.rev-last-child-10 td:first-child::after,
+.child-11.last-child-11 td:first-child::after,
+.child-12.rev-last-child-11 td:first-child::after,
+.child-12.last-child-12 td:first-child::after,
+.child-13.rev-last-child-12 td:first-child::after,
+.child-13.last-child-13 td:first-child::after,
+.child-14.rev-last-child-13 td:first-child::after,
+.child-14.last-child-14 td:first-child::after,
+.child-15.rev-last-child-14 td:first-child::after,
+.child-15.last-child-15 td:first-child::after,
+.child-16.rev-last-child-15 td:first-child::after,
+.child-16.last-child-16 td:first-child::after,
+.child-17.rev-last-child-16 td:first-child::after,
+.child-17.last-child-17 td:first-child::after,
+.child-18.rev-last-child-17 td:first-child::after,
+.child-18.last-child-18 td:first-child::after,
+.child-19.rev-last-child-18 td:first-child::after,
+.child-19.last-child-19 td:first-child::after,
+.child-20.rev-last-child-19 td:first-child::after,
+.child-20.last-child-20 td:first-child::after {
     margin-left: -37px !important;
     width: 21px !important;
     top: -23px !important;
@@ -2448,6 +2514,13 @@ tr.parent-1 td:first-child {
   padding-left: 15px !important;
 }
 
+.child-1:not(.on-search), .child-2:not(.on-search), .child-3:not(.on-search), .child-4:not(.on-search), .child-5:not(.on-search),
+.child-6:not(.on-search), .child-7:not(.on-search), .child-8:not(.on-search), .child-9:not(.on-search), .child-10:not(.on-search),
+.child-11:not(.on-search), .child-12:not(.on-search), .child-13:not(.on-search), .child-14:not(.on-search), .child-15:not(.on-search),
+.child-16:not(.on-search), .child-17:not(.on-search), .child-18:not(.on-search), .child-19:not(.on-search), .child-20:not(.on-search) {
+    display: none;
+}
+
 /*Tab for business style*/
 .nav-tabs-bu .nav-item {
   border-style: solid;
@@ -2459,3 +2532,86 @@ tr.parent-1 td:first-child {
   background-color: #354052;
   color: #ffffff;
 }
+/*End*/
+
+.fa.fa-times {
+    font-size: 20px;
+}
+
+.breadcrumb.detail-page {
+  padding: 25px 0;
+}
+
+.detail-user .bootstrap-table .parent-user-1 td:nth-of-type(3) {
+  padding-left: 20px;
+}
+
+.detail-user .bootstrap-table .childs-1 td:nth-of-type(3) {
+  padding-left: 48px;
+}
+
+.detail-user .bootstrap-table .childs-2 td:nth-of-type(3) {
+  padding-left: 77px;
+}
+
+.detail-user .bootstrap-table .childs-3 td:nth-of-type(3) {
+  padding-left: 106px;
+}
+
+.detail-user .bootstrap-table .childs-4 td:nth-of-type(3) {
+  padding-left: 115px;
+}
+
+.detail-user .childs-1 td:nth-of-type(3)::before, .detail-user .childs-2 td:nth-of-type(3)::before, .detail-user .childs-3 td:nth-of-type(3)::before {
+    border: 1px dotted #000;
+    content: '';
+    border-width: 0 0 1px 1px;
+    display: list-item;
+    margin-left: -27px;
+    list-style-type: none;
+    position: relative;
+    width: 20px;
+    top: 14px;
+}
+
+.detail-user .childs-1 td:nth-of-type(3)::after, .detail-user .childs-2 td:nth-of-type(3)::after, .detail-user .childs-3 td:nth-of-type(3)::after {
+    border: 1px dotted #000;
+    content: '';
+    border-width: 0 0 1px 1px;
+    display: list-item;
+    margin-left: -48px;
+    list-style-type: none;
+    position: relative;
+    width: 41px;
+    top: -13px;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+.detail-user tr.childs-1:last-child td:nth-of-type(3)::after, .detail-user tr.childs-2:last-child td:nth-of-type(3)::after, .detail-user tr.childs-3:last-child td:nth-of-type(3)::after {
+    border: 1px dotted #000;
+    content: '';
+    border-width: 0 0 1px 1px;
+    top: -22px;
+    width: 23px;
+    margin-left: -39px;
+}
+
+// .detail-user .childs-1 td:nth-of-type(3)::after, .detail-user .childs-2 td:nth-of-type(3)::after, .detail-user .childs-3 td:nth-of-type(3)::after {
+//     border: 1px dotted #000;
+//     content: '';
+//     border-width: 0 0 1px 1px;
+//     display: list-item;
+//     margin-left: -38px;
+//     list-style-type: none;
+//     position: relative;
+//     width: 21px;
+//     top: -23px;
+//     -webkit-transform: rotate(270deg);
+//     -moz-transform: rotate(270deg);
+//     -o-transform: rotate(270deg);
+//     -ms-transform: rotate(270deg);
+//     transform: rotate(270deg);
+// }

@@ -132,6 +132,16 @@ var app = {
       collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8', 'child-8');
       collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9', 'child-9');
       collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10', 'child-10');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11', 'child-11');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12', 'child-12');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12, parent-13', 'child-13');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12, parent-13, parent-14', 'child-14');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12, parent-13, parent-14, parent-15', 'child-15');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12, parent-13, parent-14, parent-15, parent-16', 'child-16');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12, parent-13, parent-14, parent-15, parent-16, parent-17', 'child-17');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12, parent-13, parent-14, parent-15, parent-16, parent-17, parent-18', 'child-18');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12, parent-13, parent-14, parent-15, parent-16, parent-17, parent-18, parent-19', 'child-19');
+      collapse('.parent-1, .parent-2, .parent-3, .parent-4, .parent-5, .parent-6, .parent-7, .parent-8, .parent-9, .parent-10, parent-11, parent-12, parent-13, parent-14, parent-15, parent-16, parent-17, parent-18, parent-19, parent-20', 'child-20');
 
       /*Detect css who have has-childs class on parent*/
       // jQuery('tr[class*="parent-"]').each(function(){
@@ -139,16 +149,47 @@ var app = {
       // });
 
       //Define for addClass child have parent for line vertical
+      jQuery('.child-0 + .child-1').prev().addClass('pre-last-child');
+      jQuery('.child-1 + .child-0').prev().addClass('preRev-last-child');
       jQuery('.child-1 + .child-2').prev().addClass('last-child-1');
+      jQuery('.child-2 + .child-1').prev().addClass('rev-last-child-1');
       jQuery('.child-2 + .child-3').prev().addClass('last-child-2');
+      jQuery('.child-3 + .child-2').prev().addClass('rev-last-child-2');
       jQuery('.child-3 + .child-4').prev().addClass('last-child-3');
+      jQuery('.child-3 + .child-1').prev().addClass('last-child-3-1');
       jQuery('.child-4 + .child-5').prev().addClass('last-child-4');
+      jQuery('.child-5 + .child-4').prev().addClass('rev-last-child-4');
       jQuery('.child-5 + .child-6').prev().addClass('last-child-5');
+      jQuery('.child-6 + .child-5').prev().addClass('rev-last-child-5');
       jQuery('.child-6 + .child-7').prev().addClass('last-child-6');
+      jQuery('.child-7 + .child-6').prev().addClass('rev-last-child-6');
       jQuery('.child-7 + .child-8').prev().addClass('last-child-7');
+      jQuery('.child-8 + .child-7').prev().addClass('rev-last-child-7');
       jQuery('.child-8 + .child-9').prev().addClass('last-child-8');
+      jQuery('.child-9 + .child-8').prev().addClass('rev-last-child-8');
       jQuery('.child-9 + .child-10').prev().addClass('last-child-9');
+      jQuery('.child-10 + .child-9').prev().addClass('rev-last-child-9');
       jQuery('.child-10 + .child-11').prev().addClass('last-child-10');
+      jQuery('.child-11 + .child-10').prev().addClass('rev-last-child-10');
+      jQuery('.child-11 + .child-12').prev().addClass('last-child-11');
+      jQuery('.child-12 + .child-11').prev().addClass('rev-last-child-11');
+      jQuery('.child-12 + .child-13').prev().addClass('last-child-12');
+      jQuery('.child-13 + .child-12').prev().addClass('rev-last-child-12');
+      jQuery('.child-13 + .child-14').prev().addClass('last-child-13');
+      jQuery('.child-14 + .child-13').prev().addClass('rev-last-child-13');
+      jQuery('.child-14 + .child-15').prev().addClass('last-child-14');
+      jQuery('.child-15 + .child-14').prev().addClass('rev-last-child-14');
+      jQuery('.child-15 + .child-16').prev().addClass('last-child-15');
+      jQuery('.child-16 + .child-15').prev().addClass('rev-last-child-15');
+      jQuery('.child-16 + .child-17').prev().addClass('last-child-16');
+      jQuery('.child-17 + .child-16').prev().addClass('rev-last-child-16');
+      jQuery('.child-17 + .child-18').prev().addClass('last-child-17');
+      jQuery('.child-18 + .child-17').prev().addClass('rev-last-child-17');
+      jQuery('.child-18 + .child-19').prev().addClass('last-child-18');
+      jQuery('.child-19 + .child-18').prev().addClass('rev-last-child-18');
+      jQuery('.child-19 + .child-20').prev().addClass('last-child-19');
+      jQuery('.child-20 + .child-19').prev().addClass('rev-last-child-19');
+      jQuery('.child-20 + .child-21').prev().addClass('last-child-20');
     },
 
     riskTableAdd: function() {
