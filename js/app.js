@@ -40,6 +40,7 @@ var app = {
         app.riskTableDelete();
         app.BUTableCollapse();
         app.initActionToTable();
+        app.mergeUserDetail();
     },
 
     // ======================================================================
@@ -190,6 +191,20 @@ var app = {
       jQuery('.child-19 + .child-20').prev().addClass('last-child-19');
       jQuery('.child-20 + .child-19').prev().addClass('rev-last-child-19');
       jQuery('.child-20 + .child-21').prev().addClass('last-child-20');
+    },
+
+    mergeUserDetail: function() {
+      var $tableUser = jQuery('#table-home.detail-user');
+        $tableUser.bootstrapTable('mergeCells', {
+            index: 0,
+            field: 'lastname',
+            rowspan: 6
+        });
+        $tableUser.bootstrapTable('mergeCells', {
+            index: 0,
+            field: 'firstname',
+            rowspan: 6
+        });
     },
 
     riskTableAdd: function() {

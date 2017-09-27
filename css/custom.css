@@ -2036,6 +2036,7 @@ tr.parent-1 td:first-child {
   color: #ffffff; }
 
 /*End*/
+/*Detail user page*/
 .fa.fa-times {
   font-size: 20px; }
 
@@ -2091,5 +2092,10 @@ tr.parent-1 td:first-child {
   top: -22px;
   width: 23px;
   margin-left: -39px; }
+
+.detail-user tr td {
+  vertical-align: top; }
+
+/*End*/
 
 /*# sourceMappingURL=custom.css.map */

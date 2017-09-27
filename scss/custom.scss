@@ -2534,6 +2534,7 @@ tr.parent-1 td:first-child {
 }
 /*End*/
 
+/*Detail user page*/
 .fa.fa-times {
     font-size: 20px;
 }
@@ -2599,19 +2600,8 @@ tr.parent-1 td:first-child {
     margin-left: -39px;
 }
 
-// .detail-user .childs-1 td:nth-of-type(3)::after, .detail-user .childs-2 td:nth-of-type(3)::after, .detail-user .childs-3 td:nth-of-type(3)::after {
-//     border: 1px dotted #000;
-//     content: '';
-//     border-width: 0 0 1px 1px;
-//     display: list-item;
-//     margin-left: -38px;
-//     list-style-type: none;
-//     position: relative;
-//     width: 21px;
-//     top: -23px;
-//     -webkit-transform: rotate(270deg);
-//     -moz-transform: rotate(270deg);
-//     -o-transform: rotate(270deg);
-//     -ms-transform: rotate(270deg);
-//     transform: rotate(270deg);
-// }
+.detail-user tr td {
+  vertical-align: top;
+}
+
+/*End*/
