@@ -729,7 +729,27 @@
           </div>
         </div>
         <p>Select or create risk assessment criteria in the table below. This information will be used to assess inherent and residual risk levels within the Security Risk Register.</p>
+
+        <ul class="nav nav-tabs-bu" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#consequence" role="tab">Consequence Criteria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#likelihood" role="tab">Likelihood Criteria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#matrix" role="tab">Risk Matrix</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tolerance" role="tab">Risk Tolerance</a>
+          </li>
+        </ul>
+
+
+
         <div id="modal_asset-content">
+          <div class="tab-content">
+            <div id="consequence" class="tab-pane active" role="tabpanel">
           <!-- Table -->
           <table cellspacing="0" cellpadding="0" border="0" width="66.6666%" align="right" class="threat_table mrg_top10 width66_percent risk_table">
 
@@ -1081,7 +1101,9 @@
 
 </tbody></table>
           <!-- // Table -->
+        </div>
 
+        <div id="likelihood" class="tab-pane active" role="tabpanel">
 <!-- Table 2 -->
 <table cellspacing="0" cellpadding="0" border="0" width="100%" class="reset_table mrg_top10">
 <thead>
@@ -1779,6 +1801,9 @@
 </table>
 <!-- Table 2 -->
 
+</div>
+<div id="matrix" class="tab-pane active" role="tabpanel">
+
 <!-- Table 3 -->
 <table cellspacing="0" cellpadding="0" border="0" width="100%" class="reset_table fontweight_normal">
     <thead>
@@ -1933,6 +1958,8 @@
     </thead>
   </table>
 <!-- // Table 3 -->
+</div>
+</div>
 
           <div class="btn_outer">
             <button type="button" class="btn btn-success">Save as New Criteria</button>

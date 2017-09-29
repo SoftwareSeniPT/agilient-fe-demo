@@ -2046,17 +2046,17 @@ tr.parent-1 td:first-child {
 .detail-user .bootstrap-table .parent-user-1 td:nth-of-type(3) {
   padding-left: 20px; }
 
-.detail-user .bootstrap-table .childs-1 td:nth-of-type(3) {
-  padding-left: 48px; }
+#table-home tbody .childs-1 td:nth-of-type(3) {
+  padding-left: 48px !important; }
 
-.detail-user .bootstrap-table .childs-2 td:nth-of-type(3) {
-  padding-left: 77px; }
+#table-home tbody .childs-2 td:nth-of-type(3) {
+  padding-left: 77px !important; }
 
-.detail-user .bootstrap-table .childs-3 td:nth-of-type(3) {
-  padding-left: 106px; }
+#table-home tbody .childs-3 td:nth-of-type(3) {
+  padding-left: 106px !important; }
 
-.detail-user .bootstrap-table .childs-4 td:nth-of-type(3) {
-  padding-left: 115px; }
+#table-home tbody .childs-4 td:nth-of-type(3) {
+  padding-left: 115px !important; }
 
 .detail-user .childs-1 td:nth-of-type(3)::before, .detail-user .childs-2 td:nth-of-type(3)::before, .detail-user .childs-3 td:nth-of-type(3)::before {
   border: 1px dotted #000;
@@ -2097,5 +2097,22 @@ tr.parent-1 td:first-child {
   vertical-align: top; }
 
 /*End*/
+/*Modal risk tab*/
+#myModalCriteria .nav-tabs-bu {
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid #DCDCDC; }
+  #myModalCriteria .nav-tabs-bu .nav-link.active {
+    background-color: #737373;
+    border-radius: 5px 5px 0 0; }
+  #myModalCriteria .nav-tabs-bu .nav-item {
+    margin: 0 10px 0 0;
+    border-width: 1px 1px 0 1px;
+    border-color: #DCDCDC;
+    border-radius: 5px 5px 0 0; }
+
+#myModalCriteria .modal-body > p {
+  margin-bottom: 20px; }
+
+/*end*/
 
 /*# sourceMappingURL=custom.css.map */

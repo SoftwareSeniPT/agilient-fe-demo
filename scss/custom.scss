@@ -2547,20 +2547,15 @@ tr.parent-1 td:first-child {
   padding-left: 20px;
 }
 
-.detail-user .bootstrap-table .childs-1 td:nth-of-type(3) {
-  padding-left: 48px;
-}
-
-.detail-user .bootstrap-table .childs-2 td:nth-of-type(3) {
-  padding-left: 77px;
-}
-
-.detail-user .bootstrap-table .childs-3 td:nth-of-type(3) {
-  padding-left: 106px;
-}
-
-.detail-user .bootstrap-table .childs-4 td:nth-of-type(3) {
-  padding-left: 115px;
+#table-home tbody {
+  .childs-1 td:nth-of-type(3) {
+    padding-left: 48px !important; }
+  .childs-2 td:nth-of-type(3) {
+    padding-left: 77px !important; }
+  .childs-3 td:nth-of-type(3) {
+    padding-left: 106px !important; }
+  .childs-4 td:nth-of-type(3) {
+    padding-left: 115px !important; }
 }
 
 .detail-user .childs-1 td:nth-of-type(3)::before, .detail-user .childs-2 td:nth-of-type(3)::before, .detail-user .childs-3 td:nth-of-type(3)::before {
@@ -2603,5 +2598,26 @@ tr.parent-1 td:first-child {
 .detail-user tr td {
   vertical-align: top;
 }
-
 /*End*/
+
+/*Modal risk tab*/
+#myModalCriteria {
+  .nav-tabs-bu {
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid #DCDCDC;
+    .nav-link.active {
+      background-color: #737373;
+      border-radius: 5px 5px 0 0;
+    }
+    .nav-item {
+      margin: 0 10px 0 0;
+      border-width: 1px 1px 0 1px;
+      border-color: #DCDCDC;
+      border-radius: 5px 5px 0 0;
+    }
+  }
+  .modal-body > p {
+    margin-bottom: 20px;
+  }
+}
+/*end*/
